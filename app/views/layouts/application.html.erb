@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<% if user_signed_in? %>
+<html>
+	<%= render "/layouts/head" %>
+	<%= render "/layouts/body" %>
+<% else %>
+<html id="extr-page">
+	<%= render "/layouts/head" %>
+	<%= render "/layouts/login" %>
+<% end %>
+</html>
+

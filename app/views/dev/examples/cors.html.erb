@@ -1,0 +1,19 @@
+<h1>Testing CORS functionality</h1>
+<script>
+  function cors_req(){
+      $.ajax({
+          url: 'https://www.deliriumtechmen.com/v1/things',
+          headers: { 'Authorization': 'Basic bWF0aWFzQG9waS5sYTpvcGlvcGlvcGk=' },
+          data: { get_param: 'value' },
+          dataType: 'text',
+          success: function (data) {
+              $('#json_div').html(String(data));
+          }
+      });
+  }
+</script>
+
+<%= link_to  'get json from different origin', '#', onclick: 'javascript:cors_req();' %>
+
+<br/><br/>
+<div id="json_div"></div>

@@ -1,0 +1,212 @@
+// Color or tables
+// Filas impares (odd)
+$color-tr-odd:#B2C4D1;
+//Filas pares (even)
+$color-tr-even:#DFE7ED;
+//Hover de filasde tabla
+$color-tr-hover:#DFE7ED;
+//Hover del head de la tabla
+$gris-azul-2: #93AEC3;
+
+.color-primary-0 { color: #9CB3C5 }	/* Main Primary color */
+.color-primary-1 { color: #EFF4F7 }
+.color-primary-2 { color: #CBD8E2 }
+.color-primary-3 { color: #6B8AA2 }
+.color-primary-4 { color: #446986 }
+
+
+
+#content{
+    border-top: 1px solid #999;
+
+}
+table tr:first-child th{
+    background-color: #DFE7ED;
+    white-space: nowrap;
+}
+table.dataTable, .no-margin-top-bottom{
+    margin-top:0 !important;
+    margin-bottom:0 !important;
+    padding-bottom: 0!important;
+}
+table.grey-blue-table tr:nth-child(odd) {
+   // background-color: $color-tr-odd;
+}
+table.grey-blue-table tr th{
+    background-color: $gris-azul-2;
+    white-space: nowrap;
+}
+table.grey-blue-table tr:nth-child(even) th{
+   // background-color: $color-tr-even;
+}
+table.grey-blue-table tr:hover td, table tr:hover th, table.grey-blue-table tr:hover td, table.grey-blue-table tr:hover th {
+    background-color:  $color-tr-hover;
+}
+
+table.grey-blue-table tr th{
+    background-color: transparent;
+    border-right: 1px solid #ccc;
+}
+table.grey-blue-table tr:first-child td, table.grey-blue-table tr:first-child th{
+    border-top:0px none;
+}
+
+.btn-help{
+    margin: 0 0 0 5px ;
+    padding: 5px 7px;
+    background: #D9E5EE;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border:1px solid #D5E1E6;
+    color:#446986;
+}
+.edit label{
+    font-weight: bold;
+}
+.txt-color-white a{
+  text-decoration:none;
+  color:white;
+  padding-left:3px;
+}
+
+// Estilos del login
+.btn-danger {
+  background-color: #a90329;
+  border-color: #900323;
+  color: #fff;
+}
+#extr-page-header-space a[href="register.html"]{
+  font-size: 13px;
+}
+// Iconos de timeline
+.smart-timeline i.fa{
+ color:#23527c;
+  
+}
+.smart-timeline .label{
+  margin-right:5px;
+  padding:2px 4px;
+  background-color:#23527c;
+}
+.smart-timeline table{
+  font-size:11px;
+}
+@media (max-width: 767px) {
+  .alert-success {
+    //max-height: 50px;
+  }
+  
+}
+@media (max-width: 767px) {
+  ul#sparks{
+    display:none;
+  }
+}
+
+.introjs-helperNumberLayer {
+  background: #3A3633!important;
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  color: white;
+  font-family: Arial,verdana,tahoma;
+  font-size: 13px;
+  font-weight: bold;
+  height: 21px !important;
+  left: 5px !important;
+  line-height: 11px!important;
+  padding: 2px 0px !important;
+  position: absolute;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  top: -16px;
+  visibility: visible;
+  width: 21px !important;
+  z-index: 2147483647 !important;
+}
+
+.filtros{
+  //padding:10px 0;
+  //border:1px solid #ccc;
+  //background:#f8f7f7;
+  //margin-bottom:5px;
+}
+.filtros form .form-group{
+  margin-right:10px;
+}
+.filtros form select, .filtros form select option{
+  width:50px;
+}
+.filtros .btn-group button{
+  margin-top:15px;
+  margin-right:5px;
+}
+.jarviswidget-editbox form label{
+  //font-weight:bold;
+}
+.pagination.pagination-xs {
+  //font-size:11px;
+}
+form#per_page_change select#per_page{
+  max-width:50px!important;
+  padding:2px;
+}
+@media (max-width: 767px) {
+.pagination-xs > li > a, .pagination-xs > li > span {
+  font-size: 12px;
+  padding: 4px 6px;
+}
+}
+.filter-group{
+  float:right;
+}
+#filter-zone{
+  background-color: #ddd;
+  padding: 0 0 0 10px;
+}
+//table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child::before, 
+
+table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child::before {
+ background-color: rgb(38,91,137);
+  border-radius: 0;
+}
+table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child::before {
+  //background-color: rgb(38,91,137);
+  border-radius: 0;
+}
+table.dataTable.dtr-inline.collapsed > tbody > tr.child td.child table{
+ width:100%;
+}
+table.dataTable.dtr-inline.collapsed > tbody > tr.child > td p{
+  text-align:left;
+}
+table.dataTable.dtr-inline.collapsed > tbody > tr.child > td:first-child::before{
+  display: none;
+}
+.table-actions a{
+ border-radius: 4px;
+    display: block;
+    float: left;
+    margin: 2px 5px;
+    padding: 3px;
+}
+.widget-footer{
+  min-height:40px;
+    margin: 0 -13px;
+}
+.widget-footer .form-actions {
+    border: medium none;
+  margin: auto;
+    padding:0;
+}
+.jarviswidget .widget-body {
+  min-height:0;
+  padding-bottom: 0;
+}
+#bootstrap-wizard-1 .form-actions{
+  padding:0;
+}
+table tr td.table-actions{
+  padding:0;
+}

@@ -1,0 +1,102 @@
+<section id="widget-grid">
+
+	<!-- row -->
+	<div class="row">
+		<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<!-- Widget ID (each widget will need unique ID)-->
+			<div id="wid-id-0" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"  class="jarviswidget jarviswidget-color-darken">
+
+				<header>
+					<span class="widget-icon"><i class="fa fa-table"></i></span>
+					<div class="widget-toolbar filter-group">
+						<a href="#" id="filtrar" role="button" class="btn <%= @filter_active ? 'btn-danger' : 'btn-primary' %>"><i class="fa fa-filter"></i> <%= @filter_active ? t('simple_form.buttons.filtering') : t('simple_form.buttons.filters') %> </a>
+					</div>
+				</header>
+				<!-- widget div-->
+				<div class="no-padding filtros">
+					<div class="jarviswidget-editbox" id="filter-zone" style="display:none;">
+						<!-- This area used as dropdown edit box -->
+
+						<div class="col-md-12 col-sm-12">
+							<%= search_form_for(@q, url: public_activity_index_path, html: {name: 'filter_form', class: 'form-inline'}) do |f| %>
+							<fieldset>
+								<div class="form-group">
+									<label for="q[owner_id_eq]"><%= t('activerecord.models.user.one') %></label>
+									<%= f.select :owner_id_eq, options_from_collection_for_select(User.all, :id, :name, @q.owner_id_eq), {include_blank: true}, {class: "form-control input-sm"} %>
+								</div>
+								<div class="form-group">
+									<label for="q[trackable_type_eq]"><%= t('activerecord.models.trackable_type') %></label>
+									<%= f.select :trackable_type_eq, options_from_collection_for_select(trackables, :id, :name, @q.trackable_type_eq), {include_blank: true}, {class: "form-control input-sm"} %>
+								</div>
+								<div class="form-group">
+									<label for="q[key_cont]">Action</label>
+									<%= f.select :key_cont, keyables, {include_blank: true}, {class: "form-control input-sm"} %>
+								</div>
+								<div class="form-group spanning ">
+									<label for="q[created_at_gteq]"><%= t('simple_form.labels.defaults.created_at') %></label>
+									<div class="input-group input-group-sm block">
+										<%= f.search_field :created_at_gteq, label: false, placeholder: t('simple_form.placeholders.from'), class: "form-control datepicker input-sm", data: {dateformat: "dd/mm/yy"} %>
+									</div>
+									<div class="input-group input-group-sm block">
+										<%= f.search_field :created_at_lteq, label: false, placeholder: t('simple_form.placeholders.to'), class: "form-control datepicker input-sm", data: {dateformat: "dd/mm/yy"} %>
+									</div>
+								</div>
+								<div class="btn-group">
+									<button id="search_clear" name="search_clear" type="submit" value="true" class="btn btn-sm btn-warning">
+										<i class="fa fa-repeat"></i> <%= t('simple_form.buttons.reset_filters') %>
+									</button>
+									<button type="submit" class="btn btn-sm btn-primary">
+										<i class="fa fa-filter"></i> <%= t('simple_form.buttons.filter') %>
+									</button>
+								</div>
+							</fieldset>
+							<% end %>
+						</div>
+
+					</div>
+					<!-- end widget edit box -->
+					<!-- widget content -->
+					<div class="widget-body">
+
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<div class="well well-sm">
+									<!-- Timeline Content -->
+									<div class="smart-timeline">
+										<ul class="smart-timeline-list">
+											<% @activities.each do |activity| %>
+											<%
+ if activity.key.include?('create')
+                          fallback = 'default_create'
+                        elsif activity.key.include?('update')
+                          fallback = 'default_update'
+                        elsif activity.key.include?('destroy')
+                          fallback = 'default_destroy'
+                        end
+%>
+											<% if !activity.trackable_type.blank? && exists_class?(activity.trackable_type) %>
+											<%= render_activity(activity, fallback: fallback) %>
+											<% end %>
+											<% end %>
+										</ul>
+									</div>
+									<!-- END Timeline Content -->
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- end widget content -->
+
+					<div class="widget-footer">
+						<%= render 'shared/pagination', locals: {target: @activities, model_index_path: public_activity_index_path} %>
+					</div>
+				</div>
+				<!-- end widget div -->
+
+			</div>
+			<!-- end widget -->
+		</article>
+	</div>
+</section>
+

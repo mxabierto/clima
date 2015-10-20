@@ -1,0 +1,84 @@
+<section id="widget-grid">
+  <article class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+    <div id="wid-id-0" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" class="jarviswidget jarviswidget-color-darken">
+      <header><span class="widget-icon"><i class="fa fa-binoculars"></i></span>
+
+        <div class="widget-toolbar">
+          <%= link_to raw("<i class='fa fa-arrow-left'></i> #{t('simple_form.buttons.list')}"), users_path, class: 'btn btn-primary' %>
+          <%= link_to raw("<i class='fa fa-pencil'></i> #{t('simple_form.buttons.edit')}"), edit_user_path(@user), class: 'btn btn-primary' if can?(:update, User) %>
+        </div>
+      </header>
+      <div class="no-padding">
+        <div class="widget-body">
+          <div class="form-horizontal">
+            <div class="form-group">
+              <label class="col-sm-2 control-label"><%= t('simple_form.labels.defaults.email') %></label>
+
+              <div class="col-sm-10">
+                <p class="form-control-static"><%= @user.email %></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label"><%= t('simple_form.labels.defaults.name') %></label>
+
+              <div class="col-sm-10">
+                <p class="form-control-static"><%= @user.name %></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label"><%= t('simple_form.labels.defaults.locale') %></label>
+
+              <div class="col-sm-10">
+                <p class="form-control-static"><%= @user.locale %></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label"><%= t('simple_form.labels.defaults.timezone') %></label>
+
+              <div class="col-sm-10">
+                <p class="form-control-static"><%= @user.time_zone %></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label"><%= t('simple_form.labels.defaults.role') %></label>
+              <div class="col-sm-10">
+                <p class="form-control-static"><%= @user.role.try(:name) %></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label"><%= t('simple_form.labels.defaults.only_api_access') %></label>
+              <div class="col-sm-10">
+                <p class="form-control-static"><%= boolean_check_mark(@user.only_api_access) %></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label"><%= t('simple_form.labels.defaults.avatar') %></label>
+              <div class="col-sm-10">
+                <p class="form-control-static"><%= image_tag attachment_url(@user, :avatar, :fill, 100, 100, fallback: "avatars/male.png") %><%#= attachment_image_tag(@user, :avatar, :fill, 50, 50) %></p>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!--
+  <article class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+    <div id="wid-id-1" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" class="jarviswidget jarviswidget-color-darken">
+      <header><span class="widget-icon"><i class="fa fa-info"></i></span>
+        <h2>Details</h2>
+      </header>
+      <div class="no-padding">
+        <div class="widget-body">
+
+        </div>
+      </div>
+    </div>
+  </article>
+  -->
+</section>
+

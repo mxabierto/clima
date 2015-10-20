@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<%= render "/layouts/head" %>
+
+
+<% if user_signed_in? %>
+    <%= render "errors/body_error" %>
+<% else %>
+    <%= render "/layouts/login" %>
+<% end %>
+
+</html>

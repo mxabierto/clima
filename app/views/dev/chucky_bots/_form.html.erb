@@ -1,0 +1,49 @@
+<div>
+      <%= simple_form_for [:dev, @chucky_bot], html: {class: 'form-horizontal'},
+                          wrapper: :horizontal_form,
+                          wrapper_mappings: {
+                                  check_boxes: :horizontal_radio_and_checkboxes,
+                                  radio_buttons: :horizontal_radio_and_checkboxes,
+                                  file: :horizontal_file_input,
+                                  boolean: :horizontal_boolean
+                          } do |f| %>
+          <div class="form-inputs">
+            <%= f.input :underscore_model_name, hint: 'underscore_model_name' %>
+            <%= f.input :i18n_singular_name %>
+            <%= f.input :i18n_plural_name %>
+            <%= f.input :fa_icon, hint: 'ej: fa-fw fa fa-user' %>
+            <%= f.input :migrate %>
+
+            <%= f.simple_fields_for :public_activity, OpenStruct.new(@chucky_bot.public_activity) do |public_activity_f| %>
+                <h2>public_activity</h2>
+                <%= public_activity_f.input :actions, hint: 'create:update:destroy' %>
+                <%= public_activity_f.input :notes, as: :text, label: 'Notas', hint: 'escriba todo lo que quiera avisar/aclarar al respecto de public activity' %>
+            <% end %>
+
+            <h2>authorization</h2>
+            <%= f.simple_fields_for :authorization, OpenStruct.new(@chucky_bot.authorization) do |authorization_f| %>
+                <% @chucky_bot.authorization.keys.each do |field_name| %>
+                    <%= authorization_f.input field_name, hint: 'create-read-update-destroy-whatever o manage' unless ['notes', :notes].include?(field_name) %>
+                <% end %>
+                <%= authorization_f.input :notes, as: :text, label: 'Notas', hint: 'escriba todo lo que quiera avisar/aclarar al respecto de atorización' %>
+            <% end %>
+
+
+            <h2>fields</h2>
+            <%= f.simple_fields_for :fields do |builder| %>
+                <%= render 'field_fields', f: builder %>
+            <% end %>
+            <%= link_to_add_fields "Add Field", f, :fields %>
+
+          </div>
+
+          <div class="form-actions">
+            <div class="btn-group">
+              <%= link_to raw('<i class="fa fa-arrow-left"></i> Back'), dev_chucky_bots_path, class: 'btn btn-default btn-sm' if can?(:read, ChuckyBot) %>
+              <%= link_to raw('<i class="fa fa-binoculars"></i> Show'), dev_chucky_bot_path(@chucky_bot), class: 'btn btn-default btn-sm' if can?(:read, ChuckyBot) && updating? %>
+              <%= link_to raw('<i class="fa fa-trash"></i> Destroy'), dev_chucky_bot_path(@chucky_bot), class: 'btn btn-default btn-sm', method: :delete, data: {confirm: 'Are you sure?', 'original-title': 'Destroy'} if can?(:destroy, ChuckyBot) && updating? %>
+              <%= f.button :submit, class: 'btn btn-primary btn-sm' %>
+            </div>
+          </div>
+      <% end %>
+</div>

@@ -1,0 +1,94 @@
+<section id="widget-grid">
+  <div class="row">
+    <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div id="wid-id-0" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" class="jarviswidget jarviswidget-color-darken">
+        <header><span class="widget-icon"><i class="fa fa-table"></i></span>
+
+          <div class="widget-toolbar">
+            <%= link_to raw("<i class='fa fa-file'></i> #{t('simple_form.buttons.new')}"), new_user_path, class: 'btn btn-primary' if (can? :create, User) %>
+            <a href="#" role="button" class="btn jarviswidget-edit-btn <%= @filter_active ? 'btn-danger' : 'btn-primary' %>"><i class="fa fa-filter"></i> <%= @filter_active ? t('simple_form.buttons.filtering') : t('simple_form.buttons.filters') %>
+            </a>
+          </div>
+        </header>
+        <div class="no-padding">
+          <div class="jarviswidget-editbox">
+            <div class="col-md-9 col-sm-12 no-padding"><%= search_form_for(@q, html: {name: 'filter_form', class: 'form-inline'}) do |f| %>
+                  <fieldset>
+                    <div class="form-group">
+                      <label for="q[email_cont]"><%= t('simple_form.labels.defaults.email') %></label>
+                      <%= f.search_field :email_cont, label: false, class: "form-control input-sm" %>
+                    </div>
+                    <div class="form-group">
+                      <label for="q[name_cont]"><%= t('simple_form.labels.defaults.name') %></label>
+                      <%= f.search_field :name_cont, label: false, class: "form-control input-sm" %>
+                    </div>
+                    <div class="form-group">
+                      <label for="q[locale_cont]"><%= t('simple_form.labels.defaults.locale') %></label>
+                      <%= f.search_field :locale_cont, label: false, class: "form-control input-sm" %>
+                    </div>
+                    <div class="form-group">
+                      <label for="q[timezone_cont]"><%= t('simple_form.labels.defaults.timezone') %></label>
+                      <%= f.search_field :time_zone_cont, label: false, class: "form-control input-sm" %>
+                    </div>
+                    <div class="form-group">
+                      <label for="q[role_id_cont]"><%= t('simple_form.labels.role') %></label>
+                      <%= f.select :role_id_eq, options_from_collection_for_select(Role.all, :id, :name, @q.role_id_eq), {include_blank: true}, {class: "form-control input-sm"} %>
+                    </div>
+                    <div class="btn-group">
+                      <button id="search_clear" name="search_clear" type="submit" value="true" class="btn btn-sm btn-warning form-control">
+                        <i class="fa fa-repeat"></i> <%= t('simple_form.buttons.reset_filters') %></button>
+                      <button type="submit" class="btn btn-sm btn-primary form-control">
+                        <i class="fa fa-filter"></i> <%= t('simple_form.buttons.filter') %></button>
+                    </div>
+                  </fieldset>
+              <% end %>
+            </div>
+          </div>
+          <div class="widget-body">
+            <table id="dt_basic" width="100%" class="display table table-striped table-bordered table-hover">
+              <thead>
+              <tr>
+                <th class='all control'><%= sort_link(@q, :email, t('simple_form.labels.defaults.email')) %></th>
+                <th><%= sort_link(@q, :name, t('simple_form.labels.defaults.name')) %></th>
+                <th><%= sort_link(@q, :locale, t('simple_form.labels.defaults.locale')) %></th>
+                <th><%= sort_link(@q, :time_zone, t('simple_form.labels.defaults.timezone')) %></th>
+                <th><%= sort_link(@q, :role_name, t('simple_form.labels.role')) %></th>
+                <th class="all"><%= t('simple_form.screen.actions') %></th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @users.each do |user| %>
+                  <tr>
+                    <td><%= user.email %></td>
+                    <td><%= user.name %></td>
+                    <td><%= user.locale %></td>
+                    <td><%= user.time_zone %></td>
+                    <td><%= user.role.try(:name) %></td>
+                    <td class="table-actions">
+                      <% # variables para el extra action
+                         if user.sign_in_count == 0
+                           fa_icon = 'fa-envelope'
+                           tooltip = t('devise.labels.resend_wellcome_mail')
+                         else
+                           fa_icon = 'fa-key'
+                           tooltip = t('devise.labels.send_reset_pass_mail')
+                         end
+                         url = "/users/resend_password_instructions/#{user.id}"
+                         name = 'resend_password_instructions'
+                      %>
+                      <%= render 'shared/action_icons', locals: {target: user, model_edit_path: edit_user_path(user), extra_actions: [{name: name, fa_icon: fa_icon, url: url, tooltip: tooltip}] } %>
+                    </td>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
+            <div class="no-padding">
+              <%= render 'shared/pagination', locals: {target: @users, model_index_path: users_path} %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+

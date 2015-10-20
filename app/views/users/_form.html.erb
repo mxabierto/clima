@@ -1,0 +1,57 @@
+<div class="jarviswidget" id="wid-id-0">
+  <header>
+    <h2><%= creating? ? "<i class='fa fa-file'></i>".html_safe : "<i class='fa fa-pencil'></i>".html_safe %></h2>
+  </header>
+  <div>
+    <div class="widget-body">
+      <%= simple_form_for @user, html: {class: 'form-horizontal'},
+                          wrapper: :horizontal_form,
+                          wrapper_mappings: {
+                                  check_boxes: :horizontal_radio_and_checkboxes,
+                                  radio_buttons: :horizontal_radio_and_checkboxes,
+                                  #file: :horizontal_file_input,
+                                  attachment: :horizontal_file_input,
+                                  boolean: :horizontal_boolean
+                          } do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email %>
+            <%= f.input :name %>
+            <%= f.input :locale, as: :select, collection: available_locales_for_dropdown %>
+            <%= f.input :time_zone, priority: /Mexico/, include_blank: true %>
+            <%= f.association :role %>
+            <%= f.input :only_api_access %>
+            <%#= f.attachment_field :avatar %>
+            <%= f.input :avatar, as: :attachment, label: 'Avatar', direct: true %>
+            <% if @user.avatar %>
+            <div class="form-group attachment optional thing_thing_attaches_files">
+              <label class="attachment optional col-sm-3 control-label"></label>
+              <div class="col-sm-9">
+                <table id="dt_basic" width="100%" class="display table table-striped table-bordered table-hover" style="margin:0 padding-top:0px">
+                  <tr>
+                    <th class="all control">Imagen</th>
+                    <th class="all">Destruir</th>
+                  </tr>
+                  <tr>
+                    <td><%= image_tag attachment_url(f.object, :avatar, :fill, 100, 100) %> <%#= attachment_image_tag(f.object, :avatar, :fill, 30, 30) %></td>
+                    <td align="center"><%= f.input :remove_avatar, as: :boolean, wrapper: :clean %></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <% end %>
+          </div>
+
+          <div class="form-actions">
+            <div class="btn-group">
+              <%= link_to raw("<i class='fa fa-arrow-left'></i> #{t('simple_form.buttons.list')}"), users_path, class: 'btn btn-default btn-sm' if can?(:read, User) %>
+              <%= link_to raw("<i class='fa fa-binoculars'></i> #{t('simple_form.buttons.show')}"), @user, class: 'btn btn-default btn-sm' if can?(:read, User) && updating? %>
+              <%= link_to raw("<i class='fa fa-trash'></i> #{t('simple_form.buttons.destroy')}"), @user, class: 'btn btn-default btn-sm', method: :delete, data: {confirm: 'Are you sure?', 'original-title': 'Destroy'} if can?(:destroy, User) && updating? %>
+              <button type="submit" class="btn btn-primary btn-sm">
+                <i class='fa fa-check-circle'></i> <%= creating? ? t('simple_form.buttons.create') : t('simple_form.buttons.update') %>
+              </button>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<style>
+    .short_input {
+        width: 110px !important;
+    }
+</style>
+
+<table id="dt_basic" width="100%" class="display responsive table table-striped table-bordered">
+  <thead>
+      <tr>
+        <th>name</th>
+        <th>type</th>
+        <th>i18n_name</th>
+        <th>validations_options</th>
+        <th>formats_options</th>
+        <th>association_options</th>
+        <th>Actions</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><%= f.input :name, label: false, wrapper_tag: :span, input_html: {class: 'short_input'} %></td>
+        <td><%= f.input :field_type, label: false, as: :select, collection: %w{string integer float text date datetime boolean}, wrapper_tag: :span, input_html: {class: 'short_input'} %></td>
+        <td><%= f.input :i18n_name, label: false, wrapper_tag: :span, input_html: {class: 'short_input'} %></td>
+        <td>
+          <% hash = f.object.validations_options || {validates: nil, notes: nil} %>
+          <%= f.simple_fields_for :validations_options, OpenStruct.new(hash) do |validations_options_f| %>
+              <%= validations_options_f.input :validates, label: false, hint: 'validates', as: :select, collection: %w[presence numericality uniqueness absence acceptance associated], wrapper_tag: :span, input_html: {multiple: true, class: 'short_input'} %>
+              <%= validations_options_f.input :notes, label: false, hint: 'Notas', as: :text, wrapper_tag: :span, input_html: {class: 'short_input'} %>
+          <% end %>
+        </td>
+        <td>
+          <% hash = f.object.formats_options || {index: nil, show: nil, all: nil} %>
+          <%= f.simple_fields_for :formats_options, OpenStruct.new(hash) do |formats_options_f| %>
+              <%= formats_options_f.input :index, wrapper_tag: :span, label: false, hint: 'index', input_html: {class: 'short_input'} %>
+              <%= formats_options_f.input :show, wrapper_tag: :span, label: false, hint: 'show', input_html: {class: 'short_input'} %>
+              <%= formats_options_f.input :all, wrapper_tag: :span, label: false, hint: 'all/ignora anteriores', input_html: {class: 'short_input'} %>
+          <% end %>
+        </td>
+        <td>
+          <% hash = f.object.association_options || {drop_down_type: nil, dependent_on_parent: nil, no_relationize: nil} %>
+          <%= f.simple_fields_for :association_options, OpenStruct.new(hash) do |association_options_f| %>
+              <%= association_options_f.input :drop_down_type, label: false, hint: 'dropdown', as: :select, collection: %w[normal filter autocomplete], wrapper_tag: :span, input_html: {class: 'short_input'} %>
+              <%= association_options_f.input :dependent_on_parent, label: false, hint: 'dependent', as: :select, collection: %w[nullify destroy delete_all restrict_with_exception restrict_with_error], wrapper_tag: :span, input_html: {class: 'short_input'} %>
+              <%= association_options_f.input :no_relationize, wrapper_tag: :span, as: :boolean %>
+          <% end %>
+        </td>
+        <td><%= f.input :_destroy, as: :hidden, value: true %> <%= link_to '[remove]', '#', class: 'remove_fields' %></td>
+      </tr>
+  </tbody>
+</table>
+
+
+

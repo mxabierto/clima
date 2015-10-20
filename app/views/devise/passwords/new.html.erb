@@ -1,0 +1,30 @@
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { id: 'login-form', class: 'smart-form client-form', method: :post}) do |f| %>
+<!-- form action="login.html" id="login-form" class="smart-form client-form" -->
+  <header>
+    Forgot Password
+  </header>
+
+  <fieldset>
+
+    <section>
+      <label class="label">Enter your email address</label>
+      <label class="input"> <i class="icon-append fa fa-envelope"></i>
+        <%= f.input :email, label: false, autofocus: true %>
+        <!-- input type="email" name="email" -->
+        <b class="tooltip tooltip-top-right"><i class="fa fa-envelope txt-color-teal"></i> Please enter email address for password reset</b></label>
+    </section>
+    <section>
+      <div class="note">
+        <%= render "devise/shared/links" %>
+        <!-- <a href="login.html">I remembered my password!</a> -->
+      </div>
+    </section>
+
+  </fieldset>
+  <footer>
+    <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+        <i class='fa fa-refresh'></i> Reset Password
+    <% end %>
+    <!-- <i class='fa fa-refresh'></i> Reset Password -->
+  </footer>
+<% end %>

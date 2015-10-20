@@ -1,0 +1,73 @@
+// need to override just one or two small stylistic things and don't want to edit the main .less files?  Add those overrides here
+// TODO see what can be moved to index
+
+.jarviswidget-editbox {
+  background-color: #ddd;
+
+  .form-actions {
+    background-color: #ddd;
+  }
+
+  fieldset {
+    margin: 10px 0;
+
+    button {
+      height: 29px;
+      margin-top: 18px;
+    }
+  }
+
+  select {
+    min-width: 174px;
+  }
+
+  padding: 0 0 0 10px;
+}
+
+#sparks li {
+  overflow: inherit;
+}
+
+.block {
+  display: block !important;
+}
+
+.center {
+  text-align: center;
+}
+
+.form-actions {
+  border: none;
+  margin: auto;
+
+  > .form-control {
+    display: inline;
+    width: inherit;
+  }
+}
+
+.form-inline label {
+  display: block;
+  margin: 0;
+}
+
+.spanning {
+  input {
+    width: 49% !important;
+  }
+}
+
+.table-actions a {
+  margin-right: 5px;
+}
+
+.widget-body {
+  > .control-buttons {
+    margin: 5px;
+  }
+
+  > table {
+    margin-bottom: 15px;
+  }
+
+}

@@ -1,0 +1,29 @@
+<%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { id: 'login-form', class: 'smart-form client-form', method: :post}) do |f| %>
+    <header>
+      Resend unlock instructions
+    </header>
+
+    <fieldset>
+      <%= f.error_notification %>
+      <%= f.full_error :unlock_token %>
+
+      <section>
+        <label class="label">Enter your email address</label>
+        <label class="input"> <i class="icon-append fa fa-envelope"></i>
+          <%= f.input :email, label: false, required: true, autofocus: true %>
+          <b class="tooltip tooltip-top-right"><i class="fa fa-envelope txt-color-teal"></i> Please enter email address for unlock instructions</b></label>
+      </section>
+      <section>
+        <div class="note">
+          <%= render "devise/shared/links" %>
+        </div>
+      </section>
+
+    </fieldset>
+    <footer>
+      <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+          <i class='fa fa-unlock'></i> send unlock instructions
+      <% end %>
+    </footer>
+<% end %>
+
