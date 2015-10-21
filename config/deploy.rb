@@ -1,14 +1,14 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
-set :application, 'chucky'
-set :repo_url, 'git@github.com:matiasrenta/chucky.git'
+set :application, 'clima'
+set :repo_url, 'git@github.com:matiasrenta/clima.git'
 
 # Default branch is :master
-ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
+#ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/deployer/railsapps/chucky'
+set :deploy_to, '/home/deployer/railsapps/clima'
 
 # Default value for :scm is :git
 # set :scm, :git
