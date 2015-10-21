@@ -1,0 +1,73 @@
+es:
+  simple_form:
+    "yes": 'Sí'
+    "no": 'No'
+    required:
+      text: 'requerido'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Please review the problems below:"
+    # Examples
+    # labels:
+    #   defaults:
+    #     password: 'Password'
+    #   user:
+    #     new:
+    #       email: 'E-mail to sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # hints:
+    #   defaults:
+    #     username: 'User name to sign in.'
+    #     password: 'No special characters, please.'
+    # include_blanks:
+    #   defaults:
+    #     age: 'Rather not say'
+    # prompts:
+    #   defaults:
+    #     age: 'Select your age'
+
+    labels:
+      defaults:
+        name: 'Nombre'
+        description: 'Descripción'
+        age: 'Edad'
+        price: 'Precio'
+        expires: 'Expira'
+        discharged_at: 'Pagado el'
+        published: 'Publicado'
+        role: 'Rol'
+        only_api_access: 'Solo acceso API'
+
+    placeholders:
+      from: 'desde'
+      to: 'hasta'
+
+    screen:
+      actions: 'Acciones'
+
+    flash:
+      successfully_created: 'Creado exitosamente'
+      successfully_updated: 'Actualizado exitosamente'
+      successfully_destroyed: 'Eliminado exitosamente'
+
+    buttons:
+      new: 'Nuevo'
+      filters: 'Filtros'
+      filtering: 'Filtrando'
+      filter: 'Filtrar'
+      reset_filters: 'Limpiar filtros'
+      list: 'Lista'
+      edit: 'Editar'
+      show: 'Ver'
+      destroy: 'Eliminar'
+      create: 'Crear'
+      update: 'Actualizar'
+
+    tooltips:
+      show: 'Ver'
+      edit: 'Editar'
+      destroy: 'Eliminar'

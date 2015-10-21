@@ -1,0 +1,85 @@
+<section id="widget-grid">
+  <div class="row">
+    <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div id="wid-id-0" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" class="jarviswidget jarviswidget-color-darken">
+        <header><span class="widget-icon"><i class="fa fa-table"></i></span>
+          <div class="widget-toolbar">
+            <%= link_to raw("<i class='fa fa-file'></i> #{t('simple_form.buttons.new')}"), new_admin_setting_path, class: 'btn btn-primary' %>
+            <a href="#" role="button" class="btn jarviswidget-edit-btn <%= @filter_active ? 'btn-danger' : 'btn-primary' %>"><i class="fa fa-filter"></i> <%= @filter_active ? t('simple_form.buttons.filtering') : t('simple_form.buttons.filters') %></a>
+          </div>
+        </header>
+        <div class="no-padding">
+          <div class="jarviswidget-editbox">
+            <div class="col-md-9 col-sm-12 no-padding"><%= search_form_for(@q, url: admin_settings_path, html: {name: 'filter_form', class: 'form-inline'}) do |f| %>
+                  <fieldset>
+                    <div class="form-group">
+                      <label for="q[name_cont]">Var</label>
+                      <%= f.search_field :var_cont, label: false, class: "form-control input-sm" %>
+                    </div>
+                    <div class="form-group spanning">
+                      <label for="q[created_at_gteq]">Created at</label>
+                      <div class="input-group input-group-sm block">
+                        <%= f.search_field :created_at_gteq, label: false, placeholder: t('simple_form.placeholders.from'), class: "form-control input-sm datepicker", data: {dateformat: "dd/mm/yy"} %>
+                      </div>
+                      <div class="input-group input-group-sm block">
+                        <%= f.search_field :created_at_lteq, label: false, placeholder: t('simple_form.placeholders.to'), class: "form-control input-sm datepicker", data: {dateformat: "dd/mm/yy"} %>
+                      </div>
+                    </div>
+                    <div class="form-group spanning">
+                      <label for="q[updated_at_gteq]"><%= t('simple_form.labels.defaults.expires') %></label>
+                      <div class="input-group input-group-sm block">
+                        <%= f.search_field :updated_at_gteq, label: false, placeholder: t('simple_form.placeholders.from'), class: "form-control datepicker input-sm datepicker", data: {dateformat: "dd/mm/yy"} %>
+                      </div>
+                      <div class="input-group input-group-sm block">
+                        <%= f.search_field :updated_at_lteq, label: false, placeholder: t('simple_form.placeholders.to'), class: "form-control datepicker input-sm datepicker", data: {dateformat: "dd/mm/yy"} %>
+                      </div>
+                    </div>
+                    <div class="btn-group">
+                      <button id="search_clear" name="search_clear" type="submit" value="true" class="btn btn-sm btn-warning form-control">
+                        <i class="fa fa-repeat"></i> <%= t('simple_form.buttons.reset_filters') %></button>
+                      <button type="submit" class="btn btn-sm btn-primary form-control">
+                        <i class="fa fa-filter"></i> <%= t('simple_form.buttons.filter') %></button>
+                    </div>
+                  </fieldset>
+              <% end %>
+            </div>
+          </div>
+          <div class="widget-body">
+            <table id="dt_basic" width="100%" class="display table table-striped table-bordered table-hover">
+              <thead>
+              <tr>
+                <th class='all control'>Var</th>
+                <th>Value</th>
+                <th>Class</th>
+                <th>Created At</th>
+                <th>Updated At</th>
+                <th class="all"><%= t('simple_form.screen.actions') %></th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @settings.each do |sett| %>
+                  <tr>
+                    <td><%= sett.var %></td>
+                    <td><%= Settings[sett.var].to_s %></td>
+                    <td><%= Settings[sett.var].class.try(:name) %></td>
+                    <td><%= sett.created_at %></td>
+                    <td><%= sett.updated_at %></td>
+                    <td class="table-actions">
+                      <%= link_to raw('<i class="fa fa-pencil"></i>'), edit_admin_setting_path(sett), rel: 'tooltip', data: { toggle: 'toggle', placement: 'top', 'original-title' => t('simple_form.tooltips.edit')} %>
+                      <%= link_to raw('<i class="fa fa-trash"></i>'), "/admin/settings/#{sett.var}", method: :delete, rel: 'tooltip', data: { toggle: 'toggle', placement: 'top' , confirm: 'Are you sure?', 'original-title' => t('simple_form.tooltips.destroy')} %>
+                    </td>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
+            <div class="no-padding">
+              <%= render 'shared/pagination', locals: {target: @settings, model_index_path: admin_settings_path} %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+

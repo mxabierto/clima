@@ -1,0 +1,45 @@
+  <%#= activity.trackable.try(:name) if ... existe la clase %>
+<li>
+  <div class="smart-timeline-icon">
+    <%= owner_avatar(activity) %>
+  </div>
+  <div class="smart-timeline-time">
+    <small><%= time_ago_in_words(activity.created_at) %></small>
+  </div>
+  <div class="smart-timeline-content">
+    <p><%= user_label(activity) %></p>
+    <p>
+      <i class="fa fa-pencil-square-o fa-border fa-lg"></i>
+      Actualizó <strong><%= t("activerecord.models.#{activity.trackable_type.underscore}.one") %></strong>
+      <%= trackable_label(activity) %>
+    </p>
+
+    <p><a href="#" class="show-details">Mostrar detalles</a></p>
+    <div class="detalles" style="display:none">
+      <% changes = activity.parameters[:attributes_changed] %>
+      <% if changes %>
+          <% keys = changes.keys # lo paso a arrays para garantizar el mismo orden %>
+          <table id="dt_basic" width="100%" class="display table table-striped table-bordered table-hover" style="margin:0 padding-top:0px">
+            <tr>
+              <th class="all ">Valor</th>
+              <% keys.each do |key| %>
+                  <th><%= t("simple_form.labels.defaults.#{key}") %></th>
+              <% end %>
+            </tr>
+            <tr>
+              <td><strong>Antes</strong></td>
+              <% keys.each do |key| %>
+                  <td><%= changes[key][0] %></td>
+              <% end %>
+            </tr>
+            <tr>
+              <td><strong>Después<strong></td>
+              <% keys.each do |key| %>
+                  <td><%= changes[key][1] %></td>
+              <% end %>
+            </tr>
+          </table>
+      <% end %>
+    </div>
+  </div>
+</li>

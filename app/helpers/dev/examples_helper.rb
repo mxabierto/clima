@@ -1,0 +1,2 @@
+module Dev::ExamplesHelper
+end

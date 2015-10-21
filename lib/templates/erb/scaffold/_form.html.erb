@@ -1,0 +1,44 @@
+<div class="jarviswidget" id="wid-id-0">
+  <header>
+    <h2><%%= creating? ? "<i class='fa fa-file'></i>".html_safe : "<i class='fa fa-pencil'></i>".html_safe %></h2>
+  </header>
+  <div>
+    <div class="widget-body">
+      <%%= simple_form_for @<%= singular_table_name %>, html: { class: 'form-horizontal' },
+                          wrapper: :horizontal_form,
+                          wrapper_mappings: {
+                                  check_boxes: :horizontal_radio_and_checkboxes,
+                                  radio_buttons: :horizontal_radio_and_checkboxes,
+                                  file: :horizontal_file_input,
+                                  boolean: :horizontal_boolean
+                          } do |f| %>
+          <div class="form-inputs">
+            <%- attributes.each do |attribute| -%>
+                <% if [:date, :datetime, :time].include? attribute.type.to_sym -%>
+                    <%%= f.input :<%= attribute.name %>, as: :string, input_html: {class: 'datepicker', data: {dateformat: 'dd/mm/yy'}} %>
+                <% elsif attribute.type.to_sym ==  :text -%>
+                    <%%= f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %>, :input_html => { :rows => 4, :cols => 30 } %>
+                <% elsif [:integer, :float, :decimal].include? attribute.type.to_sym -%>
+                    <% if attribute.name[-3,3] ==  "_id" -%>
+                        <%%= f.association :<%= attribute.name[0,attribute.name.length-3] %> %>
+                    <% else -%>
+                        <%%= f.input :<%= attribute.name %> %>
+                    <% end -%>
+                <% else -%>
+                    <%%= f.input :<%= attribute.name %> %>
+                <% end -%>
+            <%- end -%>
+          </div>
+
+          <div class="form-actions">
+            <div class="btn-group">
+              <%%= link_to raw("<i class='fa fa-arrow-left'></i> #{t('simple_form.buttons.list')}"), <%= plural_table_name %>_path, class: 'btn btn-default btn-sm' if can?(:read, <%= singular_table_name.camelize %>) %>
+              <%%= link_to raw("<i class='fa fa-binoculars'></i> #{t('simple_form.buttons.show')}"), @<%= singular_table_name %>, class: 'btn btn-default btn-sm' if can?(:read, <%= singular_table_name.camelize %>) && updating? %>
+              <%%= link_to raw("<i class='fa fa-trash'></i> #{t('simple_form.buttons.destroy')}"), @<%= singular_table_name %>, class: 'btn btn-default btn-sm', method: :delete, data: {confirm: 'Are you sure?', 'original-title': 'Destroy'} if can?(:destroy, <%= singular_table_name.camelize %>) && updating? %>
+              <button type="submit" class="btn btn-primary btn-sm"><i class='fa fa-check-circle'></i> <%%= creating? ? t('simple_form.buttons.create') : t('simple_form.buttons.update') %></button>
+            </div>
+          </div>
+      <%% end %>
+    </div>
+  </div>
+</div>

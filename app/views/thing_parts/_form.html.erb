@@ -1,0 +1,33 @@
+<div class="jarviswidget" id="wid-id-0">
+  <header>
+    <h2><%= creating? ? "<i class='fa fa-file'></i>".html_safe : "<i class='fa fa-pencil'></i>".html_safe %></h2>
+  </header>
+  <div>
+    <div class="widget-body">
+      <%= simple_form_for @thing_part, html: { class: 'form-horizontal' },
+                          wrapper: :horizontal_form,
+                          wrapper_mappings: {
+                                  check_boxes: :horizontal_radio_and_checkboxes,
+                                  radio_buttons: :horizontal_radio_and_checkboxes,
+                                  file: :horizontal_file_input,
+                                  boolean: :horizontal_boolean
+                          } do |f| %>
+          <div class="form-inputs">
+                                    <%= f.input :name %>
+                                                    <%= f.input :field1 %>
+                                                    <%= f.input :field2 %>
+                                                    <%= f.input :field3 %>
+                          </div>
+
+          <div class="form-actions">
+            <div class="btn-group">
+              <%= link_to raw("<i class='fa fa-arrow-left'></i> #{t('simple_form.buttons.list')}"), thing_parts_path, class: 'btn btn-default btn-sm' if can?(:read, ThingPart) %>
+              <%= link_to raw("<i class='fa fa-binoculars'></i> #{t('simple_form.buttons.show')}"), @thing_part, class: 'btn btn-default btn-sm' if can?(:read, ThingPart) && updating? %>
+              <%= link_to raw("<i class='fa fa-trash'></i> #{t('simple_form.buttons.destroy')}"), @thing_part, class: 'btn btn-default btn-sm', method: :delete, data: {confirm: 'Are you sure?', 'original-title': 'Destroy'} if can?(:destroy, ThingPart) && updating? %>
+              <button type="submit" class="btn btn-primary btn-sm"><i class='fa fa-check-circle'></i> <%= creating? ? t('simple_form.buttons.create') : t('simple_form.buttons.update') %></button>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { id: 'login-form', class: 'smart-form client-form', method: :put }) do |f| %>
+    <!--form action="index.html" id="login-form" class="smart-form client-form" -->
+    <header>
+      Change your password
+    </header>
+
+    <fieldset>
+      <%= f.error_notification %>
+      <%= f.input :reset_password_token, as: :hidden %>
+      <%= f.full_error :reset_password_token %>
+
+      <section>
+        <label class="label">New password</label>
+        <label class="input"> <i class="icon-append fa fa-user"></i>
+          <%= f.input :password, label: false, required: true, autofocus: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+        </label>
+      </section>
+
+      <section>
+        <label class="label">Confirm your new password</label>
+        <label class="input"> <i class="icon-append fa fa-lock"></i>
+          <%= f.input :password_confirmation, label: false, required: true %>
+        </label>
+        <div class="note">
+          <%= render "devise/shared/links" %>
+        </div>
+      </section>
+    </fieldset>
+    <footer>
+      <%= f.button :submit, "Change password", class: 'btn btn-primary' %>
+    </footer>
+    <!--/form -->
+<% end %>
+

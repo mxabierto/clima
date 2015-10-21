@@ -1,0 +1,5 @@
+para deployar con capistrano:
+=============================
+bundle exec cap production deploy
+
+en config/deploy.rb comentar/descomentar para que no compile/compile los assets

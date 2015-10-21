@@ -1,0 +1,124 @@
+<section id="widget-grid">
+  <div class="row">
+    <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div id="wid-id-0" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" class="jarviswidget jarviswidget-color-darken">
+        <header><span class="widget-icon"><i class="fa fa-table"></i></span>
+
+          <div class="widget-toolbar filter-group">
+            <%= link_to raw("<i class='fa fa-file'></i> #{t('simple_form.buttons.new')}"), new_thing_path, class: 'btn btn-primary' if (can? :create, Thing) %>
+            <a href="#" id="filtrar" role="button" class="btn  <%= @filter_active ? 'btn-danger' : 'btn-primary' %>"><i class="fa fa-filter"></i> <%= @filter_active ? t('simple_form.buttons.filtering') : t('simple_form.buttons.filters') %>
+            </a>
+          </div>
+        </header>
+        <div class="no-padding">
+          <div class="jarviswidget-editbox" id="filter-zone" style="display:none;">
+            <div class="col-md-9 col-sm-12 no-padding"><%= search_form_for(@q, html: {name: 'filter_form', class: 'form-inline'}) do |f| %>
+                  <fieldset>
+                    <div class="form-group">
+                      <label for="q[name_cont]"><%= t('simple_form.labels.defaults.name') %></label>
+                      <%= f.search_field :name_cont, label: false, class: "form-control input-sm" %>
+                    </div>
+                    <div class="form-group spanning">
+                      <label for="q[age_gteq]"><%= t('simple_form.labels.defaults.age') %></label>
+
+                      <div class="input-group input-group-sm block">
+                        <%= f.search_field :age_gteq, label: false, placeholder: t('simple_form.placeholders.from'), class: "form-control input-sm" %>
+                      </div>
+                      <div class="input-group input-group-sm block">
+                        <%= f.search_field :age_lteq, label: false, placeholder: t('simple_form.placeholders.to'), class: "form-control input-sm" %>
+                      </div>
+                    </div>
+                    <div class="form-group spanning">
+                      <label for="q[price_gteq]"><%= t('simple_form.labels.defaults.price') %></label>
+
+                      <div class="input-group input-group-sm block">
+                        <%= f.search_field :price_gteq, label: false, placeholder: t('simple_form.placeholders.from'), class: "form-control input-sm" %>
+                      </div>
+                      <div class="input-group input-group-sm block">
+                        <%= f.search_field :price_lteq, label: false, placeholder: t('simple_form.placeholders.to'), class: "form-control input-sm" %>
+                      </div>
+                    </div>
+                    <div class="form-group spanning">
+                      <label for="q[expires_gteq]"><%= t('simple_form.labels.defaults.expires') %></label>
+
+                      <div class="input-group input-group-sm block">
+                        <%= f.search_field :expires_gteq, label: false, placeholder: t('simple_form.placeholders.from'), class: "form-control datepicker input-sm", data: {dateformat: "dd/mm/yy"} %>
+                      </div>
+                      <div class="input-group input-group-sm block">
+                        <%= f.search_field :expires_lteq, label: false, placeholder: t('simple_form.placeholders.to'), class: "form-control datepicker input-sm", data: {dateformat: "dd/mm/yy"} %>
+                      </div>
+                    </div>
+                    <div class="form-group spanning">
+                      <label for="q[discharged_at_gteq]"><%= t('simple_form.labels.defaults.discharged_at') %></label>
+
+                      <div class="input-group input-group-sm block">
+                        <%= f.search_field :discharged_at_gteq, label: false, placeholder: t('simple_form.placeholders.from'), class: "form-control datepicker input-sm", data: {dateformat: "dd/mm/yy"} %>
+                      </div>
+                      <div class="input-group input-group-sm block">
+                        <%= f.search_field :discharged_at_lteq, label: false, placeholder: t('simple_form.placeholders.to'), class: "form-control datepicker input-sm", data: {dateformat: "dd/mm/yy"} %>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="q[description_cont]"><%= t('simple_form.labels.defaults.description') %></label>
+                      <%= f.search_field :description_cont, label: false, class: "form-control input-sm" %>
+                    </div>
+                    <div class="form-group">
+                      <label for="q[published_eq]"><%= t('simple_form.labels.defaults.published') %></label>
+                      <%= f.select :published_eq, options_for_select([['True', 'true'], ['False', 'false']], @q.published_eq), {include_blank: true}, {class: "form-control input-sm"} %>
+                    </div>
+                    <div class="form-group">
+                      <label for="q[gender_cont]"><%= t('simple_form.labels.defaults.gender') %></label>
+                      <%= f.search_field :gender_cont, label: false, class: "form-control input-sm" %>
+                    </div>
+                    <div class="btn-group">
+                      <button id="search_clear" name="search_clear" type="submit" value="true" class="btn btn-sm btn-warning form-control">
+                        <i class="fa fa-repeat"></i> <%= t('simple_form.buttons.reset_filters') %></button>
+                      <button type="submit" class="btn btn-sm btn-primary form-control">
+                        <i class="fa fa-filter"></i> <%= t('simple_form.buttons.filter') %></button>
+                    </div>
+                  </fieldset>
+              <% end %>
+            </div>
+          </div>
+          <div class="widget-body no-margin-top-bottom" >
+            <table id="dt_basic" width="100%" class="display table table-striped table-bordered table-hover" style="margin:0 padding-top:0px">
+              <thead>
+              <tr class="table-heading">
+                <th class='all control'><%= sort_link(@q, :name, t('simple_form.labels.defaults.name')) %></th>
+                <th><%= sort_link(@q, :age, t('simple_form.labels.defaults.age')) %></th>
+                <th><%= sort_link(@q, :price, t('simple_form.labels.defaults.price')) %></th>
+                <th><%= sort_link(@q, :expires, t('simple_form.labels.defaults.expires')) %></th>
+                <th><%= sort_link(@q, :discharged_at, t('simple_form.labels.defaults.discharged_at')) %></th>
+                <th><%= sort_link(@q, :description, t('simple_form.labels.defaults.description')) %></th>
+                <th><%= sort_link(@q, :published, t('simple_form.labels.defaults.published')) %></th>
+                <th><%= sort_link(@q, :gender, t('simple_form.labels.defaults.gender')) %></th>
+                <th class="all"><%= t('simple_form.screen.actions') %></th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @things.each do |thing| %>
+                  <tr>
+                    <td><%= thing.name %></td>
+                    <td align='right'><%= thing.age %></td>
+                    <td align='right'><%= thing.price %></td>
+                    <td><%= l(thing.expires, format: :default) if thing.expires %></td>
+                    <td><%= l(thing.discharged_at, format: :without_seg) if thing.discharged_at %></td>
+                    <td><%= thing.description %></td>
+                    <td align='center'><%= boolean_check_mark(thing.published) %></td>
+                    <td><%= thing.gender %></td>
+                    <td class="table-actions">
+                      <%= render 'shared/action_icons', locals: {target: thing, model_edit_path: edit_thing_path(thing)} %>
+                    </td>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+          <div class="widget-footer">
+              <%= render 'shared/pagination', locals: {target: @things, model_index_path: things_path} %>
+            </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>

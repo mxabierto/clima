@@ -1,0 +1,94 @@
+<!-- row -->
+<div class="row">
+   <article class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <!-- Widget ID (each widget will need unique ID)-->
+    <div id="wid-id-0" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" class="jarviswidget jarviswidget-color-darken">
+         <!-- widget options:
+            usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+            
+            data-widget-colorbutton="false"
+            data-widget-editbutton="false"
+            data-widget-togglebutton="false"
+            data-widget-deletebutton="false"
+            data-widget-fullscreenbutton="false"
+            data-widget-custombutton="false"
+            data-widget-collapsed="true"
+            data-widget-sortable="false"
+            
+            -->
+         <header>
+            <span class="widget-icon"><i class="fa fa-binoculars"></i></span>
+            <div class="widget-toolbar">
+               <%= link_to raw("<i class='fa fa-arrow-left'></i> #{t('simple_form.buttons.list')}"), things_path, class: 'btn btn-primary' %>
+               <%= link_to raw("<i class='fa fa-pencil'></i> #{t('simple_form.buttons.edit')}"), edit_thing_path(@thing), class: 'btn btn-primary' if can?(:update, Thing) %>
+            </div>
+         </header>
+         <!-- widget div-->
+         <div>
+            <!-- widget edit box -->
+            <div class="jarviswidget-editbox">
+               <!-- This area used as dropdown edit box -->
+            </div>
+            <!-- end widget edit box -->
+            <!-- widget content -->
+            <div class="widget-body">         
+
+              <table class="table table-striped table-hover grey-blue-table" width="100%" cellspacing="0" id="dt_basic">
+                
+                 <tbody>
+                   <tr role="row">
+                       <th><%= t('simple_form.labels.defaults.name') %></th>
+                       <td><%= @thing.name %></td>
+                    </tr>
+                   <tr role="row">
+                       <th><%= t('simple_form.labels.defaults.age') %></th>
+                       <td><%= @thing.age %></td>
+                    </tr>
+                   <tr role="row">
+                       <th><%= t('simple_form.labels.defaults.price') %></th>
+                       <td><%= @thing.price %></td>
+                    </tr>
+                   <tr role="row">
+                       <th><%= t('simple_form.labels.defaults.expires') %></th>
+                       <td><%= l(@thing.expires, :format => :long) if @thing.expires %></td>
+                    </tr>
+                   <tr role="row">
+                       <th><%= t('simple_form.labels.defaults.discharged_at') %></th>
+                       <td><%= l(@thing.discharged_at, :format => :long) if @thing.discharged_at %></td>
+                    </tr>
+                   <tr role="row">
+                       <th><%= t('simple_form.labels.defaults.description') %></th>
+                       <td><%= @thing.description %></td>
+                    </tr>
+                   <tr role="row">
+                       <th><%= t('simple_form.labels.defaults.published') %></th>
+                       <td><%= boolean_check_mark(@thing.published) %></td>
+                    </tr>
+                   <tr role="row">
+                       <th><%= t('simple_form.labels.defaults.gender') %></th>
+                       <td><%= @thing.gender %></td>
+                    </tr>
+                   <tr role="row">
+                       <th>Imágenes</th>
+                       <td><% @thing.thing_attaches.each do |attach| %>
+                        <p class="form-control-static"><%= image_tag attachment_url(attach, :file, :fill, 100, 100) %></p>
+                        <% end %></td>
+                    </tr>
+                   
+                 </tbody>
+              </table>
+
+            </div>
+            <!-- end widget content -->
+         </div>
+         <!-- end widget div -->
+        
+      </div>
+      <!-- end widget -->
+   </article>
+</div>
+
+
+
+  
+</script>

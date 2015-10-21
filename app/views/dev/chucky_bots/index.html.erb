@@ -1,0 +1,82 @@
+<section id="widget-grid">
+  <div class="row">
+    <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div id="wid-id-0" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" class="jarviswidget jarviswidget-color-darken">
+        <header><span class="widget-icon"><i class="fa fa-table"></i></span>
+
+          <div class="widget-toolbar">
+            <%= link_to raw("<i class='fa fa-file'></i> #{t('simple_form.buttons.new')}"), new_dev_chucky_bot_path, class: 'btn btn-primary' if (can? :create, ChuckyBot) %>
+            <a href="#" role="button" class="btn jarviswidget-edit-btn <%= @filter_active ? 'btn-danger' : 'btn-primary' %>"><i class="fa fa-filter"></i> <%= @filter_active ? t('simple_form.buttons.filtering') : t('simple_form.buttons.filters') %>
+            </a>
+          </div>
+        </header>
+        <div class="no-padding">
+          <div class="jarviswidget-editbox">
+            <div class="col-md-9 col-sm-12 no-padding"><%= search_form_for(@q, url: dev_chucky_bots_path, html: {name: 'filter_form', class: 'form-inline'}) do |f| %>
+                  <fieldset>
+                    <div class="form-group">
+                      <label for="q[underscore_model_name_cont]">underscore_model_name</label>
+                      <%= f.search_field :underscore_model_name_cont, label: false, class: "form-control input-sm" %>
+                    </div>
+                    <div class="form-group">
+                      <label for="q[i18n_singular_name_cont]">i18n_singular_name</label>
+                      <%= f.search_field :i18n_singular_name_cont, label: false, class: "form-control input-sm" %>
+                    </div>
+                    <div class="form-group">
+                      <label for="q[i18n_plural_name_cont]">i18n_plural_name</label>
+                      <%= f.search_field :i18n_plural_name_cont, label: false, class: "form-control input-sm" %>
+                    </div>
+                    <div class="form-group">
+                      <label for="q[migrate_eq]">migrate</label>
+                      <%= f.select :migrate_eq, options_for_select([['True', 'true'], ['False', 'false']], @q.migrate_eq), {include_blank: true}, {class: "form-control input-sm"} %>
+                    </div>
+
+                    <div class="btn-group">
+                      <button id="search_clear" name="search_clear" type="submit" value="true" class="btn btn-sm btn-warning form-control">
+                        <i class="fa fa-repeat"></i> <%= t('simple_form.buttons.reset_filters') %></button>
+                      <button type="submit" class="btn btn-sm btn-primary form-control">
+                        <i class="fa fa-filter"></i> <%= t('simple_form.buttons.filter') %></button>
+                    </div>
+                  </fieldset>
+              <% end %>
+            </div>
+          </div>
+          <div class="widget-body">
+            <table id="dt_basic" width="100%" class="display table table-striped table-bordered table-hover">
+              <thead>
+              <tr>
+                <th class='all control'><%= sort_link(@q, :underscore_model_name, 'underscore_model_name') %></th>
+                <th><%= sort_link(@q, :i18n_singular_name, 'i18n_singular_name') %></th>
+                <th><%= sort_link(@q, :i18n_plural_name, 'i18n_plural_name') %></th>
+                <th><%= sort_link(@q, :migrate, 'migrate') %></th>
+                <th class="all"><%= t('simple_form.screen.actions') %></th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @chucky_bots.each do |chucky_bot| %>
+                  <tr>
+                    <td><%= chucky_bot.underscore_model_name %></td>
+                    <td><%= chucky_bot.i18n_singular_name %></td>
+                    <td><%= chucky_bot.i18n_plural_name %></td>
+                    <td align='center;'><%= chucky_bot.migrate %></td>
+                    <td class="table-actions">
+                      <%= link_to raw('<i class="fa fa-binoculars"></i>'), dev_chucky_bot_path(chucky_bot), rel: 'tooltip', data: { toggle: 'toggle', placement: 'top', 'original-title' => t('simple_form.tooltips.show')} if can? :read, chucky_bot %>
+                      <%= link_to raw('<i class="fa fa-pencil"></i>'), edit_dev_chucky_bot_path(chucky_bot), rel: 'tooltip', data: { toggle: 'toggle', placement: 'top', 'original-title' => t('simple_form.tooltips.edit')} if can? :update, chucky_bot %>
+                      <%= link_to raw('<i class="fa fa-trash"></i>'), dev_chucky_bot_path(chucky_bot), method: :delete, rel: 'tooltip', data: { toggle: 'toggle', placement: 'top' , confirm: 'Are you sure?', 'original-title' => t('simple_form.tooltips.destroy')} if can? :destroy, chucky_bot %>
+                    </td>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
+
+            <div class="no-padding">
+              <%= render 'shared/pagination', locals: {target: @chucky_bots, model_index_path: dev_chucky_bots_path} %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
