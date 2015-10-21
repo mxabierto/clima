@@ -1,71 +1,22 @@
-<!-- Left panel : Navigation area -->
-<!-- Note: This width of the aside area can be adjusted through LESS variables -->
-<aside id="left-panel">
-
-  <!-- User info -->
-  <div class="login-info" data-step="1" data-intro="Aqui se encuentra la información del usuario. Y aqui hay más info...">
-    <span> <!-- User image size is adjusted inside CSS, it should stay as it -->
-        <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
-          <%= image_tag("avatars/matias.png", alt: "me", class: "online") %>
-          <span>Matias</span>
-          <i class="fa fa-angle-down"></i>
-        </a>
-
-    </span>
-  </div>
-  <!-- end user info -->
-
-  <!-- NAVIGATION : This navigation is also responsive-->
-  <nav>
-    <ul>
-
-      <li data-step="2" data-intro="Este es el menú de administración. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
-        <a href="#"><i class="fa fa-lg fa-fw fa-cogs"></i> <span class="menu-item-parent">Administration</span></a>
-        <ul>
-          <li>
-            <%= link_to 'Users', users_path, {title: 'Users'}  %>
-          </li>
-          <li>
-            <%= link_to 'Settings', '/admin/settings', {title: 'Settings'}  %>
-          </li>
-        </ul>
-      </li>
-
-      <li data-step="3" data-intro="Este es el menú de desarollo.">
-        <a href="#"><i class="fa fa-lg fa-fw fa-code"></i> <span class="menu-item-parent">Development</span></a>
-        <ul>
-          <li>
-            <%= link_to 'Chucky Bots', dev_chucky_bots_path, {title: 'Chucky Bots'}  %>
-          </li>
-          <li data-no-turbolink>
-            <%= link_to 'Chartkick', '/dev/examples/chartkick', {title: 'Chartkick'}  %>
-          </li>
-          <li>
-            <%= link_to 'Things', things_path, {title: 'Things'}  %>
-          </li>
-          <li>
-            <%= link_to 'Public Activity', '/public_activity', {title: 'Public Activity'}  %>
-          </li>
-          <li>
-            <%= link_to 'Pruebas', '/welcome/prueba', {title: 'Pruebas'}  %>
-          </li>
-          
-        </ul>
-      </li>
-      <li> 
-      	  <a href="#"><i class="fa fa-lg fa-fw fa-question-circle"></i> <span class="menu-item-parent">Ayuda</span></a>
-      	
-      	<ul><li>
-           <a href="#" id="start-tour">Tour guiado</a>
-          </li>
-        </ul>
-      </li>
-       
-    </ul>
-  </nav>
-			<span class="minifyme" data-action="minifyMenu">
-				<i class="fa fa-arrow-circle-left hit"></i>
-			</span>
-
-</aside>
-<!-- END NAVIGATION -->
+<nav class="navbar">
+  <ul id="menu_wrap" class="green">
+    <li class="button">
+      <a href="index.html">Cambio climático</a>
+    </li>
+    <li class="button">
+      <a href="#">¿Qué es?</a>
+    </li>
+    <li class="button">
+      <a href="#">¿Por qué pasa?</a>
+    </li>
+    <li class="button">
+      <a href="#">¿Cómo me afecta?</a>
+    </li>
+    <li class="button">
+      <a href="#">Acciones</a>
+    </li>
+    <li class="button">
+      <a href="mapa.html">Mapa</a>
+    </li>
+  </ul>
+</nav>

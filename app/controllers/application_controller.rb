@@ -1,16 +1,16 @@
 class ApplicationController < ActionController::Base
-  include PublicActivity::StoreController
-  check_authorization unless: :devise_controller?
-  skip_authorization_check only: [:access_denied]
+  #include PublicActivity::StoreController
+  #check_authorization unless: :devise_controller?
+  #skip_authorization_check only: [:access_denied]
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
   before_action :set_cache_buster
-  before_action :authenticate_user!
-  before_action :redirect_only_api_user
-  before_action :set_content_title, :set_user_language, :set_user_time_zone
+  #before_action :authenticate_user!
+  #before_action :redirect_only_api_user
+  #before_action :set_content_title, :set_user_language, :set_user_time_zone
 
   # previene que usuarios que solo usan la api puedan hacer login en la aplicación web
   # todo: debería mejorarse para que no alcance a hacer login. Aqui alcanza a hacerlo y luego fuerzo el logout
