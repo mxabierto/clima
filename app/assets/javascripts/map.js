@@ -1,14 +1,37 @@
 $(function() {
 
-	var map = L.map('map').setView([19.43, -99.13], 4);
+var greenIcon = L.icon({
+    iconUrl: 'http://leafletjs.com/docs/images/leaf-green.png',
+    shadowUrl: 'http://leafletjs.com/docs/images/leaf-shadow.png',
 
+    iconSize:     [38, 95], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
+	var map = L.map('map').setView([23.38, -102.13], 5);
+	
 	L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		attribution : 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+		attribution : 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> | <a herf="http://opi.la/">OPI</a>',
 		maxZoom : 18
 	}).addTo(map);
 
+	var df = L.marker([19.00, -102.36],{icon: greenIcon}).bindPopup('Ciudad de México}.'),
+	    morelia = L.marker([19.70, -101.19],{icon: greenIcon}).bindPopup('Morelia.'),
+	    oaxaca = L.marker([17.04, -96.43],{icon: greenIcon}).bindPopup('Oaxaca.');
+
+	var cities = L.layerGroup([df, morelia, oaxaca]);
+	var overlayMaps = {
+		"Cities" : cities
+	};
+	
+
 	// control that shows state info on hover
 	var info = L.control();
+
+L.control.layers(overlayMaps).addTo(map);
 
 	info.onAdd = function(map) {
 		this._div = L.DomUtil.create('div', 'info');
@@ -17,7 +40,7 @@ $(function() {
 	};
 
 	info.update = function(props) {
-		this._div.innerHTML = '<h4>US Population Density</h4>' + ( props ? '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>' : 'Hover over a state');
+		this._div.innerHTML = '<h4>Cambio climático en México</h4>' + ( props ? '<b>' + props.cve + '</b><br />' + props.nom_ent : 'Selecciona un estado');
 	};
 
 	info.addTo(map);
@@ -42,7 +65,7 @@ $(function() {
 		var layer = e.target;
 
 		layer.setStyle({
-			weight : 5,
+			weight : 3,
 			color : '#666',
 			dashArray : '',
 			fillOpacity : 0.7
@@ -79,7 +102,7 @@ $(function() {
 		onEachFeature : onEachFeature
 	}).addTo(map);
 
-	map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
+	map.attributionControl.addAttribution('Fuente :<a href="http://datos.gob.mx">Datos abiertos</a>');
 
 	var legend = L.control({
 		position : 'bottomright'
