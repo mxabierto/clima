@@ -1,7 +1,7 @@
 <nav class="nav-bar">
   <ul id="menu_wrap" class="green">
     <li class="button">
-      <a href="index.html">Cambio climático</a>
+      <a href="/">Cambio climático</a>
     </li>
     <li class="button">
       <a href="#">¿Qué es?</a>
@@ -13,10 +13,10 @@
       <a href="#">¿Cómo me afecta?</a>
     </li>
     <li class="button">
-      <a href="#">Acciones</a>
+      <%= link_to 'Acciones', welcome_acciones_path %>
     </li>
     <li class="button">
-      <a href="mapa.html">Mapa</a>
+      <%= link_to 'Mapa', welcome_mapa_path, 'data-no-turbolink' => 'true' %>
     </li>
   </ul>
 </nav>

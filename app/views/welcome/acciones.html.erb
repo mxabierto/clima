@@ -1,0 +1,12 @@
+<h1>Acciones</h1>
+
+<%
+   require 'csv'
+   #body = CSV.open('conjunto_landing_3_rows.csv')
+   csv = CSV.new(File.new('conjunto_landing_3_rows.csv'), :headers => true, :header_converters => :symbol)
+
+%>
+
+<% csv.to_a.each do |row| %>
+    <p><%= row %></p>
+<% end %>
