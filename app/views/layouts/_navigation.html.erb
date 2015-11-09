@@ -13,10 +13,10 @@
       <a href="#">¿Cómo me afecta?</a>
     </li>
     <li class="button">
-      <a href="#">Acciones</a>
+      <%= link_to 'Acciones', welcome_acciones_path %>
     </li>
     <li class="button">
-      <%= link_to 'Mapa', welcome_prueba_path, data: { no_turbolink: true } %>
+      <%= link_to 'Mapa', welcome_mapa_path, 'data-no-turbolink' => 'true' %>
     </li>
   </ul>
 </nav>

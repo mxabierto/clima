@@ -1,39 +1,18 @@
 Rails.application.routes.draw do
 
-  resources :wizard
-  resources :public_activity
-  resources :thing_contacts
-  resources :thing_parts
-  resources :things
-
-  namespace :dev do
-    resources :chucky_bots
-    resources :examples do
-      collection do
-        get 'chartkick'
-        get 'cors'
-      end
-
+  resources :load do
+    collection do
+      get 'country_variables'
+      get 'jsonize'
     end
   end
-
-  namespace :admin do
-    root to: 'application#index'
-    resources :settings
-  end
-
-  devise_for :users
-  resources :users do
-    get 'resend_password_instructions/:id', action: 'resend_password_instructions', on: :collection
-  end
-
-  get "application/access_denied"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # Rout para probar paginas
-  get 'welcome/prueba'
+  get 'welcome/mapa'
+  get 'welcome/acciones'
 
   # You can have the root of your site routed with "root"
   root to: 'welcome#index'
@@ -87,9 +66,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     #   end
 
-
-  # API's routes
-  api_version(:module => "V1", :path => {:value => "v1"}, :defaults => {:format => "json"}) do
-    resources :things
-  end
 end
