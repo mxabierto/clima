@@ -1,12 +1,13 @@
 require 'csv'
 
-class WelcomeController < ApplicationController
+class LoadController < ApplicationController
   def index
-    set_content_title('fa fa-lg fa-fw fa-cube', ['Welcome!'])
-    csv = CSV.new(File.new('conjunto_landing_3_rows.csv'), :headers => true, :header_converters => :symbol)
-    csv.each do |row|
-      puts "mmmmmmmmmm: #{row[0]}"
-    end
+  end
+
+  def country_variables
+    csv = CSV.new(File.new('conjunto_landing.csv'), :headers => true, :header_converters => :symbol)
+    CountryVariable.create_all(csv)
+    redirect_to load_index_url, notice: 'Se cargaron correctamente'
   end
 
   def page1

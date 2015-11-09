@@ -54,7 +54,7 @@ gem 'exception_notification'
 # para versionar API
 gem 'versionist'
 # ssl (https://github.com/tobmatth/rack-ssl-enforcer)
-gem 'rack-ssl-enforcer'
+#gem 'rack-ssl-enforcer'
 # upload files (https://github.com/refile/refile)
 # antes tenia la version 0.5.5. voy a updetear este gem para ver si funciona con simple_form
 gem 'refile', require: 'refile/rails', git: 'https://github.com/refile/refile.git', branch: 'master'
