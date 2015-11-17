@@ -1,0 +1,103 @@
+/* Tabs container */
+.r-tabs {
+	position: relative;
+}
+
+/* Tab element */
+.r-tabs .r-tabs-nav .r-tabs-tab {
+	position: relative;
+}
+
+/* Tab anchor */
+.r-tabs .r-tabs-nav .r-tabs-anchor {
+	display: inline-block;
+	padding: 10px 12px;
+	text-decoration: none;
+	font-size: 14px;
+	color: #71807E;
+}
+
+/* Disabled tab */
+.r-tabs .r-tabs-nav .r-tabs-state-disabled {
+}
+
+/* Active state tab anchor */
+.r-tabs .r-tabs-nav .r-tabs-state-active .r-tabs-anchor {
+	color: #25C18C;
+	text-shadow: none;
+	background-color: #EEEEEE;
+}
+
+/* Tab panel */
+.r-tabs .r-tabs-panel {
+	background-color: #EEEEEE;
+	border-style: solid;
+	border-color: white;
+	border-width: 2px;
+	border-top-color: #EEEEEE;
+}
+
+/* Accordion anchor */
+.r-tabs .r-tabs-accordion-title .r-tabs-anchor {
+	display: block;
+	padding: 10px;
+	background-color: #24C192;
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+/* Active accordion anchor */
+.r-tabs .r-tabs-accordion-title.r-tabs-state-active .r-tabs-anchor {
+	color: #00c5ad;
+	text-shadow: none;
+}
+
+/* Disabled accordion button */
+.r-tabs .r-tabs-accordion-title.r-tabs-state-disabled {
+}
+
+/* Buttons */
+button {
+	display:inline-block;
+	margin-top: 10px;
+	padding: 10px 20px;
+	line-height: 100%;
+	color: #fff;
+	font-size: 14px;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: bold;
+	border: 0;
+	background-color: #24C192;
+	cursor: pointer;
+}
+
+/* Info bar */
+.info {
+	display:inline-block;
+	margin-top: 10px;
+	padding: 10px 20px;
+	width: 300px;
+	line-height: 100%;
+	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	font-size: 14px;
+	color: #24C192;
+	background-color: #EEEEEE;
+	cursor: pointer;
+} 
+
+
+.title-tab{
+	color:white;
+	padding-top: 10px;	
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: #24C192;			
+}
+
+.normal-tab{
+	background-color: #EDEDED;
+}
+
