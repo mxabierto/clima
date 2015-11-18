@@ -1,0 +1,64 @@
+{
+	"item1":{
+		"highlight":"13o",
+		"description":"País en Emisiones",
+		"imageUrl":"http://trebolbit.mx/cambio_climatico/img/green_towers.png",
+		"tooltipDescription":"México contribuye con sólo el 1.37% de las emisones globales de CO2 derivadas de la quema de combustibles fósiles",
+		"properties":[
+			{
+				"highlight":"390%",
+				"description":"Más emisiones globales que en 1960.",
+				"tooltipDescription":"Lorem Ipsum Bacon Auditore",				
+				"color":"red"
+			},{
+				"highlight":"30%",
+				"description":"Menos tala de árboles que en 1960",
+				"tooltipDescription":"Lorem Ipsum Bacon Auditore",
+				"color":"green"
+			}
+		]
+	},
+	"item2":{
+		"highlight":"5.9",
+		"description":"Millones de Hectareas de bosque perdidas.",
+		"imageUrl":"http://trebolbit.mx/cambio_climatico/img/green_towers.png",
+		"tooltipDescription":"Lorem Ipsum Bacon Auditore",
+		"properties":[
+			{
+				"highlight":"$5,822",
+				"description":"Millones de dolares en pérdidas.",
+				"tooltipDescription":"Perdidas anuales del 2015 por desastres naturales.",				
+				"color":"red"
+			},{
+				"highlight":"18%",
+				"description":"De nuevas areas verdes",
+				"tooltipDescription":"Lorem Ipsum Bacon Auditore",
+				"color":"green"
+			}
+		]
+	},		
+	"item3":{
+		"highlight":"$40,663",
+		"description":"MDP invertidos para adaptación y mitigación de CC.",
+		"imageUrl":"http://trebolbit.mx/cambio_climatico/img/green_towers.png",
+		"tooltipDescription":"Presupuesto 2015.",
+		"properties":[
+			{
+				"highlight":"$6,008",
+				"description":"Millones de pesos para el Fondo de Desastres Naturales (FONDEN)",
+				"tooltipDescription":"Lorem Ipsum Bacon Auditore",				
+				"color":"green"
+			},{
+				"highlight":"22%",
+				"description":"De reduccion de Gases Efecto Invernadero para 2030.",
+				"tooltipDescription":"Lorem Ipsum Bacon Auditore",
+				"color":"green"
+			},{
+				"highlight":"35%",
+				"description":"De generación de energía de fuentes limpias para el 2024.",
+				"tooltipDescription":"Lorem Ipsum Bacon Auditore",
+				"color":"green"
+			}
+		]
+	}
+}

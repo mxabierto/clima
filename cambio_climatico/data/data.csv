@@ -1,0 +1,82 @@
+,a_Categoria_IPCC,a_SubCategoria_IPCC,a_Sector_IPCC,a_Subsector.IPCC,a_2012
+1,Agricultura,Cultivo de arroz,Otros,Cultivo de arroz,0
+2,Agricultura,Fermentación entérica,Bovinos,Bovinos lecheros ,0
+3,Agricultura,Fermentación entérica,Bovinos,Bovinos no lecheros ,0
+4,Agricultura,Fermentación entérica,Otros,Caprinos,0
+5,Agricultura,Fermentación entérica,Otros,Equinos ,0
+6,Agricultura,Fermentación entérica,Otros,Ovinos,0
+7,Agricultura,Fermentación entérica,Otros,Porcinos,0
+8,Agricultura,Manejo de estiércol,Bovinos,Bovinos lecheros ,0
+9,Agricultura,Manejo de estiércol,Bovinos,Bovinos no lecheros ,0
+10,Agricultura,Manejo de estiércol,Otros,Almacenamiento sólido,0
+11,Agricultura,Manejo de estiércol,Otros,Aves de corral,0
+12,Agricultura,Manejo de estiércol,Otros,Caprinos,0
+13,Agricultura,Manejo de estiércol,Otros,Equinos ,0
+14,Agricultura,Manejo de estiércol,Otros,Otros,0
+15,Agricultura,Manejo de estiércol,Otros,Ovinos,0
+16,Agricultura,Manejo de estiércol,Otros,Porcinos,0
+17,Agricultura,Manejo de estiércol,Otros,Sistemas líquidos,0
+18,Agricultura,Manejo de suelos agrícolas,Emisiones Directas,Aplicación de abonos de origen animal,0
+19,Agricultura,Manejo de suelos agrícolas,Emisiones Directas,Descomposición de residuos agrícolas,0
+20,Agricultura,Manejo de suelos agrícolas,Emisiones Directas,Excretas de animales en pastoreo,0
+21,Agricultura,Manejo de suelos agrícolas,Emisiones Directas,Fertilizantes sintéticos nitrogenados,0
+22,Agricultura,Manejo de suelos agrícolas,Emisiones Directas,Fijación biológica de nitrógeno,0
+23,Agricultura,Manejo de suelos agrícolas,Emisiones Indirectas,Lixiviación/Escorrentía,0
+24,Agricultura,Manejo de suelos agrícolas,Emisiones Indirectas,Volatilización/Deposición,0
+25,Agricultura,Quema de residuos agrícolas,Pre- y post-cosecha,Pre- y post-cosecha,0
+26,Desechos,Eliminación de desechos sólidos,Eliminación de desechos sólidos,Eliminación de desechos sólidos,0
+27,Desechos,Incineración de desechos,Incineración de desechos,Incineración de RPBI y RPI,160.02
+28,Desechos,Incineración de desechos,Incineración de desechos,Quema a cielo abierto de residuos,499.43
+29,Desechos,Tratamiento biológico de los desechos sólidos,Tratamiento biológico de los desechos sólidos,Tratamiento biológico de los desechos sólidos,0
+30,Desechos,Tratamiento y eliminación de aguas residuales,Tratamiento y eliminación de aguas residuales,Tratamiento y eliminación de aguas residuales domésticas,0
+31,Desechos,Tratamiento y eliminación de aguas residuales,Tratamiento y eliminación de aguas residuales,Tratamiento y eliminación de aguas residuales industriales,0
+32,Energía, Consumo de Combustibles fósiles,Industria generadora de energía,Manufactura de combustibles sólidos,1443.24
+33,Energía, Consumo de Combustibles fósiles,Industria generadora de energía,Producción de electricidad en el sector público,129856.18
+34,Energía, Consumo de Combustibles fósiles,Industria generadora de energía,Refinación de petróleo,53047.9
+35,Energía, Consumo de Combustibles fósiles,Manufactura e industria de la construcción,Autogeneración de energía eléctrica,13105.83
+36,Energía, Consumo de Combustibles fósiles,Manufactura e industria de la construcción,Celulosa y papel ,2105.17
+37,Energía, Consumo de Combustibles fósiles,Manufactura e industria de la construcción,Cemento,10131.09
+38,Energía, Consumo de Combustibles fósiles,Manufactura e industria de la construcción,Construcción,837.11
+39,Energía, Consumo de Combustibles fósiles,Manufactura e industria de la construcción,Fabricación de automóviles y camiones,336.41
+40,Energía, Consumo de Combustibles fósiles,Manufactura e industria de la construcción,Fabricación de productos de hule,419.14
+41,Energía, Consumo de Combustibles fósiles,Manufactura e industria de la construcción,Metales no ferrosos,0
+42,Energía, Consumo de Combustibles fósiles,Manufactura e industria de la construcción,Minería de minerales metálicos y no metálicos,1900.5
+43,Energía, Consumo de Combustibles fósiles,Manufactura e industria de la construcción,Otras ramas,23507.22
+44,Energía, Consumo de Combustibles fósiles,Manufactura e industria de la construcción,"Procesamiento de alimentos, bebidas y tabaco",1419.92
+45,Energía, Consumo de Combustibles fósiles,Manufactura e industria de la construcción,"Química, petroquímica y fertilizantes",10096.26
+46,Energía, Consumo de Combustibles fósiles,Manufactura e industria de la construcción, Siderurgia,7271.63
+47,Energía, Consumo de Combustibles fósiles,Manufactura e industria de la construcción,Vidrio,2916.82
+48,Energía, Consumo de Combustibles fósiles,Otros sectores,Agropecuario,8811.3
+49,Energía, Consumo de Combustibles fósiles,Otros sectores,Comercial,4632.92
+50,Energía, Consumo de Combustibles fósiles,Otros sectores,Residencial,19838.26
+51,Energía, Consumo de Combustibles fósiles,Transporte,Autotransporte,146352.71
+52,Energía, Consumo de Combustibles fósiles,Transporte,Aviación,8670.93
+53,Energía, Consumo de Combustibles fósiles,Transporte,Ferroviario,1922.54
+54,Energía, Consumo de Combustibles fósiles,Transporte,Marítimo,2300.68
+55,Energía,Emisiones fugitivas de combustibles,Combustibles sólidos,Minas a cielo abierto (en superficie),0
+56,Energía,Emisiones fugitivas de combustibles,Combustibles sólidos,Minas subterráneas,0
+57,Energía,Emisiones fugitivas de combustibles,Petróleo  y gas natural,Gas Natural,9313.99
+58,Energía,Emisiones fugitivas de combustibles,Petróleo  y gas natural,Petróleo,1776.65
+59,Permanencia USCUSS,Permanencia USCUSS,Pastizales,Pastizales que permanecen como Pastizales,-21672.1
+60,Permanencia USCUSS,Permanencia USCUSS,Tierras agrícolas,Tierras Agricolas que permanecen como Tierras Agricolas,-1093.27
+61,Permanencia USCUSS,Permanencia USCUSS,Tierras forestales,Tierras forestales que permanecen como tierras forestales,-150232.25
+62,Procesos Industriales,Consumo de halocarbonos y hexafluoruro de azufre,Consumo de halocarbonos y hexafluoruro de azufre,Consumo de halocarbonos y hexafluoruro de azufre,0
+63,Procesos Industriales,Industria de los metales,Industria de los metales,Producción de aluminio,0
+64,Procesos Industriales,Industria de los metales,Industria de los metales,Producción de ferroaleaciones,348.01
+65,Procesos Industriales,Industria de los metales,Industria de los metales,Producción de hierro y acero,7520.1
+66,Procesos Industriales,Industria de los minerales,Industria de los minerales,Producción de cal,3382.67
+67,Procesos Industriales,Industria de los minerales,Industria de los minerales,Producción de cemento,20770.33
+68,Procesos Industriales,Industria de los minerales,Industria de los minerales,Producción y uso de carbonato de sodio,120.35
+69,Procesos Industriales,Industria de los minerales,Industria de los minerales,Uso de caliza y dolomita,8558.54
+70,Procesos Industriales,Industria química,Industria química,Otros químicos,0
+71,Procesos Industriales,Industria química,Industria química,Producción de ácido adípico,0
+72,Procesos Industriales,Industria química,Industria química,Producción de ácido nítrico,0
+73,Procesos Industriales,Industria química,Industria química,Producción de amoniaco,1408.5
+74,Procesos Industriales,Industria química,Industria química,Producción de carburos,0
+75,Procesos Industriales,Producción de halocarbonos y hexafluoruro de azufre,Producción de halocarbonos y hexafluoruro de azufre,Producción de halocarbonos y hexafluoruro de azufre,0
+76,USCUSS,USCUSS,Asentamientos humanos,Tierras Convertidas a Asentamientos,783.93
+77,USCUSS,USCUSS,Incendios,Incendios,8039.52
+78,USCUSS,USCUSS,Otras tierras,Tierras Convertidas a Otras tierras,1306.18
+79,USCUSS,USCUSS,Pastizales,Tierras Convertidas a Pastizales,28877.56
+80,USCUSS,USCUSS,Tierras agrícolas,Tierras Convertidas a Tierras Agricolas,4425.85
+81,USCUSS,USCUSS,Tierras forestales,Tierras Convertidas a Tierras Forestales,-12582.75

@@ -19,9 +19,11 @@ h2, .h2,
 h3, .h3,
 h4, .h4,
 h5, .h5,
-h6, .h6 {
+h6, .h6, 
+.span, .p{
   margin-top: 0;
   font-weight: normal;
+  font-family: OpenSans;
 }
 
 /*
@@ -50,6 +52,15 @@ h6, .h6 {
 }
 
 /* Active state gets a caret at the bottom */
+
+.container-clima{
+	width: 750px;
+	padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .blog-nav .active {
   color: #fff;
 }
@@ -68,7 +79,21 @@ h6, .h6 {
 }
 
 .aqua-text{
-	color: #25C18C;
+	color: #099960;
+	font-size: 14px;
+	text-align: justify;
+
+}
+
+.text-size-12{
+	font-size: 12px;
+}
+
+.black-text{
+	color: black;
+	font-size: 14px;
+	text-align: justify;
+
 }
 
 .side-box{
@@ -85,7 +110,9 @@ h6, .h6 {
 }
 
 .indicator-box-red{
-	background-color: red;
+	width: 146px;
+	height: 146px;
+	background-color: #CC352D;
 	color: white;
 	border-style: solid;
 	border-color: #EEEEEE;	
@@ -94,7 +121,9 @@ h6, .h6 {
 	padding: 8px;	
 }
 .indicator-box-green{
-	background-color: green;
+	width: 146px;
+	height: 146px;
+	background-color: #099960;
 	color: white;
 	border-style: solid;
 	border-color: #EEEEEE;	
@@ -109,15 +138,15 @@ h6, .h6 {
 }
 
 .box-text{
-	width: 48%;
+	width: 53%;
 	float: left;
-	font-family: helvetica;
+	font-family: OpenSans;
 	text-align: right;
 }
 
 .hightext::first-letter{
 	font-size: 200%;
-	font-family:helvetica;
+	font-family:OpenSans;
 	text-align: right;
 }
 
@@ -144,6 +173,33 @@ h6, .h6 {
 
  
 .custom-tooltip + .tooltip > .tooltip-inner {background-color: white; color: black; text-align: left; font-weight: bold;}
+.custom-tooltip + .tooltip > .tooltip-arrow { border-bottom-color:white; }
 .custom-tooltip + .tooltip > .tooltip-arrow { border-top-color:white; }
+
+.map-year{
+	font-size: 22px;
+}
+
+.title-tab{
+	padding-top: 13px; 
+	padding-left: 14px; 
+	padding-right: 18px;
+}
+
+.normal-tab{
+	padding-left: 14px; 
+	padding-right: 18px;
+}
+
+.text-size-14{
+	font-size: 14px;
+}
+
+.images-margin.side{
+	margin-left: 10px; 
+	margin-top: 5px;
+}
+
+
 
 
