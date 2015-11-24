@@ -21,7 +21,43 @@
 
     <!-- Custom styles for this template -->
     <link href="css/main_style.css" rel="stylesheet">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
     
+
+    <style>
+		#map {
+			width: auto;
+			height: 500px;
+		}
+
+		.info {
+			padding: 6px 8px;
+			font: 14px/16px Arial, Helvetica, sans-serif;
+			background: white;
+			background: rgba(255,255,255,0.8);
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 5px;
+		}
+		.info h4 {
+			margin: 0 0 5px;
+			color: #777;
+		}
+
+		.legend {
+			text-align: left;
+			line-height: 18px;
+			color: #555;
+		}
+		.legend i {
+			width: 18px;
+			height: 18px;
+			float: left;
+			margin-right: 8px;
+			opacity: 0.7;
+		}
+	</style>
   </head>
 
   <body>
@@ -72,25 +108,25 @@
 				    <!-- Indicadores -->
 				    <p style="font-size: 20px;">Indicadores</p>
 				    <div class="row">
-						<div class="text-center indicator-box-red col-xs-3 custom-tooltip" data-toggle="tooltip" data-placement="top" title="México ha reducido el incremento de temperatura al introducir tecnologías ambientales como el uso de energías renovables.">
-							<h1>170</h1>
-							<p class="text-size-12">toneladas de emisiones de carbono al mes</p>
+						<div class="text-center indicator-box-red col-xs-3 custom-tooltip" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum Bacon Auditore">
+							<h1>390%</h1>
+							<p class="text-size-12">Más emisiones globales que en 1960.</p>
 						</div>	
-						<div class="text-center indicator-box-green col-xs-3 custom-tooltip" data-toggle="tooltip" data-placement="top" title="México ha reducido el incremento de temperatura al introducir tecnologías ambientales como el uso de energías renovables.">
-							<h1>18%</h1>
-							<p class="text-size-12"> de nuevas áreas verdes</p>	
+						<div class="text-center indicator-box-green col-xs-3 custom-tooltip" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum Bacon Auditore">
+							<h1>30%</h1>
+							<p class="text-size-12"> Menos tala de árboles que en 1960</p>	
 						</div>								
-						<div class="text-center indicator-box-green col-xs-3 custom-tooltip" data-toggle="tooltip" data-placement="top" title="México ha reducido el incremento de temperatura al introducir tecnologías ambientales como el uso de energías renovables.">
-							<h1>170</h1>
-							<p class="text-size-12">toneladas de emisiones de carbono al mes</p>
+						<div class="text-center indicator-box-green col-xs-3 custom-tooltip" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum Bacon Auditore">
+							<h1></h1>
+							<p class="text-size-12"></p>
 						</div>	
-						<div class="text-center indicator-box-red col-xs-3 custom-tooltip" data-toggle="tooltip" data-placement="top" title="México ha reducido el incremento de temperatura al introducir tecnologías ambientales como el uso de energías renovables.">
-							<h1>18%</h1>
-							<p class="text-size-12">de nuevas áreas verdes</p>
+						<div class="text-center indicator-box-red col-xs-3 custom-tooltip" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum Bacon Auditore">
+							<h1></h1>
+							<p class="text-size-12"></p>
 						</div>	
-						<div class="text-center indicator-box-green col-xs-3 custom-tooltip" data-toggle="tooltip" data-placement="top" title="México ha reducido el incremento de temperatura al introducir tecnologías ambientales como el uso de energías renovables.">
-							<h1>18%</h1>
-							<p class="text-size-12">de nuevas áreas verdes</p>
+						<div class="text-center indicator-box-green col-xs-3 custom-tooltip" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum Bacon Auditore">
+							<h1></h1>
+							<p class="text-size-12"></p>
 						</div>							
 					</div>    
 				    
@@ -171,34 +207,39 @@
 					<p>Explora</p>
 					<p>
 						Selecciona un indicador: 
-						<select>
-						  <option value="">Opcion 1</option>
-						  <option value="">Opcion 2</option>
-						  <option value="">Opcion 3</option>						  						  
+						<select id="opciones">
+						  <option value="1">Opcion 1</option>
+						  <option value="2">Opcion 2</option>
+						  <option value="3">Opcion 3</option>						  						  
 						</select>
 					</p>					
 					<div class="row">
 						<div class="col-xs-12">
 						    <img class="img-responsive" src="img/g3.png"/>							
 						</div>	
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<div id="map"></div>
+						</div>
 					</div>						
 					<div class="row">
-						<div class="col-xs-2">
+						<div class="col-xs-2" id="anio2010">
 							<p class="text-center map-year"><strong>2010</strong></p>
 						</div>	
-						<div class="col-xs-2">
+						<div class="col-xs-2" id="anio2011">
 							<p class="text-center map-year"><strong>2011</strong></p>
 						</div>	
-						<div class="col-xs-2">
+						<div class="col-xs-2" id="anio2012">
 							<p class="text-center map-year"><strong>2012</strong></p>
 						</div>	
-						<div class="col-xs-2">
+						<div class="col-xs-2" id="anio2013">
 							<p class="text-center map-year"><strong>2013</strong></p>
 						</div>	
-						<div class="col-xs-2">
+						<div class="col-xs-2" id="anio2014">
 							<p class="text-center map-year"><strong>2014</strong></p>
 						</div>	
-						<div class="col-xs-2">
+						<div class="col-xs-2" id="anio2015">
 							<p class="text-center map-year aqua-text"><strong>2015</strong></p>
 						</div>																									
 					</div>
@@ -340,8 +381,309 @@
 
 	<!-- Responsive Tabs JS -->
 	<script src="js/jquery.responsiveTabs.js" type="text/javascript"></script>
+
+	<!-- Leaflet -->
+	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+	<!--script src="js/states_temp_2by2.js" type="text/javascript"></script-->
 	
 	<script type="text/javascript">
+
+		var estados;
+		var anio = 25;
+		var op = 1;
+
+
+		$('#anio2010').click(function() {
+			anio = 20;
+			if($('#opciones').val() == 1) {
+				pintarMapa();		
+			} else if($('#opciones').val() == 2) {
+				pintarMapa2();
+			}
+		});
+
+		$('#anio2011').click(function() {
+			anio = 21;
+			if($('#opciones').val() == 1) {
+				pintarMapa();		
+			} else if($('#opciones').val() == 2) {
+				pintarMapa2();
+			}
+		});
+
+		$('#anio2012').click(function() {
+			anio = 22;
+			if($('#opciones').val() == 1) {
+				pintarMapa();		
+			} else if($('#opciones').val() == 2) {
+				pintarMapa2();
+			}
+		});
+
+		$('#anio2013').click(function() {
+			anio = 23;
+			if($('#opciones').val() == 1) {
+				pintarMapa();		
+			} else if($('#opciones').val() == 2) {
+				pintarMapa2();
+			}
+		});
+
+		$('#anio2014').click(function() {
+			anio = 24;
+			if($('#opciones').val() == 1) {
+				pintarMapa();		
+			} else if($('#opciones').val() == 2) {
+				pintarMapa2();
+			}
+		});
+
+		$('#anio2015').click(function() {
+			anio = 25;
+			if($('#opciones').val() == 1) {
+				pintarMapa();		
+			} else if($('#opciones').val() == 2) {
+				pintarMapa2();
+			}
+		});
+
+		$('#opciones').change(function() {
+
+			if($(this).val() == 1) {
+				pintarMapa();
+			} else if($(this).val() == 2) {
+				pintarMapa2();
+			}
+
+		});
+
+
+
+		function pintarMapa() {
+			function style1(feature) {
+				return {
+					weight: 2,
+					opacity: 1,
+					color: 'white',
+					dashArray: '3',
+					fillOpacity: 0.7,
+					fillColor: getColor(feature.properties.indicador1[anio].valor)
+				};
+			}
+			
+			info.removeFrom(map);
+
+			info.onAdd = function (map) {
+				this._div = L.DomUtil.create('div', 'info');
+				this.update();
+				return this._div;
+			}
+
+			info.update = function (props) {
+				this._div.innerHTML = '<h4>Valor</h4>' +  (props ?
+					'<b>' + props.name + '</b><br /> valor: ' + props.indicador1[anio].valor
+					: '');
+			}
+
+			info.addTo(map);
+
+			map.removeLayer(geojson);
+
+			geojson = L.geoJson(estados, {
+				style: style1,
+				onEachFeature: onEachFeature
+			}).addTo(map);
+		}
+
+
+		function pintarMapa2() {
+			function style2(feature) {
+					return {
+						weight: 2,
+						opacity: 1,
+						color: 'white',
+						dashArray: '3',
+						fillOpacity: 0.7,
+						fillColor: getColor(feature.properties.indicador2[anio].valor)
+					};
+				}
+
+				info.removeFrom(map);
+
+				info.onAdd = function (map) {
+					this._div = L.DomUtil.create('div', 'info');
+					this.update();
+					return this._div;
+				}
+
+				info.update = function (props) {
+					this._div.innerHTML = '<h4>Valor</h4>' +  (props ?
+						'<b>' + props.name + '</b><br /> valor: ' + props.indicador2[anio].valor
+						: '');
+				}
+
+				info.addTo(map);
+
+				map.removeLayer(geojson);
+
+				geojson = L.geoJson(estados, {
+					style: style2,
+					onEachFeature: onEachFeature
+				}).addTo(map);
+		}
+
+
+
+		$.ajax({
+			//url: "data/states_temp.json",
+			url: "data/states_temp_2by2.json",
+			async: false,
+			success: function(data){
+				console.log(data);
+				estados = data;
+			},
+			error: function(err) {
+				console.log(err.responseText);
+				estados = err.responseText;
+			}
+		});
+
+		var map = L.map('map', {zoomControl: false}).setView([22.890674, -102.067944], 5);
+
+		// Disable drag and zoom handlers.
+		map.dragging.disable();
+		map.touchZoom.disable();
+		map.doubleClickZoom.disable();
+		map.scrollWheelZoom.disable();
+
+		// Disable tap handler, if present.
+		if (map.tap) map.tap.disable();
+
+		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', {
+			maxZoom: 18,
+			id: 'mapbox.light'
+		}).addTo(map);
+
+		var info = L.control();
+
+		info.onAdd = function (map) {
+			this._div = L.DomUtil.create('div', 'info');
+			this.update();
+			return this._div;
+		};
+
+		info.update = function (props) {
+			this._div.innerHTML = '<h4>Valor</h4>' +  (props ?
+				'<b>' + props.name + '</b><br /> valor: ' + props.indicador1[anio].valor
+				: '');
+		};
+
+		info.addTo(map);
+
+		function getColor(d) {
+			return d > 4000000 ? '#009975' :
+			       d > 3500000  ? '#00b388' :
+			       d > 3000000  ? '#00cc9c' :
+			       d > 2500000  ? '#00ffc3' :
+			       d > 2000000   ? '#33ffcf' :
+			       d > 1500000   ? '#66ffdb' :
+			       d > 1000000   ? '#99ffe7' :
+			                  '#ccfff3';
+		}
+
+		function style(feature) {
+			return {
+				weight: 2,
+				opacity: 1,
+				color: 'white',
+				dashArray: '3',
+				fillOpacity: 0.7,
+				fillColor: getColor(feature.properties.indicador1[anio].valor)
+			};
+		}
+
+		function highlightFeature(e) {
+			var layer = e.target;
+
+			layer.setStyle({
+				weight: 5,
+				color: '#666',
+				dashArray: '',
+				fillOpacity: 0.7
+			});
+
+			if (!L.Browser.ie && !L.Browser.opera) {
+				layer.bringToFront();
+			}
+
+			info.update(layer.feature.properties);
+		}
+
+		var geojson;
+
+		function resetHighlight(e) {
+			geojson.resetStyle(e.target);
+			info.update();
+		}
+
+		function zoomToFeature(e) {
+			map.fitBounds(e.target.getBounds());
+		}
+
+		function onEachFeature(feature, layer) {
+			layer.on({
+				mouseover: highlightFeature,
+				mouseout: resetHighlight
+			});
+		}
+
+		geojson = L.geoJson(estados, {
+			style: style,
+			onEachFeature: onEachFeature
+		}).addTo(map);
+
+
+
+		var legend = L.control({position: 'bottomleft'});
+
+		legend.onAdd = function (map) {
+
+			var div = L.DomUtil.create('div', 'info legend'),
+				grades = [0, 1000000, 1500000, 2000000, 2500000, 3500000, 4000000, 4500000],
+				labels = [],
+				from, to;
+
+			for (var i = 0; i < grades.length; i++) {
+				from = grades[i];
+				to = grades[i + 1];
+
+				labels.push(
+					'<i style="background:' + getColor(from + 1) + '"></i> ' +
+					from + (to ? '&ndash;' + to : '+'));
+			}
+
+			div.innerHTML = labels.join('<br>');
+			return div;
+		};
+
+		legend.addTo(map);
+
+
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
 		$('#responsiveTabsContainer').responsiveTabs({
 		    startCollapsed: 'accordion',
 		    active: 1
@@ -359,10 +701,10 @@
 					$("#green-boxes").append('<div id="item1" class="side-box custom-tooltip" data-toggle="tooltip" data-placement="bottom" title="'+item1.tooltipDescription+'"><div class="box-image"><div class="images-margin-side"><img class="img-responsive" src="'+item1.imageUrl+'"></div></div><div class="box-text"><p class=" text-size-14"><span style="font-size:22px">'+item1.highlight+'</span> '+item1.description+'</p></div></div>');
 
 			    var item2 = data.item2;
-					$("#green-boxes").append('<div id="item2" class="side-box custom-tooltip" data-toggle="tooltip" data-placement="bottom" title="'+item2.tooltipDescription+'"><div class="box-image"><div class="images-margin-side"><img class="img-responsive" src="'+item2.imageUrl+'"></div></div><div class="box-text"><p class=" text-size-14"><span style="font-size:22px">'+item2.highlight+'</span> '+item2.description+'</p></div></div>');
+					$("#green-boxes").append('<div id="item2" class="side-box custom-tooltip" data-toggle="tooltip" data-placement="top" title="'+item2.tooltipDescription+'"><div class="box-image"><div class="images-margin-side"><img class="img-responsive" src="'+item2.imageUrl+'"></div></div><div class="box-text"><p class=" text-size-14"><span style="font-size:22px">'+item2.highlight+'</span> '+item2.description+'</p></div></div>');
 
 			    var item3 = data.item3;
-					$("#green-boxes").append('<div id="item3" class="side-box custom-tooltip" data-toggle="tooltip" data-placement="bottom" title="'+item3.tooltipDescription+'"><div class="box-image"><div class="images-margin-side"><img class="img-responsive" src="'+item3.imageUrl+'"></div></div><div class="box-text"><p class=" text-size-14"><span style="font-size:22px">'+item3.highlight+'</span> '+item3.description+'</p></div></div>');
+					$("#green-boxes").append('<div id="item3" class="side-box custom-tooltip" data-toggle="tooltip" data-placement="top" title="'+item3.tooltipDescription+'"><div class="box-image"><div class="images-margin-side"><img class="img-responsive" src="'+item3.imageUrl+'"></div></div><div class="box-text"><p class=" text-size-14"><span style="font-size:22px">'+item3.highlight+'</span> '+item3.description+'</p></div></div>');
 		    },
 		    error: function(err){
 			    alert(JSON.stringify(err));
@@ -649,6 +991,13 @@
 	        : d.name;
 	  }
 	});
+
+
+
+
+
+
+	
 	
 	</script>
   </body>	
