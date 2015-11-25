@@ -39,10 +39,13 @@
 			background: rgba(255,255,255,0.8);
 			box-shadow: 0 0 15px rgba(0,0,0,0.2);
 			border-radius: 5px;
+			color: #777;
+			text-align: center;
 		}
 		.info h4 {
 			margin: 0 0 5px;
 			color: #777;
+			text-align: center;
 		}
 
 		.legend {
@@ -101,7 +104,38 @@
 							<div id="chart1" style="width:350px;"></div>						    
 						</div>    
 					    <div class="col-xs-4" id="green-boxes">
-						    
+							<div id="item1" class="side-box custom-tooltip" data-toggle="tooltip" data-placement="bottom" title="Title1">
+								<div class="box-image">
+									<div class="images-margin-side">
+										<img id="item1-img" class="img-responsive" src="">
+									</div>
+								</div>
+								<div class="box-text">
+									<p class=" text-size-14"><span style="font-size:22px" id="item1-highlight"></span> <span id="item1-description"></span></p>
+								</div>
+							</div>								
+
+							<div id="item2" class="side-box custom-tooltip" data-toggle="tooltip" data-placement="top" title="Title2">
+								<div class="box-image">
+									<div class="images-margin-side">
+										<img id="item2-img" class="img-responsive" src="">
+									</div>
+								</div>
+								<div class="box-text">
+									<p class=" text-size-14"><span style="font-size:22px" id="item2-highlight"></span> <span id="item2-description"></span></p>
+								</div>
+							</div>								
+
+							<div id="item3" class="side-box custom-tooltip" data-toggle="tooltip" data-placement="top" title="Title3">
+								<div class="box-image">
+									<div class="images-margin-side">
+										<img id="item3-img" class="img-responsive" src="">
+									</div>
+								</div>
+								<div class="box-text">
+									<p class=" text-size-14"><span style="font-size:22px" id="item3-highlight"></span> <span id="item3-description"></span></p>
+								</div>
+							</div>																						
 						</div>
 				    </div>
 				    <br>
@@ -213,11 +247,11 @@
 						  <option value="3">Opcion 3</option>						  						  
 						</select>
 					</p>					
-					<div class="row">
+					<!--div class="row">
 						<div class="col-xs-12">
 						    <img class="img-responsive" src="img/g3.png"/>							
 						</div>	
-					</div>
+					</div-->
 					<div class="row">
 						<div class="col-xs-12">
 							<div id="map"></div>
@@ -306,61 +340,126 @@
 					
 				</div>
 			    
-			    <div id="tab-4"> 
-				    como afecta 
+			    <div id="tab-4">
+				    <p class="black-text">
+					El cambio climático nos afecta a todos ya que su impacto potencial es enorme. Algunas predicciones son: la falta de agua potable, cambios en las condiciones de producción de alimentos. Además, un aumento en los índices de moralidad debido a inundaciones, tormentas, sequías y olas de calor. El cambio climático no es únicamente un fenómeno ambiental, sino también de profundas consecuencias económicas y sociales. Los países más pobres que no están preparados para enfrentar cambios rápidos, serán los que sufrirán las peores consecuencias.
+				    </p> 
+					<div class="row">
+						
+						<div class="col-xs-4">
+							<div id="item1" class="side-box"><div class="box-image"><div class="images-margin-side"><img class="img-responsive" src="img/huella.png"></div></div><div class="box-text"><p class=" text-size-14"><span style="font-size:22px">2</span>Nuevas especies en peligro de extinción</p></div></div>
+						</div>
+						<div class="col-xs-4">
+							<div id="item1" class="side-box"><div class="box-image"><div class="images-margin-side"><img class="img-responsive" src="img/flame.png"></div></div><div class="box-text"><p class=" text-size-14"><span style="font-size:22px">500</span> más incendios forestales al año</p></div></div>							
+						</div>
+						<div class="col-xs-4">
+							<div id="item1" class="side-box"><div class="box-image"><div class="images-margin-side"><img class="img-responsive" src="img/flame.png"></div></div><div class="box-text"><p class=" text-size-14"><span style="font-size:22px"></span> Incremento de sequías en zonas rurales</p></div></div>							
+						</div>													
+
+
+					</div>
+					<p style="font-size: 15px;">
+						Explora
+					</p>
+					<p class="black-text">
+						Los impactos ambientales se definen como la “modificación del ambiente ocasionada por la acción del hombre o de la naturaleza”. A continuación se muestran diversos impactos ambientales comunmente relacionados con el cambio climático. Aunque no necesariamente dependen de las actividades mostradas en la sección anterior.
+					</p>
+					<br>
+					<div class="select-container">
+						<p class="text-center"style="font-size: 15px; float:left;">
+							Selecciona un indicador 
+						</p>		
+						<select class="center-block indicator_select">
+							<option value="select">opción 1</option>
+							<option value="azulejos">opción 2</option>
+							<option value="azulejos">opción 3</option>
+						</select>
+					</div>	
+					<img class="map" src="img/map.png">
+					<div class="row">
+						<div class="col-xs-2" id="anio2010">
+							<p class="text-center map-year"><strong>2010</strong></p>
+						</div>	
+						<div class="col-xs-2" id="anio2011">
+							<p class="text-center map-year"><strong>2011</strong></p>
+						</div>	
+						<div class="col-xs-2" id="anio2012">
+							<p class="text-center map-year"><strong>2012</strong></p>
+						</div>	
+						<div class="col-xs-2" id="anio2013">
+							<p class="text-center map-year"><strong>2013</strong></p>
+						</div>	
+						<div class="col-xs-2" id="anio2014">
+							<p class="text-center map-year"><strong>2014</strong></p>
+						</div>	
+						<div class="col-xs-2" id="anio2015">
+							<p class="text-center map-year aqua-text"><strong>2015</strong></p>
+						</div>																									
+					</div>
+					
+					<div class="row">
+					    <div class="data-table-container">
+						    <h4 class="aqua-text"><strong>Datos</strong></h4>
+						    <table class="bottom-table">
+							    <tr>
+								    <td style="width: 40%; padding-left:20px"><p class="text-size-12"><strong>Nombre</strong></p></td>
+								    <td style="width: 15%"><p class="text-size-12"><strong>Dependencia</strong></p></td>
+								    <td style="width: 15%"><p class="text-size-12"><strong>Fecha</strong></p></td>
+								    <td style="width: 15%"><p class="text-size-12"><strong>Formato</strong></p></td>
+								    <td style="width: 15%"><strong></strong></td>
+							    </tr>
+								<tr class="name-info">
+								    <td style="padding-left:20px;">
+									    <p style="font-size: 10px; padding-right: 16px;"><strong>Rezago habitacional por condiciones de espacio, materiales e instalaciones de la vivienda</strong></p>
+									</td>    
+								    <td>
+									    SEDATU
+									</td>    
+									<td>
+									    N/A 
+									</td>  
+								    <td>
+										<span class="format-text">CSV</span>
+									</td>  
+								    <td class="download-col">
+										<div class="center-block" style="border-radius:50%; background-color:#979494; width: 42px;">
+											<h1 style="font-size: 20px; padding: 10px;" class="text-center"><i class="fa fa-download"></i><h1>
+										</div>
+									</td>
+								</tr>
+							    <tr>
+								    <td style="width: 40%; padding-left:20px; padding-right: 5px;">
+									    <br>
+									    <p class="text-size-12"><strong>Descripción</strong></p>
+									    <p style="font-size: 11px; padding-right: 24px; text-align: justify;">Una vivienda se encuentra en rezago habitacional cuando no cumple con las condiciones mínimas de espacio, materiales e instalaciones necesarias para garantizar el pleno desarrollo de sus habitantes y el numero de cuartos es mayor a 2.5. Una vivienda está en rezago habitacional por materiales cuando el piso es de tierra los muros son de material de desecho, la lámina de cartón, de lámina de asbesto o metálica, de carrizo, bambú o palma, de embarro o bajareque, o de madera o tejamanil. Una vivienda está en rezago habitacional por instalaciones de cocina cuando el principal combustible utilizado para cocinar es leña o carbón y no se cuenta con chimenea. Una vivienda está en rezago habitacional por instalaciones sanitarias cuando no cuenta con excusado, retrete, sanitario, letrina u hoyo negro, de uso excesivo (no se compare con otra vivienda) al que se le pueda echar agua mediante descarga directa o con cubetas</p>
+									</td>
+								    <td style="width: 15%">
+									    <p class="text-size-12">
+										    <strong>Desagregación</strong>
+										</p>
+										<p class="text-size-12">
+											Nacional;Estatal
+										</p>
+									</td>
+								    <td style="width: 15%">
+									    <p class="text-size-12"><strong>Desagregación<br> Temporal</strong></p>
+									    <p class="text-size-12">Anual</p>									    
+								    </td>
+								    <td style="width: 15%">
+									    <p class="text-size-12"><strong>Años</strong></p>
+									    <p class="text-size-12">2014.0</p>									    
+									    <p class="aqua-text text-size-12">MÁS INFORMACIÓN</p>
+									</td>
+								    <td style="width: 15%"></td>
+							    </tr>
+						    </table>
+					    </div>
+				    </div>
+			
 				</div>
 			    
 			    <div id="tab-5"> 
-					<style>
-					
-					#chart-tree {
-					  width: 960px;
-					  height: 500px;
-					  background: #ddd;
-					}
-					
-					text {
-					  pointer-events: none;
-					}
-					
-					.grandparent text {
-					  font-weight: bold;
-					}
-					
-					rect {
-					  fill: none;
-					  stroke: #fff;
-					}
-					
-					rect.parent,
-					.grandparent rect {
-					  stroke-width: 2px;
-					}
-					
-					.grandparent rect {
-					  fill: orange;
-					}
-					
-					.grandparent:hover rect {
-					  fill: #ee9700;
-					}
-					
-					.children rect.parent,
-					.grandparent rect {
-					  cursor: pointer;
-					}
-					
-					.children rect.parent {
-					  fill: #bbb;
-					  fill-opacity: .5;
-					}
-					
-					.children:hover rect.child {
-					  fill: #bbb;
-					}
-					
-					</style>				    
-					<p id="chart-tree">
+					Acciones
 				</div>    
 
 			</div>
@@ -480,10 +579,18 @@
 			}
 
 			info.update = function (props) {
-				this._div.innerHTML = '<h4>Valor</h4>' +  (props ?
-					'<b>' + props.name + '</b><br /> valor: ' + props.indicador1[anio].valor
-					: '');
-			}
+				this._div.innerHTML = (props ? '<h4>' + props.name + '</h4> <br>' 
+					+ 'Población: ' + props.indicador1[anio].valor + '<br>' 
+					+ 'PIB Anual: ' + props.indicador1[anio].valor + '<br>'
+					+ 'Territorio: ' + props.indicador1[anio].valor + '<br><br><br>'
+					+ '<b>Top estados generadores</b><br>' 
+					+ '<table class="table table-striped table-condensed"><tr><td><b>Estado</b></td><td><b>CO2</b></td><td><b>PIB</b></td></tr>'
+					+ '<tr><td>Morelia</td><td>100</td><td>250</td></tr>' 
+					+ '<tr><td>D.F.</td><td>95</td><td>130</td></tr>' 
+					+ '<tr><td>Nuevo León</td><td>85</td><td>130</td></tr>' 
+					+ '<tr><td>Edo. Mexico</td><td>100</td><td>130</td></tr>' 
+					+ '<tr><td>Tabasco</td><td>100</td><td>130</td></tr></table>' : '');
+			};
 
 			info.addTo(map);
 
@@ -517,10 +624,18 @@
 				}
 
 				info.update = function (props) {
-					this._div.innerHTML = '<h4>Valor</h4>' +  (props ?
-						'<b>' + props.name + '</b><br /> valor: ' + props.indicador2[anio].valor
-						: '');
-				}
+					this._div.innerHTML = (props ? '<h4>' + props.name + '</h4> <br>' 
+						+ 'Población: ' + props.indicador2[anio].valor + '<br>' 
+						+ 'PIB Anual: ' + props.indicador2[anio].valor + '<br>'
+						+ 'Territorio: ' + props.indicador2[anio].valor + '<br><br><br>'
+						+ '<b>Top estados generadores</b><br>' 
+						+ '<table class="table table-striped table-condensed"><tr><td><b>Estado</b></td><td><b>CO2</b></td><td><b>PIB</b></td></tr>'
+						+ '<tr><td>Morelia</td><td>100</td><td>250</td></tr>' 
+						+ '<tr><td>D.F.</td><td>95</td><td>130</td></tr>' 
+						+ '<tr><td>Nuevo León</td><td>85</td><td>130</td></tr>' 
+						+ '<tr><td>Edo. Mexico</td><td>100</td><td>130</td></tr>' 
+						+ '<tr><td>Tabasco</td><td>100</td><td>130</td></tr></table>' : '');
+				};
 
 				info.addTo(map);
 
@@ -573,22 +688,30 @@
 		};
 
 		info.update = function (props) {
-			this._div.innerHTML = '<h4>Valor</h4>' +  (props ?
-				'<b>' + props.name + '</b><br /> valor: ' + props.indicador1[anio].valor
-				: '');
+			this._div.innerHTML = (props ? '<h4>' + props.name + '</h4> <br>' 
+				+ 'Población: ' + props.indicador1[anio].valor + '<br>' 
+				+ 'PIB Anual: ' + props.indicador1[anio].valor + '<br>'
+				+ 'Territorio: ' + props.indicador1[anio].valor + '<br><br><br>'
+				+ '<b>Top estados generadores</b><br>' 
+				+ '<table class="table table-striped table-condensed"><tr><td><b>Estado</b></td><td><b>CO2</b></td><td><b>PIB</b></td></tr>'
+				+ '<tr><td>Morelia</td><td>100</td><td>250</td></tr>' 
+				+ '<tr><td>D.F.</td><td>95</td><td>130</td></tr>' 
+				+ '<tr><td>Nuevo León</td><td>85</td><td>130</td></tr>' 
+				+ '<tr><td>Edo. Mexico</td><td>100</td><td>130</td></tr>' 
+				+ '<tr><td>Tabasco</td><td>100</td><td>130</td></tr></table>' : '');
 		};
 
 		info.addTo(map);
 
 		function getColor(d) {
 			return d > 4000000 ? '#009975' :
-			       d > 3500000  ? '#00b388' :
-			       d > 3000000  ? '#00cc9c' :
-			       d > 2500000  ? '#00ffc3' :
-			       d > 2000000   ? '#33ffcf' :
-			       d > 1500000   ? '#66ffdb' :
-			       d > 1000000   ? '#99ffe7' :
-			                  '#ccfff3';
+			       d > 3500000 ? '#00b388' :
+			       d > 3000000 ? '#00cc9c' :
+			       d > 2500000 ? '#00ffc3' :
+			       d > 2000000 ? '#33ffcf' :
+			       d > 1500000 ? '#66ffdb' :
+			       d > 1000000 ? '#99ffe7' :
+			                     '#ccfff3';
 		}
 
 		function style(feature) {
@@ -690,27 +813,39 @@
 		});
 		$("#main-tab").click();
 		
-		$(function () {
-			$('[data-toggle="tooltip"]').tooltip()
-		});
-		
 		$.ajax("http://trebolbit.mx/cambio_climatico/data/page1Structure.json", {
 		    success: function(data){
 			    //alert(JSON.stringify(data));
 			    var item1 = data.item1;
-					$("#green-boxes").append('<div id="item1" class="side-box custom-tooltip" data-toggle="tooltip" data-placement="bottom" title="'+item1.tooltipDescription+'"><div class="box-image"><div class="images-margin-side"><img class="img-responsive" src="'+item1.imageUrl+'"></div></div><div class="box-text"><p class=" text-size-14"><span style="font-size:22px">'+item1.highlight+'</span> '+item1.description+'</p></div></div>');
-
 			    var item2 = data.item2;
-					$("#green-boxes").append('<div id="item2" class="side-box custom-tooltip" data-toggle="tooltip" data-placement="top" title="'+item2.tooltipDescription+'"><div class="box-image"><div class="images-margin-side"><img class="img-responsive" src="'+item2.imageUrl+'"></div></div><div class="box-text"><p class=" text-size-14"><span style="font-size:22px">'+item2.highlight+'</span> '+item2.description+'</p></div></div>');
-
-			    var item3 = data.item3;
-					$("#green-boxes").append('<div id="item3" class="side-box custom-tooltip" data-toggle="tooltip" data-placement="top" title="'+item3.tooltipDescription+'"><div class="box-image"><div class="images-margin-side"><img class="img-responsive" src="'+item3.imageUrl+'"></div></div><div class="box-text"><p class=" text-size-14"><span style="font-size:22px">'+item3.highlight+'</span> '+item3.description+'</p></div></div>');
+			    var item3 = data.item3;			    			    
+					
+				$("#item1-img").attr("src", item1.imageUrl);
+				$("#item1-highlight").text(item1.highlight);
+				$("#item1-description").text(item1.description);
+				$("#item1").attr('title', item1.tooltipDescription).tooltip('fixTitle');
+				
+				$("#item2-img").attr("src", item2.imageUrl);
+				$("#item2-highlight").text(item2.highlight);
+				$("#item2-description").text(item2.description);
+				$("#item2").attr('title', item2.tooltipDescription).tooltip('fixTitle');				
+				
+				$("#item3-img").attr("data-original-title", item3.tooltipDescription);					
+				$("#item3-img").attr("src", item3.imageUrl);
+				$("#item3-highlight").text(item3.highlight);
+				$("#item3-description").text(item3.description);										
+				$("#item3").attr('title', item3.tooltipDescription).tooltip('fixTitle');					
+					
 		    },
 		    error: function(err){
 			    alert(JSON.stringify(err));
 		    }		    
 		});
 
+
+		$(function () {
+			$('[data-toggle="tooltip"]').tooltip({"title":"pepe"})
+		});
 		
 		$.ajax("http://trebolbit.mx/cambio_climatico/data/data.csv", {
 		    success: function(data) {
@@ -812,193 +947,5 @@
 		});	    		
 			
 	</script>  
-	<script>
-	
-	var margin = {top: 20, right: 0, bottom: 0, left: 0},
-	    width = 960,
-	    height = 500 - margin.top - margin.bottom,
-	    formatNumber = d3.format(",d"),
-	    transitioning;
-	
-	var x = d3.scale.linear()
-	    .domain([0, width])
-	    .range([0, width]);
-	
-	var y = d3.scale.linear()
-	    .domain([0, height])
-	    .range([0, height]);
-	
-	var treemap = d3.layout.treemap()
-	    .children(function(d, depth) { return depth ? null : d._children; })
-	    .sort(function(a, b) { return a.value - b.value; })
-	    .ratio(height / width * 0.5 * (1 + Math.sqrt(5)))
-	    .round(false);
-	
-	var svg = d3.select("#chart-tree").append("svg")
-	    .attr("width", width + margin.left + margin.right)
-	    .attr("height", height + margin.bottom + margin.top)
-	    .style("margin-left", -margin.left + "px")
-	    .style("margin.right", -margin.right + "px")
-	  .append("g")
-	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-	    .style("shape-rendering", "crispEdges");
-	
-	var grandparent = svg.append("g")
-	    .attr("class", "grandparent");
-	
-	grandparent.append("rect")
-	    .attr("y", -margin.top)
-	    .attr("width", width)
-	    .attr("height", margin.top);
-	
-	grandparent.append("text")
-	    .attr("x", 6)
-	    .attr("y", 6 - margin.top)
-	    .attr("dy", ".75em");
-	
-	d3.json("data/flare.json", function(root) {
-	  initialize(root);
-	  accumulate(root);
-	  layout(root);
-	  display(root);
-	
-	  function initialize(root) {
-	    root.x = root.y = 0;
-	    root.dx = width;
-	    root.dy = height;
-	    root.depth = 0;
-	  }
-	
-	  // Aggregate the values for internal nodes. This is normally done by the
-	  // treemap layout, but not here because of our custom implementation.
-	  // We also take a snapshot of the original children (_children) to avoid
-	  // the children being overwritten when when layout is computed.
-	  function accumulate(d) {
-	    return (d._children = d.children)
-	        ? d.value = d.children.reduce(function(p, v) { return p + accumulate(v); }, 0)
-	        : d.value;
-	  }
-	
-	  // Compute the treemap layout recursively such that each group of siblings
-	  // uses the same size (1×1) rather than the dimensions of the parent cell.
-	  // This optimizes the layout for the current zoom state. Note that a wrapper
-	  // object is created for the parent node for each group of siblings so that
-	  // the parent’s dimensions are not discarded as we recurse. Since each group
-	  // of sibling was laid out in 1×1, we must rescale to fit using absolute
-	  // coordinates. This lets us use a viewport to zoom.
-	  function layout(d) {
-	    if (d._children) {
-	      treemap.nodes({_children: d._children});
-	      d._children.forEach(function(c) {
-	        c.x = d.x + c.x * d.dx;
-	        c.y = d.y + c.y * d.dy;
-	        c.dx *= d.dx;
-	        c.dy *= d.dy;
-	        c.parent = d;
-	        layout(c);
-	      });
-	    }
-	  }
-	
-	  function display(d) {
-	    grandparent
-	        .datum(d.parent)
-	        .on("click", transition)
-	      .select("text")
-	        .text(name(d));
-	
-	    var g1 = svg.insert("g", ".grandparent")
-	        .datum(d)
-	        .attr("class", "depth");
-	
-	    var g = g1.selectAll("g")
-	        .data(d._children)
-	      .enter().append("g");
-	
-	    g.filter(function(d) { return d._children; })
-	        .classed("children", true)
-	        .on("click", transition);
-	
-	    g.selectAll(".child")
-	        .data(function(d) { return d._children || [d]; })
-	      .enter().append("rect")
-	        .attr("class", "child")
-	        .call(rect);
-	
-	    g.append("rect")
-	        .attr("class", "parent")
-	        .call(rect)
-	      .append("title")
-	        .text(function(d) { return formatNumber(d.value); });
-	
-	    g.append("text")
-	        .attr("dy", ".75em")
-	        .text(function(d) { return d.name; })
-	        .call(text);
-	
-	    function transition(d) {
-	      if (transitioning || !d) return;
-	      transitioning = true;
-	
-	      var g2 = display(d),
-	          t1 = g1.transition().duration(750),
-	          t2 = g2.transition().duration(750);
-	
-	      // Update the domain only after entering new elements.
-	      x.domain([d.x, d.x + d.dx]);
-	      y.domain([d.y, d.y + d.dy]);
-	
-	      // Enable anti-aliasing during the transition.
-	      svg.style("shape-rendering", null);
-	
-	      // Draw child nodes on top of parent nodes.
-	      svg.selectAll(".depth").sort(function(a, b) { return a.depth - b.depth; });
-	
-	      // Fade-in entering text.
-	      g2.selectAll("text").style("fill-opacity", 0);
-	
-	      // Transition to the new view.
-	      t1.selectAll("text").call(text).style("fill-opacity", 0);
-	      t2.selectAll("text").call(text).style("fill-opacity", 1);
-	      t1.selectAll("rect").call(rect);
-	      t2.selectAll("rect").call(rect);
-	
-	      // Remove the old node when the transition is finished.
-	      t1.remove().each("end", function() {
-	        svg.style("shape-rendering", "crispEdges");
-	        transitioning = false;
-	      });
-	    }
-	
-	    return g;
-	  }
-	
-	  function text(text) {
-	    text.attr("x", function(d) { return x(d.x) + 6; })
-	        .attr("y", function(d) { return y(d.y) + 6; });
-	  }
-	
-	  function rect(rect) {
-	    rect.attr("x", function(d) { return x(d.x); })
-	        .attr("y", function(d) { return y(d.y); })
-	        .attr("width", function(d) { return x(d.x + d.dx) - x(d.x); })
-	        .attr("height", function(d) { return y(d.y + d.dy) - y(d.y); });
-	  }
-	
-	  function name(d) {
-	    return d.parent
-	        ? name(d.parent) + "." + d.name
-	        : d.name;
-	  }
-	});
-
-
-
-
-
-
-	
-	
-	</script>
   </body>	
 </html>
