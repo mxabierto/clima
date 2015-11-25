@@ -31,7 +31,7 @@
 /* Tab panel */
 .r-tabs .r-tabs-panel {
 	background-color: #EEEEEE;
-	border-style: solid;
+	/*border-style: solid;*/
 	border-color: white;
 	border-width: 2px;
 	border-top-color: #EEEEEE;

@@ -1,0 +1,129 @@
+{
+ "name": "Presupuesto para mitigación y adaptación de Cambio Climático",
+ "children": [
+   {
+   "name": "Gobernación",
+   "children": [
+    {"name": "Coordinación del Sistema Nacional de Protección Civil", "value": 240030704}
+   ]
+  },
+  {
+   "name": "Hacienda y Crédito Público",
+   "children": [
+    {"name": "Programa para el Mejoramiento de la Producción y la Productividad Indígena", "value": 54150000}
+   ]
+  },
+  {
+   "name": "Comunicaciones y Transportes",
+   "children": [
+    {"name": "Reconstrucción y Conservación de Carreteras", "value": 1329333000}
+   ]
+  },
+  {
+   "name": "Economía",
+   "children": [
+    {"name": "Promoción de una cultura de consumo responsable e inteligente", "value": 450000},
+    {"name": "Promoción del Comercio Exterior y Atracción de Inversión Extranjera Directa", "value": 10000000}
+   ]
+  },
+  {
+   "name": "Salud",
+   "children": [
+    {"name": "Protección Contra Riesgos Sanitarios", "value": 270895964},
+    {"name": "Vigilancia epidemiológica", "value": 372887782}
+   ]
+  },
+  {
+   "name": "Marina",
+   "children": [
+    {"name": "Seguridad a la Navegación y Protección al Medio Ambiente Marino", "value": 178708250}
+   ]
+  },
+  {
+   "name": "Desarrollo Agrario, Territorial y Urbano",
+   "children": [
+    {"name": "Programa de prevención de riesgos en los asentamientos humanos", "value": 35264198},
+    {"name": "Programa de Reordenamiento y Rescate de Unidades Habitacionales", "value": 17571995}
+   ]
+  },
+  {
+   "name": "Agricultura, Ganadería, Desarrollo Rural, Pesca y Alimentación",
+   "children": [
+    {"name": "Programa de Fomento a la Agricultura", "value": 1097958287},
+    {"name": "Programa de Fomento a la Productividad Pesquera y Acuícola", "value": 1995840181},
+    {"name": "Programa de Fomento Ganadero", "value": 4420744342},
+    {"name": "Programa Integral de Desarrollo Rural", "value": 5977931569}
+   ]
+  },
+  {
+   "name": "Medio Ambiente y Recursos Naturales",
+   "children": [
+    {"name": "Actividades de apoyo a la función pública y buen gobierno", "value": 4330695},
+    {"name": "Actividades de apoyo administrativo", "value": 13226305},
+    {"name": "Capacitación Ambiental y Desarrollo Sustentable", "value": 7581473},
+    {"name": "Consolidar el Sistema Nacional de Áreas Naturales Protegidas", "value": 246188091},
+    {"name": "Cuotas, Apoyos y Aportaciones a Organismos Internacionales", "value": 18259938},
+    {"name": "Fideicomisos Ambientales", "value": 1110000},
+    {"name": "Fomento a Programas de Calidad del Aire y Verificación Vehicular", "value": 1471006},
+    {"name": "Fomento para la Conservación y Aprovechamiento Sustentable de la Vida Silvestre", "value": 179951127},
+    {"name": "Incentivos para la operación de plantas de tratamiento de aguas residuales", "value": 258500000},
+    {"name": "Investigación científica y tecnológica", "value": 250006416},
+    {"name": "Investigación en Cambio Climático, sustentabilidad ambiental y crecimiento verde", "value": 242417912},
+    {"name": "Normatividad Ambiental e Instrumentos de Fomento para el Desarrollo Sustentable", "value": 37547969},
+    {"name": "Planeación, Dirección y Evaluación Ambiental", "value": 143733541},
+    {"name": "Políticas de Investigación de Cambio Climático", "value": 5226620},
+    {"name": "Prevención y gestión integral de residuos", "value": 675712008},
+    {"name": "Programa de Conservación para el Desarrollo Sostenible (PROCODES)", "value": 226242795},
+    {"name": "Programa de Desarrollo Institucional y Ambiental", "value": 465300},
+    {"name": "Programa de Empleo Temporal", "value": 589158594},
+    {"name": "Programa de Inspección y Vigilancia en Materia de Medio Ambiente y Recursos ", "value": 56597819},
+    {"name": "Programa de Inversión en Infraestructura Social y de Protección Ambiental", "value": 3263180},
+    {"name": "Programa de Tratamiento de Aguas Residuales", "value": 2990087387},
+    {"name": "Programa de Vigilancia Comunitaria en Áreas Naturales Protegidas y Zonas de Influencia", "value": 22231000},
+    {"name": "Programa hacia la igualdad y la sustentabilidad ambiental", "value": 4185465},
+    {"name": "Programa Nacional Forestal Pago por Servicios Ambientales", "value": 2206617078},
+    {"name": "Programa Nacional Forestal-Desarrollo Forestal", "value": 2786727721},
+    {"name": "Programa Nacional Forestal-Protección Forestal", "value": 2261070104},
+    {"name": "Regulación Ambiental", "value": 68890086}
+   ]
+  },
+  {
+   "name": "Energía",
+   "children": [
+    {"name": "Actividades de apoyo administrativo", "value": 4850000},
+    {"name": "Conducción de la política energética", "value": 262613619},
+    {"name": "Coordinación de la implementación de la política energética y de las entidades del sector electricidad", "value": 209790076},
+    {"name": "Fondo para la Transición Energética y Aprovechamiento Sustentable de Energía", "value": 4303000009},
+    {"name": "Gestión e implementación en aprovechamiento sustentable de la energía", "value": 33188562},
+    {"name": "Mantenimiento de infraestructura", "value": 125160315},
+    {"name": "Otros proyectos", "value": 54150864},
+    {"name": "Promoción de medidas para el ahorro y uso eficiente de la energía eléctrica", "value": 5313434},
+    {"name": "Promoción en materia de aprovechamiento sustentable de la energía", "value": 25716076},
+    {"name": "Proyectos de infraestructura económica de hidrocarburos", "value": 315977830},
+    {"name": "Seguimiento y evaluación de políticas públicas en aprovechamiento sustentable de la energía", "value": 25498454},
+    {"name": "Supervisar el aprovechamiento sustentable de la energía", "value": 16963027}
+   ]
+  },
+  {
+   "name": "Turismo",
+   "children": [
+    {"name": "Planeación y conducción de la política de turismo", "value": 655000}
+   ]
+  },
+  {
+   "name": "Provisiones Salariales y Económicas",
+   "children": [
+    {"name": "Fondo de Desastres Naturales (FONDEN)", "value": 6008472100},
+    {"name": "Fondo de Prevención de Desastres Naturales (FOPREDEN)", "value": 346587453}
+   ]
+  },
+  {
+   "name": "Consejo Nacional de Ciencia y Tecnología",
+   "children": [
+    {"name": "Apoyos institucionales para actividades científicas, tecnológicas y de innovación", "value": 5000000},
+    {"name": "Becas de posgrado y otras modalidades de apoyo a la calidad", "value": 100000000},
+    {"name": "Innovación tecnológica para negocios de alto valor agregado, tecnologías precursoras y competitividad de las empresas", "value": 140050710}
+   ]
+  }
+ ]
+}
