@@ -1,9 +1,0 @@
-opciones:
-=========
-la mejor: select2. https://select2.github.io/
-hay un gem: https://github.com/argerim/select2-rails
-a los css los incluí asi (con .css):
-@import "select2.css";
-@import "select2-bootstrap.css";
-
-jquery tokeninput: esta esta más fácil de implementar, hay un railscast pero buscar gem nuevos que la cosa ha cambiado
