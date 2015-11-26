@@ -1,0 +1,334 @@
+{  
+   "item1":{  
+      "highlight":"12o",
+      "description":"País en Emisiones",
+      "imageUrl":"http://trebolbit.mx/cambio_climatico/img/green_towers.png",
+      "tooltipDescription":"México contribuye con sólo el 1.37% de las emisones globales de CO2 derivadas de la quema de combustibles fósiles",
+      "properties":{  
+        "industria":{  
+            "title":"Industria, Petróleo y Gas",
+            "sector_values":[  
+               {  
+                  "name":"Petróleo y Gas",
+                  "value":"12.1%"
+               },
+               {  
+                  "name":"Industria",
+                  "value":"17.3%"
+               }
+            ],
+            "carbono_emissions":"29.4% (195 millones de ton CO2e)"
+         },
+        "fuentes":{  
+            "title":"Fuentes moviles",
+            "sector_values":[  
+               {  
+                  "name":"Autotransporte",
+                  "value":"87.8%"
+               },
+               {  
+                  "name":"No Carretero",
+                  "value":"5.6%"
+               },
+               {  
+                  "name":"Aviación",
+                  "value":"4.1%"
+               },
+               {  
+                  "name":"Marítimo",
+                  "value":"1.2%"
+               },
+               {  
+                  "name":"Ferrocarril",
+                  "value":"1.2%"
+               }
+            ],
+            "carbono_emissions":"26.2% (174 millones de ton CO2e)"
+         },
+        "generacion":{  
+            "title":"Generación Eléctrica",
+            "sector_values":[  
+               {  
+                  "name":"Ciclo Combinado",
+                  "value":"40.30%"
+               },
+               {  
+                  "name":"Termoeléctrica",
+                  "value":"29.80%"
+               },
+               {  
+                  "name":"Dual",
+                  "value":"13.90%"
+               },
+               {  
+                  "name":"Carboeléctrica",
+                  "value":"13.70%"
+               },
+               {  
+                  "name":"Turbogas",
+                  "value":"1.60%"
+               },
+               {  
+                  "name":"Combustión Interna",
+                  "value":"0.70%"
+               }
+            ],
+            "carbono_emissions":"19% (127 millones de ton CO2e)"
+         },
+        "agropecuario":{  
+            "title":"Agropecuario, uso de suelo y silvicultura",
+            "sector_values":[  
+               {  
+                  "name":"Agropecuario",
+                  "value":"12%"
+               },
+               {  
+                  "name":"Uso de suelo y silvicultura",
+                  "value":"5.6%"
+               }
+            ],
+            "carbono_emissions":"16.9% (112 millones de ton CO2e)"
+         },
+        "residuos":{  
+            "title":"Residuos, residencial y comercial",
+            "sector_values":[  
+               {  
+                  "name":"Residuos",
+                  "value":"4.6%"
+               },
+               {  
+                  "name":"Residencial y comercial",
+                  "value":"3.9%"
+               }
+            ],
+            "carbono_emissions":"8.5% (57 millones de ton CO2e)"
+         },
+        "carbono":{  
+            "title":"Carbono negro",
+            "sector_values":[  
+               {  
+                  "name":"Fuentes móviles",
+                  "value":"37.8%"
+               },
+               {  
+                  "name":"Industria, petróleo y gas",
+                  "value":"30%"
+               },
+               {  
+                  "name":"Residuos, residencial y comercial",
+                  "value":"15.4%"
+               },
+               {  
+                  "name":"Agropecuario y USCUSS",
+                  "value":"10%"
+               },
+               {  
+                  "name":"Generación eléctrica",
+                  "value":"6.8%"
+               }
+            ],
+            "carbono_emissions":"125 miles de ton"
+         }                                             
+        } 
+   },
+   "item2":{  
+      "highlight":"22%",
+      "description":"En reducción de emisiones de gases efecto invernadero",
+      "imageUrl":"http://trebolbit.mx/cambio_climatico/img/green_towers.png",
+      "tooltipDescription":"Para el 2030, México reducirá sus emisiones de GEI en un 22% y 51% de carbono negro con relación al 2013",
+      "properties":{  
+        "industria":{  
+            "title":"Industria, Petróleo y Gas",
+            "sector_values":[  
+               {  
+                  "name":"Producción de energía limpia, mejora de eficiencia en tecnologías de generación, Reducción de pérdidas técnicas en el Sistema Eléctrico Nacional, Sustitución por combustibles más limpios y alternos, cogeneración, mejores prácticas en la industria y el Cierre de la planta de producción de HCFC_22, aportarán con el 43% de las emisiones de GEI mitigadas en el 2030. Esta aportación de mitigación podrá incrementarse con la aportación de distintos sectores privados y de las acciones implementadas en los estados y municipios.",
+                  "value":""
+               }
+            ],
+            "carbono_emissions":""
+         },
+        "fuentes":{  
+            "title":"Agropecuario y USCUSS",
+            "sector_values":[  
+               {  
+                  "name":"El uso de biodigestores, agricultura sustentable, así como la recuperación de la vocación forestal en áreas naturales protegidas, cero deforestaciones netas y plantaciones comerciales aportarán el 25% de las emisiones GEI mitigadas. Esta aportación de mitigación podrá incrementarse con la aportación de distintos sectores privados y de las acciones implementadas en los estados y municipios.",
+                  "value":""
+               }
+            ],
+            "carbono_emissions":""
+         },
+        "generacion":{  
+            "title":"Transporte",
+            "sector_values":[  
+               {  
+                  "name":"Transportarnos en vehículos con tecnología baja en emisiones, impulso de transporte público y multimodal, mejora en la calidad de los combustibles, así como estándares de eficiencia energética en autos y camiones nuevos aportarán con el 23% de las emisiones GEI mitigadas. Esta aportación de mitigación podrá incrementarse con la aportación de distintos sectores privados y de las acciones implementadas en los estados y municipios.",
+                  "value":""
+               }
+            ],
+            "carbono_emissions":""
+         },
+        "agropecuario":{  
+            "title":"Residuos, residencial y comercial",
+            "sector_values":[  
+               {  
+                  "name":"El manejo sustentable de los residuos, impulso de tecnologías bajas en consumo de energía y agua, así como usar energía amigable con el ambiente en hogares y comercios aportarán con el 9% de las emisiones de GEI mitigadas. Esta aportación de mitigación podrá incrementarse con la aportación de distintos sectores privados y de las acciones implementadas en los estados y municipios.",
+                  "value":""
+               }
+            ],
+            "carbono_emissions":"16.9% (112 millones de ton CO2e)"
+         },
+        "residuos":{  
+            "title":"Carbono negro",
+            "sector_values":[  
+               {  
+                  "name":"El 83% de la mitigación de las emisiones de carbono negro se identifican, por una parte, en la contribución del sector transporte por la sustitución con combustibles de ultra bajo contenido de azufre, así como el cambio modal en el transporte de carga doméstica con el uso de ferrocarriles; y por otra parte el control de partículas negras de hollín en las calderas bagaceras de los ingenios azucareros y la industria siderúrgica. Junto con la quema de leña, que además genera problemas respiratorios. Esto representa un aporte del 11.4%  al compromiso de reducción de emisiones de carbono negro.",
+                  "value":""
+               }
+            ],
+            "carbono_emissions":""
+         },
+        "carbono":{  
+            "title":"Carbono negro",
+            "sector_values":[  
+               {  
+                  "name":"El 83% de la mitigación de las emisiones de carbono negro se identifican, por una parte, en la contribución del sector transporte por la sustitución con combustibles de ultra bajo contenido de azufre, así como el cambio modal en el transporte de carga doméstica con el uso de ferrocarriles; y por otra parte el control de partículas negras de hollín en las calderas bagaceras de los ingenios azucareros y la industria siderúrgica. Junto con la quema de leña, que además genera problemas respiratorios. Esto representa un aporte del 11.4%  al compromiso de reducción de emisiones de carbono negro.",
+                  "value":""
+               }
+            ],
+            "carbono_emissions":""
+         }                                                    
+        } 
+   },
+   "item3":{  
+      "highlight":"$40,663",
+      "description":"Millones de pesos invertidos para adaptación y mitigación de CC.",
+      "imageUrl":"http://trebolbit.mx/cambio_climatico/img/green_towers.png",
+      "tooltipDescription":"México contribuye con sólo el 1.37% de las emisones globales de CO2 derivadas de la quema de combustibles fósiles",
+      "properties":{  
+        "industria":{  
+            "title":"Industria, Petróleo y Gas",
+            "sector_values":[  
+               {  
+                  "name":"Petróleo y Gas",
+                  "value":"12.1%"
+               },
+               {  
+                  "name":"Industria",
+                  "value":"17.3%"
+               }
+            ],
+            "carbono_emissions":"29.4% (195 millones de ton CO2e)"
+         },
+        "fuentes":{  
+            "title":"Fuentes moviles",
+            "sector_values":[  
+               {  
+                  "name":"Autotransporte",
+                  "value":"87.8%"
+               },
+               {  
+                  "name":"No Carretero",
+                  "value":"5.6%"
+               },
+               {  
+                  "name":"Aviación",
+                  "value":"4.1%"
+               },
+               {  
+                  "name":"Marítimo",
+                  "value":"1.2%"
+               },
+               {  
+                  "name":"Ferrocarril",
+                  "value":"1.2%"
+               }
+            ],
+            "carbono_emissions":"26.2% (174 millones de ton CO2e)"
+         },
+        "generacion":{  
+            "title":"Generación Eléctrica",
+            "sector_values":[  
+               {  
+                  "name":"Ciclo Combinado",
+                  "value":"40.30%"
+               },
+               {  
+                  "name":"Termoeléctrica",
+                  "value":"29.80%"
+               },
+               {  
+                  "name":"Dual",
+                  "value":"13.90%"
+               },
+               {  
+                  "name":"Carboeléctrica",
+                  "value":"13.70%"
+               },
+               {  
+                  "name":"Turbogas",
+                  "value":"1.60%"
+               },
+               {  
+                  "name":"Combustión Interna",
+                  "value":"0.70%"
+               }
+            ],
+            "carbono_emissions":"19% (127 millones de ton CO2e)"
+         },
+        "agropecuario":{  
+            "title":"Agropecuario, uso de suelo y silvicultura",
+            "sector_values":[  
+               {  
+                  "name":"Agropecuario",
+                  "value":"12%"
+               },
+               {  
+                  "name":"Uso de suelo y silvicultura",
+                  "value":"5.6%"
+               }
+            ],
+            "carbono_emissions":"16.9% (112 millones de ton CO2e)"
+         },
+        "residuos":{  
+            "title":"Residuos, residencial y comercial",
+            "sector_values":[  
+               {  
+                  "name":"Residuos",
+                  "value":"4.6%"
+               },
+               {  
+                  "name":"Residencial y comercial",
+                  "value":"3.9%"
+               }
+            ],
+            "carbono_emissions":"8.5% (57 millones de ton CO2e)"
+         },
+        "carbono":{  
+            "title":"Carbono negro",
+            "sector_values":[  
+               {  
+                  "name":"Fuentes móviles",
+                  "value":"37.8%"
+               },
+               {  
+                  "name":"Industria, petróleo y gas",
+                  "value":"30%"
+               },
+               {  
+                  "name":"Residuos, residencial y comercial",
+                  "value":"15.4%"
+               },
+               {  
+                  "name":"Agropecuario y USCUSS",
+                  "value":"10%"
+               },
+               {  
+                  "name":"Generación eléctrica",
+                  "value":"6.8%"
+               }
+            ],
+            "carbono_emissions":"125 miles de ton"
+         }                                             
+        } 
+   }        
+}
