@@ -1,0 +1,132 @@
+<html>
+  <head>
+    <link href="css/c3.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div id="chart" style="height:300px;"></div>
+    <div id="chart-info" style="height:300px;"></div>
+    <div id="chart1" style="width:300px;"></div>
+
+    <script src="js/jquery-1.11.0.min.js"></script>    
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="js/c3.js"></script>
+    <script src="js/csvjson.js"></script>    
+    <script>
+		var chart = c3.generate({
+			"bindto": "#chart",
+		    data: {
+		        columns: [
+		            ['Pepe', 2012],
+		            ['Pecas', 0],
+		            ['Pica', 440000]
+		        ],
+		        type: 'bar',
+		        groups: [['Pepe', 'Pecas', 'Pica']]
+		    }
+		});
+
+
+
+
+		$.ajax("http://trebolbit.mx/cambio_climatico/data/data.csv", {
+		    success: function(data) {
+
+		        var jsonobject = csvjson.csv2json(data);
+		        		        
+
+		        var totalrows = jsonobject.rows.length;
+				
+				var sector = [];
+
+				sector[0]= {
+					name:jsonobject.rows[0].a_Categoria_IPCC,
+				};
+
+				if(jsonobject.rows[0].a_2012 > 0){
+					sector[0].total += jsonobject.rows[0].a_2012;
+				}else{
+					sector[0].total = 0;
+				};
+
+				if(jsonobject.rows[0].a_2012 < 0){
+					
+					sector[0].total_2 += (jsonobject.rows[0].a_2012)*(-1);
+				}else{
+					sector[0].total_2 = 0;
+				}				
+				
+
+		        var sectorIndex = 0					
+
+		        for(i=0; i<totalrows; i++){
+					
+					var actualSector = jsonobject.rows[i].a_Categoria_IPCC;
+					
+					if(jsonobject.rows[i].a_2012 > 0){
+						sector[sectorIndex].total += jsonobject.rows[i].a_2012;						
+					}
+					if(jsonobject.rows[i].a_2012 < 0){
+						sector[sectorIndex].total_2 += (jsonobject.rows[i].a_2012)*(-1);
+					}					
+					
+			        if(sector[sectorIndex].name != jsonobject.rows[i].a_Categoria_IPCC){
+				        	
+				        sectorIndex += 1;
+						sector[sectorIndex] = {
+							name:jsonobject.rows[i].a_Categoria_IPCC,
+							total:jsonobject.rows[i].a_2012							
+						};
+						
+						if(jsonobject.rows[i].a_2012 > 0){
+							sector[sectorIndex].total = jsonobject.rows[i].a_2012;						
+						}else{
+							sector[sectorIndex].total = 0;
+						};
+						
+						if(jsonobject.rows[i].a_2012 < 0){
+							sector[sectorIndex].total_2 = (jsonobject.rows[i].a_2012)*(-1);
+						}else{
+							sector[sectorIndex].total_2 = 0;
+						};						
+						
+
+			        }
+		        }
+		        alert(JSON.stringify(sector));
+		        
+		        
+			    var columns_adapted = [];
+			    var groups_adapted = [];
+			    groups_adapted[0] = [];			    
+			    for(j=0; j<sector.length; j++){
+				    columns_adapted[j]=[sector[j].name, sector[j].total,sector[j].total_2, sector[j].total - sector[j].total_2];
+				    groups_adapted[0].push(sector[j].name);				    
+			    };		        
+
+				alert(JSON.stringify(groups_adapted));		
+				
+				
+				var chart1 = c3.generate({
+					"bindto": "#chart1",			
+				    data: {
+				        columns: columns_adapted,
+				        type: 'bar',
+				        groups: groups_adapted
+				    },
+				    colors: {
+			            "Agricultura": '#ff0000',
+			            "Desechos": '#ff0000',
+			            "Energía": '#ff0000'
+			        }
+				});				
+					    
+
+		    },
+		    error: function() {
+				alert("Error loading the chart data.");
+		    }
+		});	    
+	
+    </script>
+  </body>
+</html>

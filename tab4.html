@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Cambio Climatico</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+	<!-- Font Awesome -->
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Responsive Tabs Style -->
+    <link type="text/css" rel="stylesheet" href="css/responsive-tabs.css" />
+    <link type="text/css" rel="stylesheet" href="css/tabs_style.css" />
+    <link href="css/c3.css" rel="stylesheet" type="text/css">    
+	<link href="css/opiscatter.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/main_style.css" rel="stylesheet">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+
+	<!-- Dendogram Style -->
+	<style>
+		.node {
+		  cursor: pointer;
+		}
+		
+		.node circle {
+		  fill: #fff;
+		  stroke: steelblue;
+		  stroke-width: 1.5px;
+		}
+		
+		.node text {
+		  font: 10px sans-serif;
+		}
+		
+		.link {
+		  fill: none;
+		  stroke: #ccc;
+		  stroke-width: 1.5px;
+		}
+		
+		.hover {   
+		  position: absolute;           
+		  text-align: center;           
+		  width: 60px;                  
+		  height: 28px;                 
+		  padding: 2px;             
+		  font: 5px sans-serif;        
+		  background: lightsteelblue;   
+		  border: 0px;      
+		  border-radius: 8px;           
+		  pointer-events: none;         
+		}
+	</style>	
+	
+	<!-- Rects Style -->	
+	<style>
+		
+		#chart {
+		  width: 750px;
+		  height: 583px;
+		  background: #ddd;
+		}
+		
+		text {
+		  pointer-events: none;
+		}
+		
+		.grandparent text {
+		  font-weight: bold;
+		}
+		
+		rect {
+		  fill: none;
+		  stroke: #fff;
+		}
+		
+		rect.parent,
+		.grandparent rect {
+		  stroke-width: 2px;
+		}
+		
+		.grandparent rect {
+		  fill: orange;
+		}
+		
+		.grandparent:hover rect {
+		  fill: #ee9700;
+		}
+		
+		.children rect.parent,
+		.grandparent rect {
+		  cursor: pointer;
+		}
+		
+		.children rect.parent {
+		  fill: #bbb;
+		  fill-opacity: .5;
+		}
+		
+		.children:hover rect.child {
+		  fill: #00C292;
+		}
+	
+	</style>
+	
+    
+  </head>
+
+  <body>
+
+   <div class="container-clima">
+		<div class="row">
+			<div id="responsiveTabsContainer">
+	
+			    <ul>
+			        <li class="title-tab"><p class="text-size-14"> Cambio Climático </p></li>
+			        <li class="normal-tab" id="tab1"><a href="#tab-2"><strong>¿Qué es? </strong></a></li>
+			        <li class="normal-tab" id="tab2"><a href="#tab-3"><strong>¿Por qué pasa?</strong> </a></li>
+			        <li class="normal-tab" id="tab3"><a href="#tab-4"><strong>¿Cómo me afecta?</strong> </a></li>
+			        <li class="normal-tab" id="tab4"><a href="#tab-5"><strong> Acciones</strong> </a></li>                
+			    </ul>
+			
+			    <div id="tab-2">
+						    
+				</div>
+				
+							    
+			    <div id="tab-3"> 
+									
+				</div>
+			    
+			    <div id="tab-4">			
+				</div>
+
+			    <div id="tab-5" style="padding:0px;"> 			    
+
+					<div class="biggreen-container">
+						<p class="white-text">La acción global frente al cambio climático es ineludible e impostergable. De acuerdo con la comunidad científica internacional, es necesario que todos los países reduzcan, de manera conjunta y decidida, las emisiones de gases y compuestos de efecto invernadero para evitar que los efectos se agraven. Para México, este desafío conlleva problemas sociales, económicos y ambientales que ya afectan a su población, infraestructura, sistemas productivos y ecosistemas.
+						<br><br>
+						A continuación se muestra el plan de crecimiento sostenible de México para los próximos años y otros datos para entender como está reaccionando el país para adaptar y mitigar el Cambio Climático.</p>		
+					</div>	
+					<div>
+						<p class="black-text" style="padding: 20px;">A partir de la publicación de la Ley General de Cambio Climático en el 2012, la Administración del Presidente Peña Nieto ha colocado las acciones de mitigación y adaptación al Cambio Climático en el centro de la agenda nacional desarrollando una Estrategia Nacional de Cambio Climático y recientemente la entrega de los compromisos 2020 - 2030.</p>
+					</div>
+					<img style="width: 100%;" src="img/timeline.png">
+					<br>
+					<p class="black-text" style="padding: 20px;">Como componente central de esta Estrategia, se está implementando el Programa Especial de Cambio Climático que cuenta con 5 objetivos, 32 estrategias y 230 lineas de acción y esta siendo implementada por 32 dependencias de la Administración Pública Federal.</p>
+					<!--img style=" display: block; margin-left: auto; margin-right: auto;" src="img/grafica_lineas.png"-->
+					<div id="dendogram">
+					</div>						
+					<br>
+					<p class="black-text" style="padding: 20px;">Durante el ejercicio fiscal, el Presupuesto de Egresos de la Federación contemplo más de 40 mil millones de pesos en recursos para la adaptación y mitigación de los efectos del cambio climático. Estos recursos fueron asignados a 13 Ramos dentro del PEF 2015.</p>
+					<p class="number-quantity"><strong>$40,663 mdp</strong></p>	
+					<br>
+					<p class="indications">Da click en cada sector para ver la distribución de los recursos y da click en la barra naranja para regresar.</p>
+					<img style="width: 100%; padding: 25px;"src="img/grafica_gris.png">
+					<div class="row">
+						<div style="padding:20px;">
+						    <div class="data-table-container">
+							    <h4 class="aqua-text"><strong>Datos</strong></h4>
+							    <table class="bottom-table">
+								    <tr>
+									    <td style="width: 40%; padding-left:20px"><p class="text-size-12"><strong>Nombre</strong></p></td>
+									    <td style="width: 15%"><p class="text-size-12"><strong>Dependencia</strong></p></td>
+									    <td style="width: 15%"><p class="text-size-12"><strong>Fecha</strong></p></td>
+									    <td style="width: 15%"><p class="text-size-12"><strong>Formato</strong></p></td>
+									    <td style="width: 15%"><strong></strong></td>
+								    </tr>
+									<tr class="name-info">
+									    <td style="padding-left:20px;">
+										    <p style="font-size: 10px; padding-right: 16px;"><strong>Rezago habitacional por condiciones de espacio, materiales e instalaciones de la vivienda</strong></p>
+										</td>    
+									    <td>
+										    SEDATU
+										</td>    
+										<td>
+										    N/A 
+										</td>  
+									    <td>
+											<span class="format-text">CSV</span>
+										</td>  
+									    <td class="download-col">
+											<div class="center-block" style="border-radius:50%; background-color:#979494; width: 42px;">
+												<h1 style="font-size: 20px; padding: 10px;" class="text-center"><i class="fa fa-download"></i><h1>
+											</div>
+										</td>
+									</tr>
+								    <tr>
+									    <td style="width: 40%; padding-left:20px; padding-right: 5px;">
+										    <br>
+										    <p class="text-size-12"><strong>Descripción</strong></p>
+										    <p style="font-size: 11px; padding-right: 24px; text-align: justify;">Una vivienda se encuentra en rezago habitacional cuando no cumple con las condiciones mínimas de espacio, materiales e instalaciones necesarias para garantizar el pleno desarrollo de sus habitantes y el numero de cuartos es mayor a 2.5. Una vivienda está en rezago habitacional por materiales cuando el piso es de tierra los muros son de material de desecho, la lámina de cartón, de lámina de asbesto o metálica, de carrizo, bambú o palma, de embarro o bajareque, o de madera o tejamanil. Una vivienda está en rezago habitacional por instalaciones de cocina cuando el principal combustible utilizado para cocinar es leña o carbón y no se cuenta con chimenea. Una vivienda está en rezago habitacional por instalaciones sanitarias cuando no cuenta con excusado, retrete, sanitario, letrina u hoyo negro, de uso excesivo (no se compare con otra vivienda) al que se le pueda echar agua mediante descarga directa o con cubetas</p>
+										</td>
+									    <td style="width: 15%">
+										    <p class="text-size-12">
+											    <strong>Desagregación</strong>
+											</p>
+											<p class="text-size-12">
+												Nacional;Estatal
+											</p>
+										</td>
+									    <td style="width: 15%">
+										    <p class="text-size-12"><strong>Desagregación<br> Temporal</strong></p>
+										    <p class="text-size-12">Anual</p>									    
+									    </td>
+									    <td style="width: 15%">
+										    <p class="text-size-12"><strong>Años</strong></p>
+										    <p class="text-size-12">2014.0</p>									    
+										    <p class="aqua-text text-size-12">MÁS INFORMACIÓN</p>
+										</td>
+									    <td style="width: 15%"></td>
+								    </tr>
+							    </table>
+						    </div>
+						</div>    
+				    </div>
+
+				</div>	
+				
+			</div>
+		</div>	
+    </div>
+	<!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->    
+    <script src="js/jquery-1.11.0.min.js"></script>    
+    <script src="js/bootstrap.js"></script>
+
+	<!-- Responsive Tabs JS -->
+	<script src="js/jquery.responsiveTabs.js" type="text/javascript"></script>
+
+	<!-- D3/C3 -->
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>    
+    <script src="js/c3.js"></script>
+	<script type="text/javascript" src="js/scatter001.js"></script>
+
+	<!-- Leaflet -->
+	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+
+	
+	<script type="text/javascript">
+
+
+		$('#responsiveTabsContainer').responsiveTabs({
+		    active: 4
+		});
+		
+		var main_url= "http://trebolbit.mx/cambio_climatico/"
+		
+		$('#tab1').click(function(){
+			window.location.href=main_url;
+		});
+		$('#tab2').click(function(){
+			window.location.href=main_url+"tab2.html";
+		});
+		$('#tab3').click(function(){
+			window.location.href=main_url+"tab3.html";
+		});
+		$('#tab4').click(function(){
+			window.location.href=main_url+"tab4.html";
+		});		
+
+		///////////////////Dendogram////////////////////////////////
+		
+		var margin = {top: 20, right: 120, bottom: 20, left: 40},
+		    width = 760 - margin.right - margin.left,
+		    height = 800 - margin.top - margin.bottom;
+		
+		var i = 0,
+		    duration = 750,
+		    root;
+		
+		var tree = d3.layout.tree()
+		    .size([height, width]);
+		
+		var diagonal = d3.svg.diagonal()
+		    .projection(function(d) { return [d.y, d.x]; });
+		
+		var svg = d3.select("#dendogram").append("svg")
+		    .attr("width", width + margin.right + margin.left)
+		    .attr("height", height + margin.top + margin.bottom)
+		  .append("g")
+		    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+		
+		d3.json("data/tree_pecc.json", function(error, flare) {
+		  if (error) throw error;
+		
+		  root = flare;
+		  root.x0 = height / 2;
+		  root.y0 = 0;
+		
+		  function collapse(d) {
+		    if (d.children) {
+		      d._children = d.children;
+		      d._children.forEach(collapse);
+		      d.children = null;
+		    }
+		  }
+		
+		  root.children.forEach(collapse);
+		  update(root);
+		});
+		
+		d3.select(self.frameElement).style("height", "800px");
+		
+		function update(source) {
+		
+		  // Compute the new tree layout.
+		  var nodes = tree.nodes(root).reverse(),
+		      links = tree.links(nodes);
+		
+		  // Normalize for fixed-depth.
+		  nodes.forEach(function(d) { d.y = d.depth * 180; });
+		
+		  // Update the nodes…
+		  var node = svg.selectAll("g.node")
+		      .data(nodes, function(d) { return d.id || (d.id = ++i); });
+		
+		  // Enter any new nodes at the parent's previous position.
+		  var nodeEnter = node.enter().append("g")
+		      .attr("class", "node")
+		      .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+		      .on("click", click)
+		      .on("mouseover", mouseover)
+		      .on("mouseout", mouseout);
+		
+		  nodeEnter.append("circle")
+		      .attr("r", 1e-6)
+		      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+		
+		  nodeEnter.append("text")
+		      .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
+		      .attr("dy", ".35em")
+		      .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+		      .text(function(d) { return d.name; })
+		      .style("fill-opacity", 1e-6);
+		
+		  // Transition nodes to their new position.
+		  var nodeUpdate = node.transition()
+		      .duration(duration)
+		      .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+		
+		  nodeUpdate.select("circle")
+		      .attr("r", 4.5)
+		      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+		
+		  nodeUpdate.select("text")
+		      .style("fill-opacity", 1);
+		
+		  // Transition exiting nodes to the parent's new position.
+		  var nodeExit = node.exit().transition()
+		      .duration(duration)
+		      .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+		      .remove();
+		
+		  nodeExit.select("circle")
+		      .attr("r", 1e-6);
+		
+		  nodeExit.select("text")
+		      .style("fill-opacity", 1e-6);
+		
+		  // Update the links…
+		  var link = svg.selectAll("path.link")
+		      .data(links, function(d) { return d.target.id; });
+		
+		  // Enter any new links at the parent's previous position.
+		  link.enter().insert("path", "g")
+		      .attr("class", "link")
+		      .attr("d", function(d) {
+		        var o = {x: source.x0, y: source.y0};
+		        return diagonal({source: o, target: o});
+		      });
+		
+		  // Transition links to their new position.
+		  link.transition()
+		      .duration(duration)
+		      .attr("d", diagonal);
+		
+		  // Transition exiting nodes to the parent's new position.
+		  link.exit().transition()
+		      .duration(duration)
+		      .attr("d", function(d) {
+		        var o = {x: source.x, y: source.y};
+		        return diagonal({source: o, target: o});
+		      })
+		      .remove();
+		
+		  // Stash the old positions for transition.
+		  nodes.forEach(function(d) {
+		    d.x0 = d.x;
+		    d.y0 = d.y;
+		  });
+		}
+		
+		// Toggle children on click.
+		function click(d) {
+		  if (d.children) {
+		    d._children = d.children;
+		    d.children = null;
+		  } else {
+		    d.children = d._children;
+		    d._children = null;
+		  }
+		  update(d);
+		}
+		
+		function mouseover(d) {
+		    d3.select(this).append("text")
+		        .attr("class", "hover")
+		        .attr('transform', function(d){ 
+		            return 'translate(5, -10)';
+		        })
+		        .text(d.info);
+		}
+		
+		// Toggle children on click.
+		function mouseout(d) {
+		    d3.select(this).select("text.hover").remove();
+		}
+
+		///////////////////////////////Rects Char//////////////////////////////////////////
+		/*
+		var margin = {top: 20, right: 0, bottom: 0, left: 0},
+		    width = 750,
+		    height = 583 - margin.top - margin.bottom,
+		    formatNumber = d3.format(",d"),
+		    transitioning;
+		
+		var x = d3.scale.linear()
+		    .domain([0, width])
+		    .range([0, width]);
+		
+		var y = d3.scale.linear()
+		    .domain([0, height])
+		    .range([0, height]);
+		
+		var treemap = d3.layout.treemap()
+		    .children(function(d, depth) { return depth ? null : d._children; })
+		    .sort(function(a, b) { return a.value - b.value; })
+		    .ratio(height / width * 0.5 * (1 + Math.sqrt(5)))
+		    .round(false);
+		
+		var svg = d3.select("#chart").append("svg")
+		    .attr("width", width + margin.left + margin.right)
+		    .attr("height", height + margin.bottom + margin.top)
+		    .style("margin-left", -margin.left + "px")
+		    .style("margin.right", -margin.right + "px")
+		  .append("g")
+		    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+		    .style("shape-rendering", "crispEdges");
+		
+		var grandparent = svg.append("g")
+		    .attr("class", "grandparent");
+		
+		grandparent.append("rect")
+		    .attr("y", -margin.top)
+		    .attr("width", width)
+		    .attr("height", margin.top);
+		
+		grandparent.append("text")
+		    .attr("x", 6)
+		    .attr("y", 6 - margin.top)
+		    .attr("dy", ".75em");
+		
+		d3.json("flare.json", function(root) {
+		  initialize(root);
+		  accumulate(root);
+		  layout(root);
+		  display(root);
+		
+		  function initialize(root) {
+		    root.x = root.y = 0;
+		    root.dx = width;
+		    root.dy = height;
+		    root.depth = 0;
+		  }
+		
+		  // Aggregate the values for internal nodes. This is normally done by the
+		  // treemap layout, but not here because of our custom implementation.
+		  // We also take a snapshot of the original children (_children) to avoid
+		  // the children being overwritten when when layout is computed.
+		  function accumulate(d) {
+		    return (d._children = d.children)
+		        ? d.value = d.children.reduce(function(p, v) { return p + accumulate(v); }, 0)
+		        : d.value;
+		  }
+		
+		  // Compute the treemap layout recursively such that each group of siblings
+		  // uses the same size (1×1) rather than the dimensions of the parent cell.
+		  // This optimizes the layout for the current zoom state. Note that a wrapper
+		  // object is created for the parent node for each group of siblings so that
+		  // the parent’s dimensions are not discarded as we recurse. Since each group
+		  // of sibling was laid out in 1×1, we must rescale to fit using absolute
+		  // coordinates. This lets us use a viewport to zoom.
+		  function layout(d) {
+		    if (d._children) {
+		      treemap.nodes({_children: d._children});
+		      d._children.forEach(function(c) {
+		        c.x = d.x + c.x * d.dx;
+		        c.y = d.y + c.y * d.dy;
+		        c.dx *= d.dx;
+		        c.dy *= d.dy;
+		        c.parent = d;
+		        layout(c);
+		      });
+		    }
+		  }
+		
+		  function display(d) {
+		    grandparent
+		        .datum(d.parent)
+		        .on("click", transition)
+		      .select("text")
+		        .text(name(d));
+		
+		    var g1 = svg.insert("g", ".grandparent")
+		        .datum(d)
+		        .attr("class", "depth");
+		
+		    var g = g1.selectAll("g")
+		        .data(d._children)
+		
+		      .enter().append("g");
+		
+		    g.filter(function(d) { return d._children; })
+		        .classed("children", true)
+		        .on("click", transition);
+		
+		    g.selectAll(".child")
+		        .data(function(d) { return d._children || [d]; })
+		      .enter().append("rect")
+		        .attr("class", "child")
+		        .call(rect);
+		
+		    g.append("rect")
+		        .attr("class", "parent")
+		        .call(rect)
+		      .append("title")
+		        .text(function(d) { return "$" + formatNumber(d.value)+ " mdp | "; })
+		      .append("text")
+		        .text(function(d) { return " " + d.name; });
+		        
+		        //Tratar que hos hijos también muestren el hover
+		
+		    g.append("text")
+		        .attr("dy", ".75em")
+		        .text(function(d) { return d.name; })
+		        .call(text);
+		        
+		    g.append("text")
+		        .attr("dy", "2em")
+		        .text(function(d) { return "$" + formatNumber(d.value) + " mdp"; })
+		        .call(text);
+		
+		    function transition(d) {
+		      if (transitioning || !d) return;
+		      transitioning = true;
+		
+		      var g2 = display(d),
+		          t1 = g1.transition().duration(750),
+		          t2 = g2.transition().duration(750);
+		
+		      // Update the domain only after entering new elements.
+		      x.domain([d.x, d.x + d.dx]);
+		      y.domain([d.y, d.y + d.dy]);
+		
+		      // Enable anti-aliasing during the transition.
+		      svg.style("shape-rendering", null);
+		
+		      // Draw child nodes on top of parent nodes.
+		      svg.selectAll(".depth").sort(function(a, b) { return a.depth - b.depth; });
+		
+		      // Fade-in entering text.
+		      g2.selectAll("text").style("fill-opacity", 0);
+		
+		      // Transition to the new view.
+		      t1.selectAll("text").call(text).style("fill-opacity", 0);
+		      t2.selectAll("text").call(text).style("fill-opacity", 1);
+		      t1.selectAll("rect").call(rect);
+		      t2.selectAll("rect").call(rect);
+		
+		      // Remove the old node when the transition is finished.
+		      t1.remove().each("end", function() {
+		        svg.style("shape-rendering", "crispEdges");
+		        transitioning = false;
+		      });
+		    }
+		
+		    return g;
+		  }
+		
+		  function text(text) {
+		    text.attr("x", function(d) { return x(d.x) + 6; })
+		        .attr("y", function(d) { return y(d.y) + 6; });
+		  }
+		
+		  function rect(rect) {
+		    rect.attr("x", function(d) { return x(d.x); })
+		        .attr("y", function(d) { return y(d.y); })
+		        .attr("width", function(d) { return x(d.x + d.dx) - x(d.x); })
+		        .attr("height", function(d) { return y(d.y + d.dy) - y(d.y); });
+		  }
+		
+		  function name(d) {
+		    return d.parent
+		        ? name(d.parent) + " -> " + d.name
+		        : d.name;
+		  }
+		});
+		*/			
+
+	</script>  
+  </body>	
+</html>
