@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Cambio Climatico</title>
+	<title>Cambio Climatico</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.css" rel="stylesheet">
 
 	<!-- Font Awesome -->
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 
-	<!-- Responsive Tabs Style -->
-    <link type="text/css" rel="stylesheet" href="css/responsive-tabs.css" />
-    <link type="text/css" rel="stylesheet" href="css/tabs_style.css" />
-    <link href="css/c3.css" rel="stylesheet" type="text/css">    
-	<link href="css/opiscatter.css" rel="stylesheet" type="text/css">
+	<!--Tabs Style -->
+	<link type="text/css" rel="stylesheet" href="css/tabs_style.css" />
 
-    <!-- Custom styles for this template -->
-    <link href="css/main_style.css" rel="stylesheet">
+	<link href="css/c3.css" rel="stylesheet" type="text/css">    
+	<link href="css/scatterbar.css" rel="stylesheet" type="text/css">
 
-    <!-- Leaflet -->
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+	<!-- Custom styles for this template -->
+	<link href="css/main_style.css" rel="stylesheet">
 
 	<!-- Dendogram Style -->
 	<style>
@@ -111,119 +108,127 @@
 		}
 	
 	</style>
-	
-    
-  </head>
 
-  <body>
 
-   <div class="container-clima">
+</head>
+
+<body>	
+	<div class="container-clima">
 		<div class="row">
-			<div id="responsiveTabsContainer">
-	
-			    <ul>
-			        <li class="title-tab"><p class="text-size-14"> Cambio Climático </p></li>
-			        <li class="normal-tab" id="tab1"><a href="#tab-2"><strong>¿Qué es? </strong></a></li>
-			        <li class="normal-tab" id="tab2"><a href="#tab-3"><strong>¿Por qué pasa?</strong> </a></li>
-			        <li class="normal-tab" id="tab3"><a href="#tab-4"><strong>¿Cómo me afecta?</strong> </a></li>
-			        <li class="normal-tab" id="tab4"><a href="#tab-5"><strong> Acciones</strong> </a></li>                
-			    </ul>
-			
-			    <div id="tab-2">
-						    
+			<div class="principal-navbar">
+				<div class="climatic-title">
+					<p class="climatic-changetext">Cambio Climático</p>
 				</div>
-				
-							    
-			    <div id="tab-3"> 
-									
-				</div>
-			    
-			    <div id="tab-4">			
-				</div>
-
-			    <div id="tab-5" style="padding:0px;"> 			    
-
-					<div class="biggreen-container">
-						<p class="white-text">La acción global frente al cambio climático es ineludible e impostergable. De acuerdo con la comunidad científica internacional, es necesario que todos los países reduzcan, de manera conjunta y decidida, las emisiones de gases y compuestos de efecto invernadero para evitar que los efectos se agraven. Para México, este desafío conlleva problemas sociales, económicos y ambientales que ya afectan a su población, infraestructura, sistemas productivos y ecosistemas.
-						<br><br>
-						A continuación se muestra el plan de crecimiento sostenible de México para los próximos años y otros datos para entender como está reaccionando el país para adaptar y mitigar el Cambio Climático.</p>		
+				<div class="tab1-nav pull-right" style="padding-right: 30px">
+					<div class="top-tabs">
+						<a href="index.html"><p>¿Qué es?</p></a>
 					</div>	
-					<div>
-						<p class="black-text" style="padding: 20px;">A partir de la publicación de la Ley General de Cambio Climático en el 2012, la Administración del Presidente Peña Nieto ha colocado las acciones de mitigación y adaptación al Cambio Climático en el centro de la agenda nacional desarrollando una Estrategia Nacional de Cambio Climático y recientemente la entrega de los compromisos 2020 - 2030.</p>
+					<div class="top-tabs">
+						<a href="tab2.html"><p>¿Por qué pasa?</p></a>
 					</div>
+					<div class="top-tabs">
+						<a href="tab3.html">¿Cómo me afecta?</a>
+					</div>			
+					<div class="top-tabs">
+						<a href="tab4.html"><p class="nav-tab-active">Acciones</p></a>						
+					</div>															
+				</div>			
+			</div>	
+			<div id="responsiveTabsContainer">				
+				
+			    <div id="tab-5"> 			    
+
+					<div class="">
+
+						<p class="huge-title">Acciones</p>						    						
+
+						<p class="black-text">La acción global frente al cambio climático es ineludible e impostergable. De acuerdo con la comunidad científica internacional, es necesario que todos los países reduzcan, de manera conjunta y decidida, las emisiones de gases y compuestos de efecto invernadero para evitar que los efectos se agraven. Para México, este desafío conlleva problemas sociales, económicos y ambientales que ya afectan a su población, infraestructura, sistemas productivos y ecosistemas.
+						<br><br>
+						A continuación se muestra el plan de crecimiento sostenible de México para los próximos años y otros datos para entender como está reaccionando el país para adaptar y mitigar el Cambio Climático.
+						<br><br>
+						A partir de la publicación de la Ley General de Cambio Climático en el 2012, la Administración del Presidente Peña Nieto ha colocado las acciones de mitigación y adaptación al Cambio Climático en el centro de la agenda nacional desarrollando una Estrategia Nacional de Cambio Climático y recientemente la entrega de los compromisos 2020 - 2030.
+						</p>
+					</div>	
 					<img style="width: 100%;" src="img/timeline.png">
 					<br>
-					<p class="black-text" style="padding: 20px;">Como componente central de esta Estrategia, se está implementando el Programa Especial de Cambio Climático que cuenta con 5 objetivos, 32 estrategias y 230 lineas de acción y esta siendo implementada por 32 dependencias de la Administración Pública Federal.</p>
+					<p class="subtitle" style="padding-top: 40px; padding-bottom: 10px;">
+						Programa especial de cambio climático. 
+					</p>    												
+					<p class="black-text">Como componente central de esta Estrategia, se está implementando el Programa Especial de Cambio Climático que cuenta con 5 objetivos, 32 estrategias y 230 lineas de acción y esta siendo implementada por 32 dependencias de la Administración Pública Federal.</p>
 					<!--img style=" display: block; margin-left: auto; margin-right: auto;" src="img/grafica_lineas.png"-->
 					<div id="dendogram">
 					</div>						
 					<br>
-					<p class="black-text" style="padding: 20px;">Durante el ejercicio fiscal, el Presupuesto de Egresos de la Federación contemplo más de 40 mil millones de pesos en recursos para la adaptación y mitigación de los efectos del cambio climático. Estos recursos fueron asignados a 13 Ramos dentro del PEF 2015.</p>
+					<p class="subtitle" style="padding-top: 40px; padding-bottom: 10px;">
+						Egresos
+					</p>    																	
+					<p class="black-text">Durante el ejercicio fiscal, el Presupuesto de Egresos de la Federación contemplo más de 40 mil millones de pesos en recursos para la adaptación y mitigación de los efectos del cambio climático. Estos recursos fueron asignados a 13 Ramos dentro del PEF 2015.</p>
 					<p class="number-quantity"><strong>$40,663 mdp</strong></p>	
 					<br>
-					<p class="indications">Da click en cada sector para ver la distribución de los recursos y da click en la barra naranja para regresar.</p>
+					<p class="black-text">Da click en cada sector para ver la distribución de los recursos y da click en la barra naranja para regresar.</p>
 					<img style="width: 100%; padding: 25px;"src="img/grafica_gris.png">
-					<div class="row">
-						<div style="padding:20px;">
-						    <div class="data-table-container">
-							    <h4 class="aqua-text"><strong>Datos</strong></h4>
-							    <table class="bottom-table">
-								    <tr>
-									    <td style="width: 40%; padding-left:20px"><p class="text-size-12"><strong>Nombre</strong></p></td>
-									    <td style="width: 15%"><p class="text-size-12"><strong>Dependencia</strong></p></td>
-									    <td style="width: 15%"><p class="text-size-12"><strong>Fecha</strong></p></td>
-									    <td style="width: 15%"><p class="text-size-12"><strong>Formato</strong></p></td>
-									    <td style="width: 15%"><strong></strong></td>
-								    </tr>
-									<tr class="name-info">
-									    <td style="padding-left:20px;">
-										    <p style="font-size: 10px; padding-right: 16px;"><strong>Rezago habitacional por condiciones de espacio, materiales e instalaciones de la vivienda</strong></p>
-										</td>    
-									    <td>
-										    SEDATU
-										</td>    
-										<td>
-										    N/A 
-										</td>  
-									    <td>
-											<span class="format-text">CSV</span>
-										</td>  
-									    <td class="download-col">
-											<div class="center-block" style="border-radius:50%; background-color:#979494; width: 42px;">
-												<h1 style="font-size: 20px; padding: 10px;" class="text-center"><i class="fa fa-download"></i><h1>
-											</div>
-										</td>
-									</tr>
-								    <tr>
-									    <td style="width: 40%; padding-left:20px; padding-right: 5px;">
-										    <br>
-										    <p class="text-size-12"><strong>Descripción</strong></p>
-										    <p style="font-size: 11px; padding-right: 24px; text-align: justify;">Una vivienda se encuentra en rezago habitacional cuando no cumple con las condiciones mínimas de espacio, materiales e instalaciones necesarias para garantizar el pleno desarrollo de sus habitantes y el numero de cuartos es mayor a 2.5. Una vivienda está en rezago habitacional por materiales cuando el piso es de tierra los muros son de material de desecho, la lámina de cartón, de lámina de asbesto o metálica, de carrizo, bambú o palma, de embarro o bajareque, o de madera o tejamanil. Una vivienda está en rezago habitacional por instalaciones de cocina cuando el principal combustible utilizado para cocinar es leña o carbón y no se cuenta con chimenea. Una vivienda está en rezago habitacional por instalaciones sanitarias cuando no cuenta con excusado, retrete, sanitario, letrina u hoyo negro, de uso excesivo (no se compare con otra vivienda) al que se le pueda echar agua mediante descarga directa o con cubetas</p>
-										</td>
-									    <td style="width: 15%">
-										    <p class="text-size-12">
-											    <strong>Desagregación</strong>
-											</p>
-											<p class="text-size-12">
-												Nacional;Estatal
-											</p>
-										</td>
-									    <td style="width: 15%">
-										    <p class="text-size-12"><strong>Desagregación<br> Temporal</strong></p>
-										    <p class="text-size-12">Anual</p>									    
-									    </td>
-									    <td style="width: 15%">
-										    <p class="text-size-12"><strong>Años</strong></p>
-										    <p class="text-size-12">2014.0</p>									    
-										    <p class="aqua-text text-size-12">MÁS INFORMACIÓN</p>
-										</td>
-									    <td style="width: 15%"></td>
-								    </tr>
-							    </table>
-						    </div>
-						</div>    
-				    </div>
 
+					<div class="">
+						<p class="subtitle" style="padding-top: 30px; padding-bottom: 20px;">
+							Datos
+						</p>						    						
+					    <div class="data-table-container">
+						    <!--h4 class="aqua-text"><strong>Datos</strong></h4-->
+						    <table class="bottom-table">
+							    <tr>
+								    <td style="width: 40%; padding-left:20px"><p class="text-size-12"><strong>Nombre</strong></p></td>
+								    <td style="width: 15%"><p class="text-size-12"><strong>Dependencia</strong></p></td>
+								    <td style="width: 15%"><p class="text-size-12"><strong>Fecha</strong></p></td>
+								    <td style="width: 15%"><p class="text-size-12"><strong>Formato</strong></p></td>
+								    <td style="width: 15%"><strong></strong></td>
+							    </tr>
+								<tr class="name-info">
+								    <td style="padding-left:20px">
+									    <p style="font-size: 10px; padding-right: 16px;"><strong>Rezago habitacional por condiciones de espacio, materiales e instalaciones de la vivienda</strong></p>
+									</td>    
+								    <td>
+									    SEDATU
+									</td>    
+									<td>
+									    N/A 
+									</td>  
+								    <td>
+										<span class="format-text">CSV</span>
+									</td>  
+								    <td class="download-col">
+									    <div class="center-block" style="border-radius:50%; background-color:#979494; width: 42px;">
+											<h1 style="font-size: 20px; padding: 10px;" class="text-center"><i class="fa fa-download"></i><h1>
+										</div>
+									</td>
+								</tr>
+							    <tr>
+								    <td style="width: 40%; padding-left:20px; padding-right: 5px;">
+									    <br>
+									    <p class="text-size-12"><strong>Descripción</strong></p>
+									    <p style="font-size: 11px; padding-right: 24px; text-align: justify;">Una vivienda se encuentra en rezago habitacional cuando no cumple con las condiciones mínimas de espacio, materiales e instalaciones necesarias para garantizar el pleno desarrollo de sus habitantes y el numero de cuartos es mayor a 2.5. Una vivienda está en rezago habitacional por materiales cuando el piso es de tierra los muros son de material de desecho, la lámina de cartón, de lámina de asbesto o metálica, de carrizo, bambú o palma, de embarro o bajareque, o de madera o tejamanil. Una vivienda está en rezago habitacional por instalaciones de cocina cuando el principal combustible utilizado para cocinar es leña o carbón y no se cuenta con chimenea. Una vivienda está en rezago habitacional por instalaciones sanitarias cuando no cuenta con excusado, retrete, sanitario, letrina u hoyo negro, de uso excesivo (no se compare con otra vivienda) al que se le pueda echar agua mediante descarga directa o con cubetas</p>
+									</td>
+								    <td style="width: 15%">
+									    <p class="text-size-12">
+										    <strong>Desagregación</strong>
+										</p>
+										<p class="text-size-12">
+											Nacional;Estatal
+										</p>
+									</td>
+								    <td style="width: 15%">
+									    <p class="text-size-12"><strong>Desagregación<br> Temporal</strong></p>
+									    <p class="text-size-12">Anual</p>									    
+								    </td>
+								    <td style="width: 15%">
+									    <p class="text-size-12"><strong>Años</strong></p>
+									    <p class="text-size-12">2014.0</p>									    
+									    <p class="aqua-text text-size-12">MÁS INFORMACIÓN</p>
+									</td>
+								    <td style="width: 15%"></td>
+							    </tr>
+						    </table>
+					    </div>
+				    </div>
 				</div>	
 				
 			</div>
@@ -237,24 +242,12 @@
     <script src="js/jquery-1.11.0.min.js"></script>    
     <script src="js/bootstrap.js"></script>
 
-	<!-- Responsive Tabs JS -->
-	<script src="js/jquery.responsiveTabs.js" type="text/javascript"></script>
-
 	<!-- D3/C3 -->
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>    
     <script src="js/c3.js"></script>
 	<script type="text/javascript" src="js/scatter001.js"></script>
 
-	<!-- Leaflet -->
-	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-
-	
 	<script type="text/javascript">
-
-
-		$('#responsiveTabsContainer').responsiveTabs({
-		    active: 4
-		});
 		
 		var main_url= "http://trebolbit.mx/cambio_climatico/"
 		
@@ -274,7 +267,7 @@
 		///////////////////Dendogram////////////////////////////////
 		
 		var margin = {top: 20, right: 120, bottom: 20, left: 40},
-		    width = 760 - margin.right - margin.left,
+		    width = 750 - margin.right - margin.left,
 		    height = 800 - margin.top - margin.bottom;
 		
 		var i = 0,

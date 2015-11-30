@@ -1,0 +1,76 @@
+@import "c3-master/c3.css";
+
+.c3-xgrid-focus {
+    display: none;
+}
+
+#chart {
+    margin: 0px 100px 0 30px;
+}
+
+.d3-tip {
+    line-height: 1;
+    font-weight: bold;
+    padding: 5px 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 4px;
+    line-height: 15px;
+    font-size: 12px;
+    min-width: 91px;
+}
+
+.d3-tip .info {
+    font-size: 11px;
+    color: #8897b4
+    display: block;
+}
+
+.d3-tip:after {
+	top: -100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: relative;
+	pointer-events: none;
+	border-color: rgba(0, 0, 0, 0);
+	border-top-color: rgba(0, 0, 0, 0.8);
+	border-width: 8px;
+	margin-left: -8px;
+}
+
+.c3-legend-item-event, .c3-legend-item{
+	/*display: none;*/
+}
+.c3-zoom-rect{
+	background-color: white;
+}
+.c3-axis-y, .c3-axis-x{
+	background-color: gray;
+    font-size: 14px;
+}
+#chart1{
+	background-color: white;
+}
+/* 
+$base-color: #741114;
+
+body {font-family: 'Raleway', sans-serif;}
+.button {
+  padding:10px;
+  background-color:$base-color;
+  color:black;
+  max-width:140px;
+  transition: background-color 200ms linear;
+   &:hover {
+    background-color:lighten( $base-color, 10% );
+    cursor:pointer;
+  }
+  float:left;
+  margin-right:10px;
+  margin-left:10px;
+} //default graphic styles provided by default c3 css
+.center {text-align:center;}
+*/

@@ -1,59 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Cambio Climatico</title>
+	<title>Cambio Climatico</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.css" rel="stylesheet">
 
 	<!-- Font Awesome -->
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 
-	<!-- Responsive Tabs Style -->
-    <link type="text/css" rel="stylesheet" href="css/responsive-tabs.css" />
-    <link type="text/css" rel="stylesheet" href="css/tabs_style.css" />
-    <link href="css/c3.css" rel="stylesheet" type="text/css">    
-	<link href="css/opiscatter.css" rel="stylesheet" type="text/css">
-
-    <!-- Custom styles for this template -->
-    <link href="css/main_style.css" rel="stylesheet">
-
-    <!-- Leaflet -->
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
-    
-  </head>
-
-  <body>
-
-   <div class="container-clima">
-		<div class="row">
-			<div id="responsiveTabsContainer">
+	<!-- Tabs Style -->
+	<link type="text/css" rel="stylesheet" href="css/tabs_style.css" />
 	
-			    <ul>
-			        <li class="title-tab"><p class="text-size-14"> Cambio Climático </p></li>
-			        <li class="normal-tab" id="tab1"><a href="#tab-2"><strong>¿Qué es? </strong></a></li>
-			        <li class="normal-tab" id="tab2"><a href="#tab-3"><strong>¿Por qué pasa?</strong> </a></li>
-			        <li class="normal-tab" id="tab3"><a href="#tab-4"><strong>¿Cómo me afecta?</strong> </a></li>
-			        <li class="normal-tab" id="tab4"><a href="#tab-5"><strong> Acciones</strong> </a></li>                
-			    </ul>
-			
-			    <div id="tab-2">
+	<link href="css/c3.css" rel="stylesheet" type="text/css">    
+
+	<!-- Custom styles for this template -->
+	<link href="css/main_style.css" rel="stylesheet">
+
+	<!-- Leaflet -->
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+
+</head>
+
+<body>	
+	<div class="container-clima">
+		<div class="row">
+			<div class="principal-navbar">
+				<div class="climatic-title">
+					<p class="climatic-changetext">Cambio Climático</p>
+				</div>
+				<div class="tab1-nav pull-right" style="padding-right: 30px">
+					<div class="top-tabs">
+						<a href="index.html">¿Qué es?</a>
+					</div>	
+					<div class="top-tabs">
+						<a href="tab2.html"><p>¿Por qué pasa?</p></a>
+					</div>
+					<div class="top-tabs">
+						<a href="tab3.html"><p class="nav-tab-active">¿Cómo me afecta?</p></a>
+					</div>			
+					<div class="top-tabs">
+						<a href="tab4.html">Acciones</a>
+					</div>															
+				</div>			
+			</div>	
+			<div id="responsiveTabsContainer">
 						    
-				</div>
-				
-							    
-			    <div id="tab-3"> 
-									
-				</div>
-			    
 			    <div id="tab-4">
+					<p class="huge-title">¿Cómo me afecta?</p>				    
 				    <p class="black-text">
 					El cambio climático nos afecta a todos ya que su impacto potencial es enorme. Algunas predicciones son: la falta de agua potable, cambios en las condiciones de producción de alimentos. Además, un aumento en los índices de moralidad debido a inundaciones, tormentas, sequías y olas de calor. El cambio climático no es únicamente un fenómeno ambiental, sino también de profundas consecuencias económicas y sociales. Los países más pobres que no están preparados para enfrentar cambios rápidos, serán los que sufrirán las peores consecuencias.
 				    </p> 
+
+					<p class="subtitle" style="padding-top: 30px; padding-bottom: 20px;">
+						Consecuencias del cambio climático
+					</p>    
+				    
 					<div class="row">
 						
 						<div class="col-xs-4">
@@ -66,11 +72,12 @@
 							<div id="" class="side-box"><div class="box-image"><div class="images-margin-side"><img class="img-responsive" src="img/flame.png"></div></div><div class="box-text"><p class=" text-size-14"><span style="font-size:22px"></span> Incremento de sequías en zonas rurales</p></div></div>							
 						</div>													
 
-
 					</div>
-					<p style="font-size: 15px;">
-						Explora
+					
+					<p class="subtitle" style="padding-top: 30px; padding-bottom: 20px;">
+						Impactos Ambientales					
 					</p>
+					
 					<p class="black-text">
 						Los impactos ambientales se definen como la “modificación del ambiente ocasionada por la acción del hombre o de la naturaleza”. A continuación se muestran diversos impactos ambientales comunmente relacionados con el cambio climático. Aunque no necesariamente dependen de las actividades mostradas en la sección anterior.
 					</p>
@@ -112,9 +119,11 @@
 						</div>																									
 					</div>
 					
-					<div class="row">
+					<div class="">
+						<p class="subtitle" style="padding-top: 30px; padding-bottom: 20px;">
+							Datos
+						</p>    						
 					    <div class="data-table-container">
-						    <h4 class="aqua-text"><strong>Datos</strong></h4>
 						    <table class="bottom-table">
 							    <tr>
 								    <td style="width: 40%; padding-left:20px"><p class="text-size-12"><strong>Nombre</strong></p></td>
@@ -172,9 +181,6 @@
 				    </div>
 			
 				</div>
-
-			    <div id="tab-5" style="padding:0px;"> 			    
-				</div>	
 				
 			</div>
 		</div>	
@@ -188,21 +194,13 @@
     <script src="js/jquery-1.11.0.min.js"></script>    
     <script src="js/bootstrap.js"></script>
 
-	<!-- Responsive Tabs JS -->
-	<script src="js/jquery.responsiveTabs.js" type="text/javascript"></script>
-
 	<script type="text/javascript" src="js/scatter001.js"></script>
 
 	<!-- Leaflet -->
 	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 	
 	<script type="text/javascript">
-
-
-		$('#responsiveTabsContainer').responsiveTabs({
-		    active: 3
-		});
-		
+				
 		var main_url= "http://trebolbit.mx/cambio_climatico/"
 		
 		$('#tab1').click(function(){

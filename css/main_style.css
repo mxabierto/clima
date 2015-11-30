@@ -9,9 +9,14 @@
 
 
 body {
-  background-color: #EEEEEE;
+  background-color: #F6F6F6;
   color: #555;
   
+}
+
+#responsiveTabsContainer{
+	min-width: 750px;
+	padding: 30px;
 }
 
 h1, .h1,
@@ -91,8 +96,10 @@ h6, .h6,
 
 .black-text{
 	color: black;
-	font-size: 14px;
+	font-size: 16px;
 	text-align: justify;
+	font-weight: lighter;
+	line-height: 23px;
 
 }
 
@@ -103,7 +110,6 @@ h6, .h6,
 }
 
 .side-box{
-	width: 100%;
 	height: 120px;
 	background-color: #24C192;
 	color: white;
@@ -184,6 +190,7 @@ h6, .h6,
 
 .map-year{
 	font-size: 22px;
+	cursor: pointer;
 }
 
 .title-tab{
@@ -210,13 +217,22 @@ h6, .h6,
 	width: 711px;
 }
 
+.select-text{
+	font-size: 12px; 
+	float:left; 
+	font-weight: lighter; 
+	padding-top:7px; 
+	color:#B4B4B4;
+}
+
 .indicator_select{
-	float: left;
-    height: 23px;
-    width: 190px;
+	border-radius: 0;
+    float: left;
+    height: 30px;
+    width: 220px;
     border: none;
-    background-color: lightgrey;
-    color: black;
+    background-color: white;
+    color: grey;
     margin-left: 10px;
 }
 
@@ -234,9 +250,9 @@ h6, .h6,
 }
 
 .number-quantity{
-	text-align: center;
+	text-align: left;
     font-size: 27px;
-    color: black;
+    color: #05CC98;
 }
 
 .indications{
@@ -283,3 +299,72 @@ h6, .h6,
 	margin-right: 8px;
 	opacity: 0.7;
 }
+
+
+
+/*NAV BAR NEW*/
+
+
+
+.principal-navbar{
+	background-color: #0FCC98;
+	width: 100%;
+    height: 45px;
+}
+
+.climatic-title{
+	height: 60px;
+    width: 121px;
+    margin-left: 31px;
+    padding-top: 16px;
+    display: inline-block;
+}
+
+.climatic-changetext{
+	font-size: 15px;
+    color: white;
+}
+
+.tab1-nav{
+	display: inline-block;
+}
+.nav-tab-active{
+	color: white;
+}
+.top-tabs{
+	color: gray;
+	margin-top: 19px;
+	padding-left: 12px;
+	padding-right: 5px;
+	display:inline-block;
+	font-size: 12px;
+	text-decoration: none;
+	font-weight:600;			
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:link{
+	color: grey;
+}
+
+a:visited{
+	color: grey;
+}
+
+.huge-title{
+	color: #4A4A4A;
+	font-weight: bold;
+    font-size: 27px;
+    padding-bottom: 30px;
+}
+
+.subtitle{
+	font-size: 16px;
+    font-weight: bold;
+    color: #4A4A4A;
+}
+
+
