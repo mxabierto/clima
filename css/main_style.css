@@ -110,7 +110,7 @@ h6, .h6,
 }
 
 .side-box{
-	height: 120px;
+	height: 100px;
 	background-color: #24C192;
 	color: white;
 	border-style: solid;
@@ -119,6 +119,7 @@ h6, .h6,
 	margin-top: 5px;
 	margin-bottom: 15px;
 	overflow: scroll;	
+	display: inline-block;	
 }
 
 .indicator-box-red{
@@ -132,6 +133,7 @@ h6, .h6,
 	min-height: 120px;
 	padding: 8px;	
 }
+
 .indicator-box-green{
 	width: 146px;
 	height: 146px;
@@ -145,26 +147,50 @@ h6, .h6,
 }
 
 .box-image{
-	width: 38%;
+	width: 25%;
 	float: left;
+	padding: 5px;
+	vertical-align: middle;
+	max-width: 63px;		
 }
 
 .box-text{
-	width: 53%;
+	width: 75%;
+	padding-left:10px;
 	float: left;
-	font-family: OpenSans;
-	text-align: right;
+	display: inline-block;
+	vertical-align: middle;	
+	font-size: 13px;
+	height: 100%;
+	/* Vertical align */
+	/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+	
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+	
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	
+	/* W3C */
+	display:box;
+	box-pack:center;
+	box-align:center;	
 }
 
 .hightext::first-letter{
 	font-size: 200%;
-	font-family:OpenSans;
 	text-align: right;
 }
 
 .data-table-container{
- background-color: white;
- margin: 10px;
+ max-width: 750px;
  }
  .download-col{
  padding-top: 10px;
@@ -366,5 +392,162 @@ a:visited{
     font-weight: bold;
     color: #4A4A4A;
 }
+
+.titles-databar{
+	width: 100%;
+    height: 26px;
+}
+
+.data-bar{
+	background-color: #DDDDDD;
+	width: 100%;
+    height: 68px;
+}
+
+.triangle-image{
+	width: 10px;
+    float: left;
+    margin-top: 2px;
+}
+
+.description-databar{
+	width: 36%;
+    font-size: 8px;
+    padding: 16px;
+    float: left;
+}
+
+.name-databar{
+	width: 13%;
+    font-size: 10px;
+    margin-left: 44px;
+    font-weight: bold;
+    float: left;
+}
+
+.dependence-databar{
+	width: 13%;
+    font-size: 10px;
+    margin-left: 134px;
+    font-weight: bold;
+    float: left;
+}
+
+.date-databar{
+	width: 13%;
+    font-size: 10px;
+    margin-left: 66px;
+    font-weight: bold;
+    float: left;
+}
+
+.format-databar{
+	width: 13%;
+    font-size: 10px;
+    margin-left: 30px;
+    font-weight: bold;
+    float: left;
+}
+
+.secretary-databar{
+	float: left;
+    font-size: 9px;
+    padding: 16px;
+}
+
+.datetext-databar{
+	float: left;
+    font-size: 9px;
+    padding: 16px;
+    margin-left: 45px;
+}
+
+.formatcontainer-databar{
+	float: left;
+    padding: 16px;
+    margin-left: 33px;
+    /*background-color: black;*/
+    height: 30px;
+    width: 111px;
+}
+
+.csv-format{
+	float: left;
+    background-color: #FED100;
+    margin-top: 0px;
+    height: 19px;
+    width: 37px;
+}
+
+.klm-format{
+	float: left;
+    background-color: black;
+    margin-top: 0px;
+    height: 19px;
+    width: 37px;
+}
+
+.format-texts{
+	margin-top: 4px;
+    margin-left: 8px;
+    color: white;
+}
+
+.greyblock-databar{
+	background-color: #555555;
+	height: 68px;
+	width: 55px;
+}
+
+.green-bars{
+	width: 44%;
+    margin-top: 35px;
+    margin-left: 14px;
+}
+
+.black-footer{
+	min-width: 750px;
+    height: 250px;
+    background-color: black;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.lists-titles{
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.footer-lists{
+	color: white;
+	line-height: 14px;
+	padding-top: 70px;
+	float: left;
+	/*padding-left: 11px;*/
+}
+
+.footer-diflist{
+	color: white;
+	line-height: 30px;
+	padding-top: 61px;
+	float: left;
+	/*padding-left: 30px;*/
+}
+
+.lists-container{
+	max-width: 750px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 

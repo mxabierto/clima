@@ -1,9 +1,9 @@
 {  
    "item1":{  
-      "highlight":"12o",
-      "description":"País en Emisiones",
+      "highlight":"0.85°C",
+      "description":"Incremento de temperatura nacional",
       "imageUrl":"http://trebolbit.mx/cambio_climatico/img/green_towers.png",
-      "tooltipDescription":"México contribuye con sólo el 1.37% de las emisones globales de CO2 derivadas de la quema de combustibles fósiles",
+      "tooltipDescription":"Desde la década de los años sesenta, México se ha vuelto más cálido. Las temperaturas promedio a nivel nacional han aumentado 0.85°C",
       "properties":{  
         "industria":{  
             "title":"Industria, Petróleo y Gas",
@@ -19,7 +19,7 @@
             ],
             "carbono_emissions":"29.4% (195 millones de ton CO2e)"
          },
-        "fuentes":{  
+        "Fuentes":{  
             "title":"Fuentes moviles",
             "sector_values":[  
                {  
@@ -132,76 +132,8 @@
         } 
    },
    "item2":{  
-      "highlight":"22%",
-      "description":"En reducción de emisiones de gases efecto invernadero",
-      "imageUrl":"http://trebolbit.mx/cambio_climatico/img/green_towers.png",
-      "tooltipDescription":"Para el 2030, México reducirá sus emisiones de GEI en un 22% y 51% de carbono negro con relación al 2013",
-      "properties":{  
-        "industria":{  
-            "title":"Industria, Petróleo y Gas",
-            "sector_values":[  
-               {  
-                  "name":"Producción de energía limpia, mejora de eficiencia en tecnologías de generación, Reducción de pérdidas técnicas en el Sistema Eléctrico Nacional, Sustitución por combustibles más limpios y alternos, cogeneración, mejores prácticas en la industria y el Cierre de la planta de producción de HCFC_22, aportarán con el 43% de las emisiones de GEI mitigadas en el 2030. Esta aportación de mitigación podrá incrementarse con la aportación de distintos sectores privados y de las acciones implementadas en los estados y municipios.",
-                  "value":""
-               }
-            ],
-            "carbono_emissions":""
-         },
-        "fuentes":{  
-            "title":"Agropecuario y USCUSS",
-            "sector_values":[  
-               {  
-                  "name":"El uso de biodigestores, agricultura sustentable, así como la recuperación de la vocación forestal en áreas naturales protegidas, cero deforestaciones netas y plantaciones comerciales aportarán el 25% de las emisiones GEI mitigadas. Esta aportación de mitigación podrá incrementarse con la aportación de distintos sectores privados y de las acciones implementadas en los estados y municipios.",
-                  "value":""
-               }
-            ],
-            "carbono_emissions":""
-         },
-        "generacion":{  
-            "title":"Transporte",
-            "sector_values":[  
-               {  
-                  "name":"Transportarnos en vehículos con tecnología baja en emisiones, impulso de transporte público y multimodal, mejora en la calidad de los combustibles, así como estándares de eficiencia energética en autos y camiones nuevos aportarán con el 23% de las emisiones GEI mitigadas. Esta aportación de mitigación podrá incrementarse con la aportación de distintos sectores privados y de las acciones implementadas en los estados y municipios.",
-                  "value":""
-               }
-            ],
-            "carbono_emissions":""
-         },
-        "agropecuario":{  
-            "title":"Residuos, residencial y comercial",
-            "sector_values":[  
-               {  
-                  "name":"El manejo sustentable de los residuos, impulso de tecnologías bajas en consumo de energía y agua, así como usar energía amigable con el ambiente en hogares y comercios aportarán con el 9% de las emisiones de GEI mitigadas. Esta aportación de mitigación podrá incrementarse con la aportación de distintos sectores privados y de las acciones implementadas en los estados y municipios.",
-                  "value":""
-               }
-            ],
-            "carbono_emissions":"16.9% (112 millones de ton CO2e)"
-         },
-        "residuos":{  
-            "title":"Carbono negro",
-            "sector_values":[  
-               {  
-                  "name":"El 83% de la mitigación de las emisiones de carbono negro se identifican, por una parte, en la contribución del sector transporte por la sustitución con combustibles de ultra bajo contenido de azufre, así como el cambio modal en el transporte de carga doméstica con el uso de ferrocarriles; y por otra parte el control de partículas negras de hollín en las calderas bagaceras de los ingenios azucareros y la industria siderúrgica. Junto con la quema de leña, que además genera problemas respiratorios. Esto representa un aporte del 11.4%  al compromiso de reducción de emisiones de carbono negro.",
-                  "value":""
-               }
-            ],
-            "carbono_emissions":""
-         },
-        "carbono":{  
-            "title":"Carbono negro",
-            "sector_values":[  
-               {  
-                  "name":"El 83% de la mitigación de las emisiones de carbono negro se identifican, por una parte, en la contribución del sector transporte por la sustitución con combustibles de ultra bajo contenido de azufre, así como el cambio modal en el transporte de carga doméstica con el uso de ferrocarriles; y por otra parte el control de partículas negras de hollín en las calderas bagaceras de los ingenios azucareros y la industria siderúrgica. Junto con la quema de leña, que además genera problemas respiratorios. Esto representa un aporte del 11.4%  al compromiso de reducción de emisiones de carbono negro.",
-                  "value":""
-               }
-            ],
-            "carbono_emissions":""
-         }                                                    
-        } 
-   },
-   "item3":{  
-      "highlight":"$40,663",
-      "description":"Millones de pesos invertidos para adaptación y mitigación de CC.",
+      "highlight":"12°",
+      "description":"País en Emisiones",
       "imageUrl":"http://trebolbit.mx/cambio_climatico/img/green_towers.png",
       "tooltipDescription":"México contribuye con sólo el 1.37% de las emisones globales de CO2 derivadas de la quema de combustibles fósiles",
       "properties":{  
@@ -219,7 +151,7 @@
             ],
             "carbono_emissions":"29.4% (195 millones de ton CO2e)"
          },
-        "fuentes":{  
+        "Fuentes":{  
             "title":"Fuentes moviles",
             "sector_values":[  
                {  
@@ -330,5 +262,231 @@
             "carbono_emissions":"125 miles de ton"
          }                                             
         } 
-   }        
+   },
+   "item3":{  
+      "highlight":"22%",
+      "description":"En reducción de emisiones de gases efecto invernadero",
+      "imageUrl":"http://trebolbit.mx/cambio_climatico/img/green_towers.png",
+      "tooltipDescription":"Para el 2030, México reducirá sus emisiones de GEI en un 22% y 51% de carbono negro con relación al 2013",
+      "properties":{  
+        "industria":{  
+            "title":"Industria, Petróleo y Gas",
+            "sector_values":[  
+               {  
+                  "name":"Producción de energía limpia, mejora de eficiencia en tecnologías de generación, Reducción de pérdidas técnicas en el Sistema Eléctrico Nacional, Sustitución por combustibles más limpios y alternos, cogeneración, mejores prácticas en la industria y el Cierre de la planta de producción de HCFC_22, aportarán con el 43% de las emisiones de GEI mitigadas en el 2030. Esta aportación de mitigación podrá incrementarse con la aportación de distintos sectores privados y de las acciones implementadas en los estados y municipios.",
+                  "value":""
+               }
+            ],
+            "carbono_emissions":""
+         },
+        "Fuentes":{  
+            "title":"Agropecuario y USCUSS",
+            "sector_values":[  
+               {  
+                  "name":"El uso de biodigestores, agricultura sustentable, así como la recuperación de la vocación forestal en áreas naturales protegidas, cero deforestaciones netas y plantaciones comerciales aportarán el 25% de las emisiones GEI mitigadas. Esta aportación de mitigación podrá incrementarse con la aportación de distintos sectores privados y de las acciones implementadas en los estados y municipios.",
+                  "value":""
+               }
+            ],
+            "carbono_emissions":""
+         },
+        "generacion":{  
+            "title":"Transporte",
+            "sector_values":[  
+               {  
+                  "name":"Transportarnos en vehículos con tecnología baja en emisiones, impulso de transporte público y multimodal, mejora en la calidad de los combustibles, así como estándares de eficiencia energética en autos y camiones nuevos aportarán con el 23% de las emisiones GEI mitigadas. Esta aportación de mitigación podrá incrementarse con la aportación de distintos sectores privados y de las acciones implementadas en los estados y municipios.",
+                  "value":""
+               }
+            ],
+            "carbono_emissions":""
+         },
+        "agropecuario":{  
+            "title":"Residuos, residencial y comercial",
+            "sector_values":[  
+               {  
+                  "name":"El manejo sustentable de los residuos, impulso de tecnologías bajas en consumo de energía y agua, así como usar energía amigable con el ambiente en hogares y comercios aportarán con el 9% de las emisiones de GEI mitigadas. Esta aportación de mitigación podrá incrementarse con la aportación de distintos sectores privados y de las acciones implementadas en los estados y municipios.",
+                  "value":""
+               }
+            ],
+            "carbono_emissions":"16.9% (112 millones de ton CO2e)"
+         },
+        "residuos":{  
+            "title":"Carbono negro",
+            "sector_values":[  
+               {  
+                  "name":"El 83% de la mitigación de las emisiones de carbono negro se identifican, por una parte, en la contribución del sector transporte por la sustitución con combustibles de ultra bajo contenido de azufre, así como el cambio modal en el transporte de carga doméstica con el uso de ferrocarriles; y por otra parte el control de partículas negras de hollín en las calderas bagaceras de los ingenios azucareros y la industria siderúrgica. Junto con la quema de leña, que además genera problemas respiratorios. Esto representa un aporte del 11.4%  al compromiso de reducción de emisiones de carbono negro.",
+                  "value":""
+               }
+            ],
+            "carbono_emissions":""
+         }                                           
+        } 
+   },
+   "item4":{  
+      "highlight":"319",
+      "description":"Municipios más vulnerables al Cambio Climático",
+      "imageUrl":"http://trebolbit.mx/cambio_climatico/img/green_towers.png",
+      "tooltipDescription":"Estos 319 municipios son los registrados como los más vulnerables a efectos del Cambio Climático",
+      "properties":{  
+        "industria":{  
+            "title":"Municipios más vulnerables del Noroeste",
+            "sector_values":[  
+               {  
+                  "name":"Baja California",
+                  "value":"3"
+               },
+               {  
+                  "name":"Baja California Sur",
+                  "value":"3"
+               },
+               {  
+                  "name":"Nayarit",
+                  "value":"10"
+               },
+               {  
+                  "name":"Sinaloa",
+                  "value":"11"
+               },
+               {  
+                  "name":"Sonora",
+                  "value":"7"
+               }
+            ],
+            "carbono_emissions":"34 municipios"
+         },
+        "Fuentes":{  
+            "title":"Municipios más vulnerables del Norte",
+            "sector_values":[  
+               {  
+                  "name":"Chihuahua",
+                  "value":"15"
+               },
+               {  
+                  "name":"Coahuila",
+                  "value":"9"
+               },
+               {  
+                  "name":"Durango",
+                  "value":"5"
+               },
+               {  
+                  "name":"San Luis Potosí",
+                  "value":"9"
+               },
+               {  
+                  "name":"Zacatecas",
+                  "value":"10"
+               }
+            ],
+            "carbono_emissions":"48 municipios"
+         },
+        "generacion":{  
+            "title":"Municipios más vulnerables del Noreste",
+            "sector_values":[  
+               {  
+                  "name":"Nuevo León",
+                  "value":"3"
+               }
+            ],
+            "carbono_emissions":"10 municipios"
+         },
+        "agropecuario":{  
+            "title":"Municipios más vulnerables del Centro Occidente",
+            "sector_values":[  
+               {  
+                  "name":"Aguascalientes",
+                  "value":"2"
+               },
+               {  
+                  "name":"Colima",
+                  "value":"3"
+               },
+               {  
+                  "name":"Guanajuato",
+                  "value":"12"
+               },
+               {  
+                  "name":"Jalisco",
+                  "value":"13"
+               },
+               {  
+                  "name":"Michoacan",
+                  "value":"14"
+               }
+            ],
+            "carbono_emissions":"44 municipios"
+         },
+        "residuos":{  
+            "title":"Municipios más vulnerables del Centro Sur",
+            "sector_values":[  
+               {  
+                  "name":"Distrito Federal",
+                  "value":"2"
+               },
+               {  
+                  "name":"Estado de México",
+                  "value":"19"
+               },
+               {  
+                  "name":"Hidalgo",
+                  "value":"15"
+               },
+               {  
+                  "name":"Morelos",
+                  "value":"5"
+               },
+               {  
+                  "name":"Puebla",
+                  "value":"9"
+               },
+               {  
+                  "name":"Querétaro",
+                  "value":"4"
+               },
+               {  
+                  "name":"Tlaxcala",
+                  "value":"9"
+               }
+            ],
+            "carbono_emissions":"63 municipios"
+         },
+        "carbono":{  
+            "title":"Municipios más vulnerables del Pacífico Sur y Golfo de México",
+            "sector_values":[  
+               {  
+                  "name":"Chiapas",
+                  "value":"24"
+               },
+               {  
+                  "name":"Guerrero",
+                  "value":"15"
+               },
+               {  
+                  "name":"Oaxaca",
+                  "value":"19"
+               },
+               {  
+                  "name":"Tabasco",
+                  "value":"12"
+               },
+               {  
+                  "name":"Veracruz",
+                  "value":"20"
+               },
+               {  
+                  "name":"Campeche",
+                  "value":"10"
+               },
+               {  
+                  "name":"Quintana Roo",
+                  "value":"3"
+               },
+               {  
+                  "name":"Yucatán",
+                  "value":"17"
+               }
+            ],
+            "carbono_emissions":"120 municipios"
+         }                                             
+        } 
+   }      
 }
