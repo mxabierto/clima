@@ -17,10 +17,10 @@
                   "value":"17.3%"
                }
             ],
-            "carbono_emissions":"29.4% (195 millones de ton CO2e)"
+            "carbono_emissions":"29.4% (195 millones de toneladas CO2 eq.)"
          },
         "Fuentes":{  
-            "title":"Fuentes moviles",
+            "title":"Fuentes móviles",
             "sector_values":[  
                {  
                   "name":"Autotransporte",
@@ -43,7 +43,7 @@
                   "value":"1.2%"
                }
             ],
-            "carbono_emissions":"26.2% (174 millones de ton CO2e)"
+            "carbono_emissions":"26.2% (174 millones de toneladas CO2 eq.)"
          },
         "generacion":{  
             "title":"Generación Eléctrica",
@@ -73,7 +73,7 @@
                   "value":"0.70%"
                }
             ],
-            "carbono_emissions":"19% (127 millones de ton CO2e)"
+            "carbono_emissions":"19% (127 millones de toneladas CO2 eq.)"
          },
         "agropecuario":{  
             "title":"Agropecuario, uso de suelo y silvicultura",
@@ -87,7 +87,7 @@
                   "value":"5.6%"
                }
             ],
-            "carbono_emissions":"16.9% (112 millones de ton CO2e)"
+            "carbono_emissions":"16.9% (112 millones de toneladas CO2 eq.)"
          },
         "residuos":{  
             "title":"Residuos, residencial y comercial",
@@ -101,7 +101,7 @@
                   "value":"3.9%"
                }
             ],
-            "carbono_emissions":"8.5% (57 millones de ton CO2e)"
+            "carbono_emissions":"8.5% (57 millones de toneladas CO2 eq.)"
          },
         "carbono":{  
             "title":"Carbono negro",
@@ -119,7 +119,7 @@
                   "value":"15.4%"
                },
                {  
-                  "name":"Agropecuario y USCUSS",
+                  "name":"Agropecuario, Uso de Suelo y Silvicultura",
                   "value":"10%"
                },
                {  
@@ -127,7 +127,7 @@
                   "value":"6.8%"
                }
             ],
-            "carbono_emissions":"125 miles de ton"
+            "carbono_emissions":"125 miles de toneladas de CO2 eq."
          }                                             
         } 
    },
@@ -149,10 +149,10 @@
                   "value":"17.3%"
                }
             ],
-            "carbono_emissions":"29.4% (195 millones de ton CO2e)"
+            "carbono_emissions":"29.4% (195 millones de toneladas CO2 eq.)"
          },
         "Fuentes":{  
-            "title":"Fuentes moviles",
+            "title":"Fuentes móviles",
             "sector_values":[  
                {  
                   "name":"Autotransporte",
@@ -175,7 +175,7 @@
                   "value":"1.2%"
                }
             ],
-            "carbono_emissions":"26.2% (174 millones de ton CO2e)"
+            "carbono_emissions":"26.2% (174 millones de toneladas CO2 eq.)"
          },
         "generacion":{  
             "title":"Generación Eléctrica",
@@ -205,21 +205,21 @@
                   "value":"0.70%"
                }
             ],
-            "carbono_emissions":"19% (127 millones de ton CO2e)"
+            "carbono_emissions":"19% (127 millones de toneladas CO2 eq.)"
          },
         "agropecuario":{  
-            "title":"Agropecuario, uso de suelo y silvicultura",
+            "title":"Agropecuario, Uso de suelo y Silvicultura",
             "sector_values":[  
                {  
                   "name":"Agropecuario",
                   "value":"12%"
                },
                {  
-                  "name":"Uso de suelo y silvicultura",
+                  "name":"Uso de suelo y Silvicultura",
                   "value":"5.6%"
                }
             ],
-            "carbono_emissions":"16.9% (112 millones de ton CO2e)"
+            "carbono_emissions":"16.9% (112 millones de toneladas CO2 eq.)"
          },
         "residuos":{  
             "title":"Residuos, residencial y comercial",
@@ -233,7 +233,7 @@
                   "value":"3.9%"
                }
             ],
-            "carbono_emissions":"8.5% (57 millones de ton CO2e)"
+            "carbono_emissions":"8.5% (57 millones de toneladas CO2 eq.)"
          },
         "carbono":{  
             "title":"Carbono negro",
@@ -251,7 +251,7 @@
                   "value":"15.4%"
                },
                {  
-                  "name":"Agropecuario y USCUSS",
+                  "name":"Agropecuario, Uso de Suelo y Silvicultura",
                   "value":"10%"
                },
                {  
@@ -259,7 +259,7 @@
                   "value":"6.8%"
                }
             ],
-            "carbono_emissions":"125 miles de ton"
+            "carbono_emissions":"125 miles de toneladas de CO2 eq."
          }                                             
         } 
    },
@@ -273,14 +273,14 @@
             "title":"Industria, Petróleo y Gas",
             "sector_values":[  
                {  
-                  "name":"Producción de energía limpia, mejora de eficiencia en tecnologías de generación, Reducción de pérdidas técnicas en el Sistema Eléctrico Nacional, Sustitución por combustibles más limpios y alternos, cogeneración, mejores prácticas en la industria y el Cierre de la planta de producción de HCFC_22, aportarán con el 43% de las emisiones de GEI mitigadas en el 2030. Esta aportación de mitigación podrá incrementarse con la aportación de distintos sectores privados y de las acciones implementadas en los estados y municipios.",
+                  "name":"Producción de energía limpia, mejora de eficiencia en tecnologías de generación, reducción de pérdidas técnicas en el Sistema Eléctrico Nacional, sustitución por combustibles más limpios y alternos, cogeneración, mejores prácticas en la industria y el cierre de la planta de producción de HCFC_22, aportarán el 43% de las emisiones de GEI mitigadas en el 2030. Esta aportación de mitigación podrá incrementarse con la aportación de distintos sectores privados y de las acciones implementadas en los estados y municipios.",
                   "value":""
                }
             ],
             "carbono_emissions":""
          },
         "Fuentes":{  
-            "title":"Agropecuario y USCUSS",
+            "title":"Agropecuario, Uso de Suelo y Silvicultura",
             "sector_values":[  
                {  
                   "name":"El uso de biodigestores, agricultura sustentable, así como la recuperación de la vocación forestal en áreas naturales protegidas, cero deforestaciones netas y plantaciones comerciales aportarán el 25% de las emisiones GEI mitigadas. Esta aportación de mitigación podrá incrementarse con la aportación de distintos sectores privados y de las acciones implementadas en los estados y municipios.",
@@ -307,13 +307,13 @@
                   "value":""
                }
             ],
-            "carbono_emissions":"16.9% (112 millones de ton CO2e)"
+            "carbono_emissions":"16.9% (112 millones de toneladas CO2 eq.)"
          },
         "residuos":{  
             "title":"Carbono negro",
             "sector_values":[  
                {  
-                  "name":"El 83% de la mitigación de las emisiones de carbono negro se identifican, por una parte, en la contribución del sector transporte por la sustitución con combustibles de ultra bajo contenido de azufre, así como el cambio modal en el transporte de carga doméstica con el uso de ferrocarriles; y por otra parte el control de partículas negras de hollín en las calderas bagaceras de los ingenios azucareros y la industria siderúrgica. Junto con la quema de leña, que además genera problemas respiratorios. Esto representa un aporte del 11.4%  al compromiso de reducción de emisiones de carbono negro.",
+                  "name":"El 83% de la mitigación de las emisiones de carbono negro se identifican, por una parte, en la contribución del sector transporte por la sustitución con combustibles de ultra bajo contenido de azufre, así como el cambio modal en el transporte de carga doméstica con el uso de ferrocarriles; y por otra parte el control de partículas negras de hollín en las calderas bagaceras de los ingenios azucareros y la industria siderúrgica. Junto con la quema de leña, que además genera problemas respiratorios. Esto representa un aporte del 11.4% al compromiso de reducción de emisiones de carbono negro.",
                   "value":""
                }
             ],
@@ -385,6 +385,10 @@
                {  
                   "name":"Nuevo León",
                   "value":"3"
+               },
+                {  
+                  "name":"Tamaulipas",
+                  "value":"7"
                }
             ],
             "carbono_emissions":"10 municipios"
