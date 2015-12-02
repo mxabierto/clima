@@ -11,9 +11,7 @@ for (var i = 0; i < 100; i++){
 
 // getact = function (d) {     var sector = d.id;
 //                             var ind = d.index;
-//                             var sectores = [{"idsec": "Microsoft","acts":[{"indicador":1,"nombre":"Games"},{"indicador":2,"nombre":"Joysticks"}]},
-//                                             {"idsec": "IBM","acts":[{"indicador":1,"nombre":"Computers"},{"indicador":2,"nombre":"Laptops"}]}
-//                                             ];
+//                             var sectores = [ {"idsec":"Agropecuario","acts":"[{"ind":1,"act":"Fermentación entérica"},{"ind":2,"act":"Manejo del estiercol"},{"ind":3,"act":"Suelos agricolas, quemas agricolas y cultivos de arroz"}]"} ],[ {"idsec":"Generación Eléctrica","acts":"[{"ind":1,"act":"Generación Eléctrica"}]"} ],[ {"idsec":"Industria Petróleo y Gas","acts":"[{"ind":1,"act":"Petróleo & Gas"},{"ind":2,"act":"Cemento (combustion y proceso)"},{"ind":3,"act":"Cal (combustion y proceso)"},{"ind":4,"act":"Siderurgica (combustion y proceso)"},{"ind":5,"act":"Química (combustion y proceso)"},{"ind":6,"act":"Consumo de otros carbonatos (Vidrio Metalúrgica)"}]"} ],[ {"idsec":"Minería","acts":"[{"ind":1,"act":"Minería"}]"} ],[ {"idsec":"Residencial y Comercial","acts":"[{"ind":1,"act":"Gas L.P. residencial"},{"ind":2,"act":"Gas Natural residencial y residencial"}]"} ];
 //                             if ( d.value ) {
 //                                 for(var k = 0; k < sectores.length; i++){
 //                                     if(sectores[k].idsec == sector){
@@ -47,7 +45,7 @@ var chart = c3.generate({
             'Agropecuario': 'x1', 'Generación Eléctrica': 'x2', 'Industria Petróleo y Gas': 'x3', 'Minería': 'x4', 'Residencial y Comercial': 'x5'
         },
         columns: [
-            ['Agropecuario',51208129,13735518],['x1',1591596,65478],['Generación Eléctrica',126607656],['x2',204585913],['Industria Petróleo y Gas',80455256,30224652,4213282,8783472,8220642,1833695],['x3',895936597,14216838,1305421,60991145,230284086,46354299],['Minería',9578774],['x4',104079321],['Residencial y Comercial',2503920,628478],['x5',53115667,101486124]
+            ['Agropecuario',51208129,13735518,14845796],['x1',1591596,65478,417346594],['Generación Eléctrica',126607656],['x2',204585913],['Industria Petróleo y Gas',80455256,30224652,4213282,8783472,8220642,1833695],['x3',895936597,14216838,1305421,60991145,230284086,46354299],['Minería',9578774],['x4',104079321],['Residencial y Comercial',2503920,628478],['x5',53115667,101486124]
             ],
         type: 'scatter'
     },
