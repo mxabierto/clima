@@ -61,7 +61,7 @@
 					<p class="subtitle" style="padding-top: 30px; padding-bottom: 20px;">
 						Cambio climático en México 
 					</p>    											    
-				    <div class="row center-block" style="max-width:90%; min-width:750px">
+				    <div class="row center-block" style="max-width:1000px; min-width:700px">
 						<div id="item1" class="side-box custom-tooltip col-xs-3" data-toggle="tooltip" data-placement="bottom" title="Title1">
 							<div class="box-image">
 								<div class="images-margin-side">
@@ -127,41 +127,6 @@
 						Indicadores
 					</p>
 				    <div class="row">
-					    
-					    <style>
-						    .indicators-table{
-						   		width: 100%;
-						    }
-						   	.indicator-box{
-						   		width: 100%;
-							    color:white;
-							    font-size: 15px;
-							    padding: 5px;
-							    height: 80px;
-						    } 
-						    .indicators-row{
-							    width: 16.66%;	
-							    padding: 3px;						    
-						    }
-							#indicator1{
-								background-color: #853B00;
-							}
-							#indicator2{
-								background-color: #C75900;
-							}							
-							#indicator3{
-								background-color: #F4B07F;
-							}
-							#indicator4{
-								background-color: #F8CAAA;
-							}
-							#indicator5{
-								background-color: #FCE4D4;
-							}
-							#indicator6{
-								background-color: black;
-							}							
-						</style>    
 
 						<table class="indicators-table center-block">
 							<tr>
@@ -212,8 +177,20 @@
 								</td>
 							</tr>	
 						</table>
+					</div>
+					<style>
+						.indicator-dialog{
+							background-color: #863B00;
+							width: 100%;							
+							margin: 10px;
+							color: white;
+							padding: 10px;
+							display: none;
+						}
+					</style>	    
+				    <div id="indicator-dialog" class="indicator-dialog">
+					    <span>Pepe pecas pica papas</span>
 					</div>    
-				    
 					<br>
 					<!-- Data table-->
 					<div class="">
@@ -457,190 +434,391 @@
 				$("#item4-highlight").text(item4.highlight);
 				$("#item4-description").text(" " +item4.description);
 				$("#item4").attr('title', item4.tooltipDescription).tooltip('fixTitle');				
+				
+				var dialogHTML = "";
+				
+				var industriaHTML = "";
+				var fuentesHTML = "";
+				var electricaHTML = "";
+				var agropecuarioHTML = "";
+				var residuosHTML = "";
+				var carbonoHTML = "";
 
-				/*
-					function setIndicator1Values(){
-	
-						//Indicator 1-item1
-						var total_industria = item1.properties.industria.sector_values.length;
-						var indicator1_rows = "";
-						
-						for(i=0; i<total_industria; i++){
-							indicator1_rows = indicator1_rows + "<tr><td style='width:50%'><p class='text-center'>"+item1.properties.industria.sector_values[i].name+":  </p></td><td style='width:50%'><p class='text-center'>"+item1.properties.industria.sector_values[i].value+"</p></td></tr>";
-						};
+								
+				var dialog_status = false;
+				var dialog_active = "";
+								
+				$("#item1").click(function(){
+					
+					dialog_status = false;						
+					$("#indicator-dialog").hide();		
+					dialog_active = "";
+					
+					$("#indicator1").html("<strong><p class='text-left'>"+item1.properties.industria.title+"</p></strong>");
+					$("#indicator2").html("<strong><p class='text-left'>"+item1.properties.fuentes.title+"</p></strong>");					
+					$("#indicator3").html("<strong><p class='text-left'>"+item1.properties.generacion.title+"</p></strong>");
+					$("#indicator4").html("<strong><p class='text-left'>"+item1.properties.agropecuario.title+"</p></strong>");
+					$("#indicator5").html("<strong><p class='text-left'>"+item1.properties.residuos.title+"</p></strong>");
+					$("#indicator6").html("<strong><p class='text-left'>"+item1.properties.carbono.title+"</p></strong>");
+										
+					var total_industria = item1.properties.industria.sector_values.length;
+					var indicator1_rows = "";
+					
+					for(i=0; i<total_industria; i++){
+						indicator1_rows = indicator1_rows + "<div style='margin:10px; display:inline-block; font-size:13px;'><span>"+item1.properties.industria.sector_values[i].name+": </span><span>"+item1.properties.industria.sector_values[i].value+"</span></div>";
+					};
 		
-						$("#indicator1").attr('title', "<div><p style='font-size:15px;' class='text-center'>Sector: "+item1.properties.industria.title+"</p></div><table class='centar-block' style='width:100%'>"+indicator1_rows+"</table><br>"+"<p style='font-size:15px;' class='text-center'>Emisiones del sector:</p>" + "<p style='font-size:10px;' class='text-center'> "+item1.properties.industria.carbono_emissions+"</p>").tooltip('fixTitle');
-						
-						//Indicator 2-item1
-						var total_fuentes = item1.properties.fuentes.sector_values.length;
-						var indicator2_rows = "";
-						
-						for(j=0; j<total_fuentes; j++){
-							indicator2_rows = indicator2_rows + "<tr><td style='width:50%'><p class='text-center'>"+item1.properties.fuentes.sector_values[j].name+":  </p></td><td style='width:50%'><p class='text-center'>"+item1.properties.fuentes.sector_values[j].value+"</p></td></tr>";
-						};
-		
-						$("#indicator2").attr('title', "<div><p style='font-size:15px;' class='text-center'>Sector: "+item1.properties.fuentes.title+"</p></div><table class='centar-block' style='width:100%'>"+indicator2_rows+"</table><br>"+"<p style='font-size:15px;' class='text-center'>Emisiones del sector:</p>" + "<p style='font-size:10px;' class='text-center'> "+item1.properties.fuentes.carbono_emissions+"</p>").tooltip('fixTitle');
-						
-						//Indicator 3-item1
-						var total_generacion = item1.properties.generacion.sector_values.length;
-						var indicator3_rows = "";
-						
-						for(j=0; j<total_generacion; j++){
-							indicator3_rows = indicator3_rows + "<tr><td style='width:50%'><p class='text-center'>"+item1.properties.generacion.sector_values[j].name+":  </p></td><td style='width:50%'><p class='text-center'>"+item1.properties.generacion.sector_values[j].value+"</p></td></tr>";
-						};
-		
-						$("#indicator3").attr('title', "<div><p style='font-size:15px;' class='text-center'>Sector: "+item1.properties.generacion.title+"</p></div><table class='centar-block' style='width:100%'>"+indicator3_rows+"</table><br>"+"<p style='font-size:15px;' class='text-center'>Emisiones del sector:</p>" + "<p style='font-size:10px;' class='text-center'> "+item1.properties.generacion.carbono_emissions+"</p>").tooltip('fixTitle');
-						
-						//Indicator 4-item1
-						var total_agropecuario = item1.properties.agropecuario.sector_values.length;
-						var indicator4_rows = "";
-						
-						for(j=0; j<total_agropecuario; j++){
-							indicator4_rows = indicator4_rows + "<tr><td style='width:50%'><p class='text-center'>"+item1.properties.agropecuario.sector_values[j].name+":  </p></td><td style='width:50%'><p class='text-center'>"+item1.properties.agropecuario.sector_values[j].value+"</p></td></tr>";
-						};
-		
-						$("#indicator4").attr('title', "<div><p style='font-size:15px;' class='text-center'>Sector: "+item1.properties.agropecuario.title+"</p></div><table class='centar-block' style='width:100%'>"+indicator4_rows+"</table><br>"+"<p style='font-size:15px;' class='text-center'>Emisiones del sector:</p>" + "<p style='font-size:10px;' class='text-center'> "+item1.properties.agropecuario.carbono_emissions+"</p>").tooltip('fixTitle');																				
-						//Indicator 5-item1
-						var total_residuos = item1.properties.residuos.sector_values.length;
-						var indicator5_rows = "";
-						
-						for(j=0; j<total_residuos; j++){
-							indicator5_rows = indicator5_rows + "<tr><td style='width:50%'><p class='text-center'>"+item1.properties.residuos.sector_values[j].name+":  </p></td><td style='width:50%'><p class='text-center'>"+item1.properties.residuos.sector_values[j].value+"</p></td></tr>";
-						};
-		
-						$("#indicator5").attr('title', "<div><p style='font-size:15px;' class='text-center'>Sector: "+item1.properties.residuos.title+"</p></div><table class='centar-block' style='width:100%'>"+indicator5_rows+"</table><br>"+"<p style='font-size:15px;' class='text-center'>Emisiones del sector:</p>" + "<p style='font-size:10px;' class='text-center'> "+item1.properties.residuos.carbono_emissions+"</p>").tooltip('fixTitle');					
-	
-						//Indicator 6-item1
-						var total_carbono = item1.properties.carbono.sector_values.length;
-						var indicator6_rows = "";
-						
-						for(j=0; j<total_residuos; j++){
-							indicator6_rows = indicator5_rows + "<tr><td style='width:50%'><p class='text-center'>"+item1.properties.carbono.sector_values[j].name+":  </p></td><td style='width:50%'><p class='text-center'>"+item1.properties.carbono.sector_values[j].value+"</p></td></tr>";
-						};
-		
-						$("#indicator6").attr('title', "<div><p style='font-size:15px;' class='text-center'>Sector: "+item1.properties.carbono.title+"</p></div><table class='centar-block' style='width:100%'>"+indicator6_rows+"</table><br>"+"<p style='font-size:15px;' class='text-center'>Emisiones del sector:</p>" + "<p style='font-size:10px;' class='text-center'> "+item1.properties.carbono.carbono_emissions+"</p>").tooltip('fixTitle');
-	
+					industriaHTML = "<div><p style='font-size:15px;' class='text-left'><strong>Sector: </strong>"+item1.properties.industria.title+" <strong><span style='margin-left:20px'> Emisiones del sector:</span></strong> "+item1.properties.industria.carbono_emissions+"</p></div><div style='display:inline-block'>"+indicator1_rows+"</div><br>";
+					
+					
+					
+					//Indicator 2-item1
+					var total_fuentes = item1.properties.fuentes.sector_values.length;
+					var indicator2_rows = "";
+					
+					for(j=0; j<total_fuentes; j++){
+						indicator2_rows = indicator2_rows + "<div style='margin:10px; display:inline-block; font-size:13px;'><span>"+item1.properties.fuentes.sector_values[j].name+": </span><span>"+item1.properties.fuentes.sector_values[j].value+"</span></div>";
 					};
 					
-					function setIndicator2Values(){
-	
-						//Indicator 1-item2
-						var total_industria = item2.properties.industria.sector_values.length;
-						var indicator1_rows = item2.properties.industria.sector_values[0].name;
-							
-						$("#indicator1").attr('title', "<p style='font-size:10px;' class='text-center'>"+indicator1_rows+"</p>").tooltip('fixTitle');
-						
-						//Indicator 2-item2
-						var total_fuentes = item2.properties.fuentes.sector_values.length;
-						var indicator2_rows = item2.properties.fuentes.sector_values[0].name;
-							
-						$("#indicator2").attr('title', "<p style='font-size:10px;' class='text-center'>"+indicator2_rows+"</p>").tooltip('fixTitle');
-						
-						//Indicator 3-item2
-						var total_generacion = item2.properties.generacion.sector_values.length;
-						var indicator3_rows = item2.properties.generacion.sector_values[0].name;
-							
-						$("#indicator3").attr('title', "<p style='font-size:10px;' class='text-center'>"+indicator3_rows+"</p>").tooltip('fixTitle');
-						
-						//Indicator 4-item2
-						var total_agropecuario = item2.properties.agropecuario.sector_values.length;
-						var indicator4_rows = item2.properties.agropecuario.sector_values[0].name;
-							
-						$("#indicator4").attr('title', "<p style='font-size:10px;' class='text-center'>"+indicator4_rows+"</p>").tooltip('fixTitle');
-																										
-						//Indicator 5-item2
-						var total_residuos = item2.properties.residuos.sector_values.length;
-						var indicator5_rows = item2.properties.residuos.sector_values[0].name;
-							
-						$("#indicator5").attr('title', "<p style='font-size:10px;' class='text-center'>"+indicator5_rows+"</p>").tooltip('fixTitle');					
-	
-						//Indicator 6-item2
-						var total_carbono = item2.properties.carbono.sector_values.length;
-						var indicator6_rows = item2.properties.carbono.sector_values[0].name;
-							
-						$("#indicator6").attr('title', "<p style='font-size:10px;' class='text-center'>"+indicator6_rows+"</p>").tooltip('fixTitle');
-	
-					};
+					fuentesHTML = "<div><p style='font-size:15px;' class='text-left'><strong>Sector: </strong>"+item1.properties.fuentes.title+" <strong><span style='margin-left:20px'> Emisiones del sector:</span></strong> "+item1.properties.fuentes.carbono_emissions+"</p></div><div style='display:inline-block'>"+indicator2_rows+"</div><br>";
+
 					
-					function setIndicator3Values(){
-	
-						//Indicator 1-item1
-						var total_industria = item3.properties.industria.sector_values.length;
-						var indicator1_rows = "";
-						
-						for(i=0; i<total_industria; i++){
-							indicator1_rows = indicator1_rows + "<tr><td style='width:50%'><p class='text-center'>"+item3.properties.industria.sector_values[i].name+":  </p></td><td style='width:50%'><p class='text-center'>"+item3.properties.industria.sector_values[i].value+"</p></td></tr>";
-						};
-		
-						$("#indicator1").attr('title', "<div><p style='font-size:15px;' class='text-center'>Sector: "+item3.properties.industria.title+"</p></div><table class='centar-block' style='width:100%'>"+indicator1_rows+"</table><br>"+"<p style='font-size:15px;' class='text-center'>Emisiones del sector:</p>" + "<p style='font-size:10px;' class='text-center'> "+item3.properties.industria.carbono_emissions+"</p>").tooltip('fixTitle');
-						
-						//Indicator 2-item3
-						var total_fuentes = item3.properties.fuentes.sector_values.length;
-						var indicator2_rows = "";
-						
-						for(j=0; j<total_fuentes; j++){
-							indicator2_rows = indicator2_rows + "<tr><td style='width:50%'><p class='text-center'>"+item3.properties.fuentes.sector_values[j].name+":  </p></td><td style='width:50%'><p class='text-center'>"+item3.properties.fuentes.sector_values[j].value+"</p></td></tr>";
-						};
-		
-						$("#indicator2").attr('title', "<div><p style='font-size:15px;' class='text-center'>Sector: "+item3.properties.fuentes.title+"</p></div><table class='centar-block' style='width:100%'>"+indicator2_rows+"</table><br>"+"<p style='font-size:15px;' class='text-center'>Emisiones del sector:</p>" + "<p style='font-size:10px;' class='text-center'> "+item3.properties.fuentes.carbono_emissions+"</p>").tooltip('fixTitle');
-						
-						//Indicator 3-item3
-						var total_generacion = item3.properties.generacion.sector_values.length;
-						var indicator3_rows = "";
-						
-						for(j=0; j<total_generacion; j++){
-							indicator3_rows = indicator3_rows + "<tr><td style='width:50%'><p class='text-center'>"+item3.properties.generacion.sector_values[j].name+":  </p></td><td style='width:50%'><p class='text-center'>"+item3.properties.generacion.sector_values[j].value+"</p></td></tr>";
-						};
-		
-						$("#indicator3").attr('title', "<div><p style='font-size:15px;' class='text-center'>Sector: "+item3.properties.generacion.title+"</p></div><table class='centar-block' style='width:100%'>"+indicator3_rows+"</table><br>"+"<p style='font-size:15px;' class='text-center'>Emisiones del sector:</p>" + "<p style='font-size:10px;' class='text-center'> "+item3.properties.generacion.carbono_emissions+"</p>").tooltip('fixTitle');
-						
-						//Indicator 4-item3
-						var total_agropecuario = item3.properties.agropecuario.sector_values.length;
-						var indicator4_rows = "";
-						
-						for(j=0; j<total_agropecuario; j++){
-							indicator4_rows = indicator4_rows + "<tr><td style='width:50%'><p class='text-center'>"+item3.properties.agropecuario.sector_values[j].name+":  </p></td><td style='width:50%'><p class='text-center'>"+item3.properties.agropecuario.sector_values[j].value+"</p></td></tr>";
-						};
-		
-						$("#indicator4").attr('title', "<div><p style='font-size:15px;' class='text-center'>Sector: "+item3.properties.agropecuario.title+"</p></div><table class='centar-block' style='width:100%'>"+indicator4_rows+"</table><br>"+"<p style='font-size:15px;' class='text-center'>Emisiones del sector:</p>" + "<p style='font-size:10px;' class='text-center'> "+item3.properties.agropecuario.carbono_emissions+"</p>").tooltip('fixTitle');																				
-						//Indicator 5-item3
-						var total_residuos = item3.properties.residuos.sector_values.length;
-						var indicator5_rows = "";
-						
-						for(j=0; j<total_residuos; j++){
-							indicator5_rows = indicator5_rows + "<tr><td style='width:50%'><p class='text-center'>"+item3.properties.residuos.sector_values[j].name+":  </p></td><td style='width:50%'><p class='text-center'>"+item3.properties.residuos.sector_values[j].value+"</p></td></tr>";
-						};
-		
-						$("#indicator5").attr('title', "<div><p style='font-size:15px;' class='text-center'>Sector: "+item3.properties.residuos.title+"</p></div><table class='centar-block' style='width:100%'>"+indicator5_rows+"</table><br>"+"<p style='font-size:15px;' class='text-center'>Emisiones del sector:</p>" + "<p style='font-size:10px;' class='text-center'> "+item3.properties.residuos.carbono_emissions+"</p>").tooltip('fixTitle');					
-	
-						//Indicator 6-item3
-						var total_carbono = item3.properties.carbono.sector_values.length;
-						var indicator6_rows = "";
-						
-						for(j=0; j<total_residuos; j++){
-							indicator6_rows = indicator5_rows + "<tr><td style='width:50%'><p class='text-center'>"+item3.properties.carbono.sector_values[j].name+":  </p></td><td style='width:50%'><p class='text-center'>"+item3.properties.carbono.sector_values[j].value+"</p></td></tr>";
-						};
-		
-						$("#indicator6").attr('title', "<div><p style='font-size:15px;' class='text-center'>Sector: "+item3.properties.carbono.title+"</p></div><table class='centar-block' style='width:100%'>"+indicator6_rows+"</table><br>"+"<p style='font-size:15px;' class='text-center'>Emisiones del sector:</p>" + "<p style='font-size:10px;' class='text-center'> "+item3.properties.carbono.carbono_emissions+"</p>").tooltip('fixTitle');
-	
+					//Indicator 3-item1
+					var total_generacion = item1.properties.generacion.sector_values.length;
+					var indicator3_rows = "";
+					
+					for(j=0; j<total_generacion; j++){
+						indicator3_rows = indicator3_rows + "<div style='margin:10px; display:inline-block; font-size:13px;'><span>"+item1.properties.generacion.sector_values[j].name+": </span><span>"+item1.properties.generacion.sector_values[j].value+"</span></div>";
 					};
 	
-					//Default values 1
-					setIndicator1Values();
+					electricaHTML = "<div><p style='font-size:15px;' class='text-left'><strong>Sector: </strong>"+item1.properties.generacion.title+" <strong><span style='margin-left:20px'> Emisiones del sector:</span></strong> "+item1.properties.generacion.carbono_emissions+"</p></div><div style='display:inline-block'>"+indicator3_rows+"</div><br>";
+						
+					//Indicator 4-item1
+					var total_agropecuario = item1.properties.agropecuario.sector_values.length;
+					var indicator4_rows = "";
 					
-					$("#item1").click(function(){
-						//alert("change");
-						setIndicator1Values();
-					});				
-					$("#item2").click(function(){
-						//alert("change2");
-						setIndicator2Values();
-					});				
-					$("#item3").click(function(){
-						//alert("change3");
-						setIndicator3Values();
-					});	
-				*/			
+					for(j=0; j<total_agropecuario; j++){
+						indicator4_rows = indicator4_rows + "<div style='margin:10px; display:inline-block; font-size:13px;'><span>"+item1.properties.agropecuario.sector_values[j].name+": </span><span>"+item1.properties.agropecuario.sector_values[j].value+"</span></div>";
+					};
+	
+					agropecuarioHTML = "<div><p style='font-size:15px;' class='text-left'><strong>Sector: </strong>"+item1.properties.agropecuario.title+" <strong><span style='margin-left:20px'> Emisiones del sector:</span></strong> "+item1.properties.agropecuario.carbono_emissions+"</p></div><div style='display:inline-block'>"+indicator4_rows+"</div><br>";
+
+
+					//Indicator 5-item1
+					var total_residuos = item1.properties.residuos.sector_values.length;
+					var indicator5_rows = "";
+					
+					for(j=0; j<total_residuos; j++){
+						indicator5_rows = indicator5_rows + "<div style='margin:10px; display:inline-block; font-size:13px;'><span>"+item1.properties.residuos.sector_values[j].name+": </span><span>"+item1.properties.residuos.sector_values[j].value+"</span></div>";
+					};
+	
+					residuosHTML = "<div><p style='font-size:15px;' class='text-left'><strong>Sector: </strong>"+item1.properties.residuos.title+" <strong><span style='margin-left:20px'> Emisiones del sector:</span></strong> "+item1.properties.residuos.carbono_emissions+"</p></div><div style='display:inline-block'>"+indicator5_rows+"</div><br>";
+	
+	
+					//Indicator 6-item1
+					var total_carbono = item1.properties.carbono.sector_values.length;
+					var indicator6_rows = "";
+					
+					for(j=0; j<total_residuos; j++){
+						indicator6_rows = indicator6_rows + "<div style='margin:10px; display:inline-block; font-size:13px;'><span>"+item1.properties.carbono.sector_values[j].name+": </span><span>"+item1.properties.carbono.sector_values[j].value+"</span></div>";
+					};
+	
+					carbonoHTML = "<div><p style='font-size:15px;' class='text-left'><strong>Sector: </strong>"+item1.properties.carbono.title+" <strong><span style='margin-left:20px'> Emisiones del sector:</span></strong> "+item1.properties.carbono.carbono_emissions+"</p></div><div style='display:inline-block'>"+indicator6_rows+"</div><br>";
+		
+				});
+				
+				$("#item2").click(function(){
+					
+					dialog_status = false;						
+					$("#indicator-dialog").hide();		
+					dialog_active = "";
+					
+					$("#indicator1").html("<strong><p class='text-left'>"+item2.properties.industria.title+"</p></strong>");
+					$("#indicator2").html("<strong><p class='text-left'>"+item2.properties.fuentes.title+"</p></strong>");					
+					$("#indicator3").html("<strong><p class='text-left'>"+item2.properties.generacion.title+"</p></strong>");
+					$("#indicator4").html("<strong><p class='text-left'>"+item2.properties.agropecuario.title+"</p></strong>");
+					$("#indicator5").html("<strong><p class='text-left'>"+item2.properties.residuos.title+"</p></strong>");
+					$("#indicator6").html("<strong><p class='text-left'>"+item2.properties.carbono.title+"</p></strong>");					
+					
+					var total_industria = item2.properties.industria.sector_values.length;
+					var indicator1_rows = "";
+					
+					for(i=0; i<total_industria; i++){
+						indicator1_rows = indicator1_rows + "<div style='margin:10px; display:inline-block; font-size:13px;'><span>"+item2.properties.industria.sector_values[i].name+": </span><span>"+item2.properties.industria.sector_values[i].value+"</span></div>";
+					};
+		
+					industriaHTML = "<div><p style='font-size:15px;' class='text-left'><strong>Sector: </strong>"+item2.properties.industria.title+" <strong><span style='margin-left:20px'> Emisiones del sector:</span></strong> "+item2.properties.industria.carbono_emissions+"</p></div><div style='display:inline-block'>"+indicator1_rows+"</div><br>";
+					
+					
+					
+					//Indicator 2-item2
+					var total_fuentes = item2.properties.fuentes.sector_values.length;
+					var indicator2_rows = "";
+					
+					for(j=0; j<total_fuentes; j++){
+						indicator2_rows = indicator2_rows + "<div style='margin:10px; display:inline-block; font-size:13px;'><span>"+item2.properties.fuentes.sector_values[j].name+": </span><span>"+item2.properties.fuentes.sector_values[j].value+"</span></div>";
+					};
+					
+					fuentesHTML = "<div><p style='font-size:15px;' class='text-left'><strong>Sector: </strong>"+item2.properties.fuentes.title+" <strong><span style='margin-left:20px'> Emisiones del sector:</span></strong> "+item2.properties.fuentes.carbono_emissions+"</p></div><div style='display:inline-block'>"+indicator2_rows+"</div><br>";
+
+					
+					//Indicator 3-item2
+					var total_generacion = item2.properties.generacion.sector_values.length;
+					var indicator3_rows = "";
+					
+					for(j=0; j<total_generacion; j++){
+						indicator3_rows = indicator3_rows + "<div style='margin:10px; display:inline-block; font-size:13px;'><span>"+item2.properties.generacion.sector_values[j].name+": </span><span>"+item2.properties.generacion.sector_values[j].value+"</span></div>";
+					};
+	
+					electricaHTML = "<div><p style='font-size:15px;' class='text-left'><strong>Sector: </strong>"+item2.properties.generacion.title+" <strong><span style='margin-left:20px'> Emisiones del sector:</span></strong> "+item2.properties.generacion.carbono_emissions+"</p></div><div style='display:inline-block'>"+indicator3_rows+"</div><br>";
+						
+					//Indicator 4-item2
+					var total_agropecuario = item2.properties.agropecuario.sector_values.length;
+					var indicator4_rows = "";
+					
+					for(j=0; j<total_agropecuario; j++){
+						indicator4_rows = indicator4_rows + "<div style='margin:10px; display:inline-block; font-size:13px;'><span>"+item2.properties.agropecuario.sector_values[j].name+": </span><span>"+item2.properties.agropecuario.sector_values[j].value+"</span></div>";
+					};
+	
+					agropecuarioHTML = "<div><p style='font-size:15px;' class='text-left'><strong>Sector: </strong>"+item2.properties.agropecuario.title+" <strong><span style='margin-left:20px'> Emisiones del sector:</span></strong> "+item2.properties.agropecuario.carbono_emissions+"</p></div><div style='display:inline-block'>"+indicator4_rows+"</div><br>";
+
+
+					//Indicator 5-item2
+					var total_residuos = item2.properties.residuos.sector_values.length;
+					var indicator5_rows = "";
+					
+					for(j=0; j<total_residuos; j++){
+						indicator5_rows = indicator5_rows + "<div style='margin:10px; display:inline-block; font-size:13px;'><span>"+item2.properties.residuos.sector_values[j].name+": </span><span>"+item2.properties.residuos.sector_values[j].value+"</span></div>";
+					};
+	
+					residuosHTML = "<div><p style='font-size:15px;' class='text-left'><strong>Sector: </strong>"+item2.properties.residuos.title+" <strong><span style='margin-left:20px'> Emisiones del sector:</span></strong> "+item2.properties.residuos.carbono_emissions+"</p></div><div style='display:inline-block'>"+indicator5_rows+"</div><br>";
+	
+	
+					//Indicator 6-item2
+					var total_carbono = item2.properties.carbono.sector_values.length;
+					var indicator6_rows = "";
+					
+					for(j=0; j<total_residuos; j++){
+						indicator6_rows = indicator6_rows + "<div style='margin:10px; display:inline-block; font-size:13px;'><span>"+item2.properties.carbono.sector_values[j].name+": </span><span>"+item2.properties.carbono.sector_values[j].value+"</span></div>";
+					};
+	
+					carbonoHTML = "<div><p style='font-size:15px;' class='text-left'><strong>Sector: </strong>"+item2.properties.carbono.title+" <strong><span style='margin-left:20px'> Emisiones del sector:</span></strong> "+item1.properties.carbono.carbono_emissions+"</p></div><div style='display:inline-block'>"+indicator6_rows+"</div><br>";
+		
+				});
+
+				$("#item3").click(function(){
+					
+					dialog_status = false;						
+					$("#indicator-dialog").hide();		
+					dialog_active = "";
+
+					$("#indicator1").html("<strong><p class='text-left'>"+item3.properties.industria.title+"</p></strong>");
+					$("#indicator2").html("<strong><p class='text-left'>"+item3.properties.fuentes.title+"</p></strong>");					
+					$("#indicator3").html("<strong><p class='text-left'>"+item3.properties.generacion.title+"</p></strong>");
+					$("#indicator4").html("<strong><p class='text-left'>"+item3.properties.agropecuario.title+"</p></strong>");
+					$("#indicator5").html("<strong><p class='text-left'>"+item3.properties.residuos.title+"</p></strong>");
+					$("#indicator6").html("<strong><p class='text-left'>"+item3.properties.carbono.title+"</p></strong>");
+					
+					//Indicator 1-item2
+					var total_industria = item3.properties.industria.sector_values.length;
+					var indicator1_rows = item3.properties.industria.sector_values[0].name;
+						
+					industriaHTML = "<p style='font-size:14px;' class='text-center'>"+indicator1_rows+"</p>";
+					
+					//Indicator 2-item3
+					var total_fuentes = item3.properties.fuentes.sector_values.length;
+					var indicator2_rows = item3.properties.fuentes.sector_values[0].name;
+
+					fuentesHTML = "<p style='font-size:14px;' class='text-center'>"+indicator2_rows+"</p>";						
+					
+					//Indicator 3-item3
+					var total_generacion = item3.properties.generacion.sector_values.length;
+					var indicator3_rows = item3.properties.generacion.sector_values[0].name;
+
+					electricaHTML = "<p style='font-size:14px;' class='text-center'>"+indicator3_rows+"</p>";
+					
+					//Indicator 4-item3
+					var total_agropecuario = item3.properties.agropecuario.sector_values.length;
+					var indicator4_rows = item3.properties.agropecuario.sector_values[0].name;
+
+					agropecuarioHTML = "<p style='font-size:14px;' class='text-center'>"+indicator4_rows+"</p>";
+																									
+					//Indicator 5-item3
+					var total_residuos = item3.properties.residuos.sector_values.length;
+					var indicator5_rows = item3.properties.residuos.sector_values[0].name;
+
+					residuosHTML = "<p style='font-size:14px;' class='text-center'>"+indicator5_rows+"</p>";
+
+					//Indicator 6-item3
+					var total_carbono = item3.properties.carbono.sector_values.length;
+					var indicator6_rows = item3.properties.carbono.sector_values[0].name;
+
+					carbonoHTML = "<p style='font-size:10px;' class='text-center'>"+indicator6_rows+"</p>";
+					
+				});
+
+				$("#item4").click(function(){
+					
+					dialog_status = false;						
+					$("#indicator-dialog").hide();		
+					dialog_active = "";
+
+					$("#indicator1").html("<strong><p class='text-left'>"+item4.properties.industria.title+"</p></strong>");
+					$("#indicator2").html("<strong><p class='text-left'>"+item4.properties.fuentes.title+"</p></strong>");					
+					$("#indicator3").html("<strong><p class='text-left'>"+item4.properties.generacion.title+"</p></strong>");
+					$("#indicator4").html("<strong><p class='text-left'>"+item4.properties.agropecuario.title+"</p></strong>");
+					$("#indicator5").html("<strong><p class='text-left'>"+item4.properties.residuos.title+"</p></strong>");
+					$("#indicator6").html("<strong><p class='text-left'>"+item4.properties.carbono.title+"</p></strong>");
+					
+					var total_industria = item4.properties.industria.sector_values.length;
+					var indicator1_rows = "";
+					
+					for(i=0; i<total_industria; i++){
+						indicator1_rows = indicator1_rows + "<div style='margin:10px; display:inline-block; font-size:13px;'><span>"+item4.properties.industria.sector_values[i].name+": </span><span>"+item4.properties.industria.sector_values[i].value+"</span></div>";
+					};
+		
+					industriaHTML = "<div><p style='font-size:15px;' class='text-left'><strong>"+item4.properties.industria.title+"</strong> <strong><span style='margin-left:20px'> Municipios: </span></strong> "+item4.properties.industria.carbono_emissions+"</p></div><div style='display:inline-block'>"+indicator1_rows+"</div><br>";
+					
+					
+					
+					//Indicator 2-item4
+					var total_fuentes = item4.properties.fuentes.sector_values.length;
+					var indicator2_rows = "";
+					
+					for(j=0; j<total_fuentes; j++){
+						indicator2_rows = indicator2_rows + "<div style='margin:10px; display:inline-block; font-size:13px;'><span>"+item4.properties.fuentes.sector_values[j].name+": </span><span>"+item4.properties.fuentes.sector_values[j].value+"</span></div>";
+					};
+					
+					fuentesHTML = "<div><p style='font-size:15px;' class='text-left'><strong>"+item4.properties.fuentes.title+"</strong> <strong><span style='margin-left:20px'> Municipios: </span></strong> "+item4.properties.fuentes.carbono_emissions+"</p></div><div style='display:inline-block'>"+indicator2_rows+"</div><br>";
+
+					
+					//Indicator 3-item4
+					var total_generacion = item4.properties.generacion.sector_values.length;
+					var indicator3_rows = "";
+					
+					for(j=0; j<total_generacion; j++){
+						indicator3_rows = indicator3_rows + "<div style='margin:10px; display:inline-block; font-size:13px;'><span>"+item4.properties.generacion.sector_values[j].name+": </span><span>"+item4.properties.generacion.sector_values[j].value+"</span></div>";
+					};
+	
+					electricaHTML = "<div><p style='font-size:15px;' class='text-left'><strong>"+item4.properties.generacion.title+"</strong> <strong><span style='margin-left:20px'> Municipios: </span></strong> "+item4.properties.generacion.carbono_emissions+"</p></div><div style='display:inline-block'>"+indicator3_rows+"</div><br>";
+						
+					//Indicator 4-item4
+					var total_agropecuario = item4.properties.agropecuario.sector_values.length;
+					var indicator4_rows = "";
+					
+					for(j=0; j<total_agropecuario; j++){
+						indicator4_rows = indicator4_rows + "<div style='margin:10px; display:inline-block; font-size:13px;'><span>"+item4.properties.agropecuario.sector_values[j].name+": </span><span>"+item4.properties.agropecuario.sector_values[j].value+"</span></div>";
+					};
+	
+					agropecuarioHTML = "<div><p style='font-size:15px;' class='text-left'><strong>"+item4.properties.agropecuario.title+" </strong><strong><span style='margin-left:20px'> Municipios: </span></strong> "+item4.properties.agropecuario.carbono_emissions+"</p></div><div style='display:inline-block'>"+indicator4_rows+"</div><br>";
+
+
+					//Indicator 5-item4
+					var total_residuos = item4.properties.residuos.sector_values.length;
+					var indicator5_rows = "";
+					
+					for(j=0; j<total_residuos; j++){
+						indicator5_rows = indicator5_rows + "<div style='margin:10px; display:inline-block; font-size:13px;'><span>"+item4.properties.residuos.sector_values[j].name+": </span><span>"+item4.properties.residuos.sector_values[j].value+"</span></div>";
+					};
+	
+					residuosHTML = "<div><p style='font-size:15px;' class='text-left'><strong>"+item4.properties.residuos.title+" </strong><strong><span style='margin-left:20px'> Municipios: </span></strong> "+item4.properties.residuos.carbono_emissions+"</p></div><div style='display:inline-block'>"+indicator5_rows+"</div><br>";
+	
+	
+					//Indicator 6-item4
+					var total_carbono = item4.properties.carbono.sector_values.length;
+					var indicator6_rows = "";
+					
+					for(j=0; j<total_residuos; j++){
+						indicator6_rows = indicator6_rows + "<div style='margin:10px; display:inline-block; font-size:13px;'><span>"+item4.properties.carbono.sector_values[j].name+": </span><span>"+item4.properties.carbono.sector_values[j].value+"</span></div>";
+					};
+	
+					carbonoHTML = "<div><p style='font-size:15px;' class='text-left'><strong>"+item4.properties.carbono.title+" </strong><strong><span style='margin-left:20px'> Municipios: </span></strong> "+item1.properties.carbono.carbono_emissions+"</p></div><div style='display:inline-block'>"+indicator6_rows+"</div><br>";
+		
+				});
+								
+				$("#item1").click();
+				
+				$("#indicator1").click(function(){
+
+					if(dialog_status == false){
+						dialog_status = true;
+						$("#indicator-dialog").css("background-color","#853B00");						
+						$("#indicator-dialog").show();
+						$("#indicator-dialog").html(industriaHTML);
+					}else{
+						dialog_status = false;						
+						$("#indicator-dialog").hide();						
+					}
+
+				});
+				
+				$("#indicator2").click(function(){
+
+					if(dialog_status == false){
+						dialog_status = true;
+						$("#indicator-dialog").css("background-color","#C75900");						
+						$("#indicator-dialog").show();
+						$("#indicator-dialog").html(fuentesHTML);											
+					}else{
+						dialog_status = false;						
+						$("#indicator-dialog").hide();						
+					}
+
+				});	
+				
+				$("#indicator3").click(function(){
+
+					if(dialog_status == false){
+						dialog_status = true;
+						$("#indicator-dialog").css("background-color","#F4B07F");						
+						$("#indicator-dialog").show();
+						$("#indicator-dialog").html(electricaHTML);											
+					}else{
+						dialog_status = false;						
+						$("#indicator-dialog").hide();						
+					}
+
+				});							
+
+				$("#indicator4").click(function(){
+					if(dialog_status == false){
+						dialog_status = true;
+						$("#indicator-dialog").css("background-color","#F8CAAA");												
+						$("#indicator-dialog").show();
+						$("#indicator-dialog").html(agropecuarioHTML);											
+					}else{
+						dialog_status = false;						
+						$("#indicator-dialog").hide();						
+					}
+
+				});
+				
+				$("#indicator5").click(function(){
+					
+					if(dialog_status == false){
+						dialog_status = true;
+						$("#indicator-dialog").css("background-color","#FCE4D4");						
+						$("#indicator-dialog").show();
+						$("#indicator-dialog").html(residuosHTML);											
+					}else{
+						dialog_status = false;						
+						$("#indicator-dialog").hide();						
+					}
+
+				});
+				
+				$("#indicator6").click(function(){
+
+					if(dialog_status == false){
+						dialog_status = true;
+						$("#indicator-dialog").css("background-color","black");												
+						$("#indicator-dialog").show();
+						$("#indicator-dialog").html(carbonoHTML);											
+					}else{
+						dialog_status = false;						
+						$("#indicator-dialog").hide();						
+					}
+				});	
 				
 		    },
 		    error: function(err){
@@ -652,106 +830,7 @@
 			$('[data-toggle="tooltip"]').tooltip({})
 		});
 		
-		/*
-		$.ajax("http://trebolbit.mx/cambio_climatico/data/data.csv", {
-		    success: function(data) {
-
-		        var jsonobject = csvjson.csv2json(data);
-		        		        
-
-		        var totalrows = jsonobject.rows.length;
-				
-				var sector = [];
-
-				sector[0]= {
-					name:jsonobject.rows[0].a_Categoria_IPCC,
-				};
-
-				if(jsonobject.rows[0].a_2012 > 0){
-					sector[0].total += jsonobject.rows[0].a_2012;
-				}else{
-					sector[0].total = 0;
-				};
-
-				if(jsonobject.rows[0].a_2012 < 0){
-					
-					sector[0].total_2 += (jsonobject.rows[0].a_2012)*(-1);
-				}else{
-					sector[0].total_2 = 0;
-				}				
-				
-
-		        var sectorIndex = 0					
-
-		        for(i=0; i<totalrows; i++){
-					
-					var actualSector = jsonobject.rows[i].a_Categoria_IPCC;
-					
-					if(jsonobject.rows[i].a_2012 > 0){
-						sector[sectorIndex].total += jsonobject.rows[i].a_2012;						
-					}
-					if(jsonobject.rows[i].a_2012 < 0){
-						sector[sectorIndex].total_2 += (jsonobject.rows[i].a_2012)*(-1);
-					}					
-					
-			        if(sector[sectorIndex].name != jsonobject.rows[i].a_Categoria_IPCC){
-				        	
-				        sectorIndex += 1;
-						sector[sectorIndex] = {
-							name:jsonobject.rows[i].a_Categoria_IPCC,
-							total:jsonobject.rows[i].a_2012							
-						};
-						
-						if(jsonobject.rows[i].a_2012 > 0){
-							sector[sectorIndex].total = jsonobject.rows[i].a_2012;						
-						}else{
-							sector[sectorIndex].total = 0;
-						};
-						
-						if(jsonobject.rows[i].a_2012 < 0){
-							sector[sectorIndex].total_2 = (jsonobject.rows[i].a_2012)*(-1);
-						}else{
-							sector[sectorIndex].total_2 = 0;
-						};						
-						
-
-			        }
-		        }
-		        //alert(JSON.stringify(sector));
-		        
-		        
-			    var columns_adapted = [];
-			    var groups_adapted = [];
-			    groups_adapted[0] = [];			    
-			    for(j=0; j<sector.length; j++){
-				    columns_adapted[j]=[sector[j].name, sector[j].total,sector[j].total_2, sector[j].total - sector[j].total_2];
-				    groups_adapted[0].push(sector[j].name);				    
-			    };		        
-
-				//alert(JSON.stringify(groups_adapted));		
-				
-				
-				var chart1 = c3.generate({
-					"bindto": "#chart1",			
-				    data: {
-				        columns: columns_adapted,
-				        type: 'bar',
-				        groups: groups_adapted
-				    },
-				    colors: {
-			            "Agricultura": '#ff0000',
-			            "Desechos": '#ff0000',
-			            "Energía": '#ff0000'
-			        }
-				});				
-					    
-
-		    },
-		    error: function() {
-				alert("Error loading the chart data.");
-		    }
-		});
-		*/	    		
+    		
 		var chart1 = c3.generate({
 			"bindto": "#chart1",
 		    data: {

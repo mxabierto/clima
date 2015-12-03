@@ -55,6 +55,7 @@
 					<p class="huge-title">¿Por qué pasa?</p>
 					<p class="black-text">
 						El cambio climático que hoy enfrentamos está vinculado a la quema de combustibles fósiles, especialmente carbón, gas y petróleo, y a la deforestación, es decir, a la pérdida de superficie forestal. Ambos fenómenos tienen como consecuencia una disminución en la capacidad de absorción y un aumento excesivo en la emisión de gases de efecto invernadero (GEI) hacia la atmósfera, mismos que incrementan la temperatura del planeta
+
 					</p>
 					<p class="subtitle" style="padding-top: 20px;">
 						Emisiones de carbono (Co<sub>2</sub>) por sector de la economía
@@ -65,9 +66,7 @@
 						</div>	
 					</div>	
 					
-					<p class="subtitle" style="padding-bottom: 20px;">
-						Actividades que contribuyen a los gases de efecto invernadero
-					</p>
+					<p class="subtitle" style="padding-bottom: 20px;">Gases efecto invernadero</p>
 					<div class="select-container">
 						<p class="text-center select-text">
 							Selecciona un indicador 
@@ -638,7 +637,7 @@ function crearFilasIndicador1() {
 		return b.properties.ganado[ind].valor - a.properties.ganado[ind].valor;
 	});
 
-	filas = '<table class="table table-striped table-condensed table-top"><tr><td><b>Estado</b></td><td><b>CO2</b></td><td><b>PIB</b></td></tr>'
+	filas = '<table class="table table-striped table-condensed table-top"><tr><td><b>Estado</b></td><td><b>Valor</b></td><td><b>PIB</b></td></tr>'
 	+ '<tr><td>' + topEs.features[0].properties.name + '</td><td>' + topEs.features[0].properties.ganado[ind].valor + '</td><td>'+topEs.features[0].properties.valoragregado_2014+'</td></tr>' 
 	+ '<tr><td>' + topEs.features[1].properties.name + '</td><td>' + topEs.features[1].properties.ganado[ind].valor + '</td><td>'+topEs.features[1].properties.valoragregado_2014+'</td></tr>' 
 	+ '<tr><td>' + topEs.features[2].properties.name + '</td><td>' + topEs.features[2].properties.ganado[ind].valor + '</td><td>'+topEs.features[2].properties.valoragregado_2014+'</td></tr>' 
@@ -664,7 +663,7 @@ function crearFilasIndicador2() {
 		return parseInt( b.properties.cosechada[ind].valor.replace(/\,/g,''), 10 ) - parseInt( a.properties.cosechada[ind].valor.replace(/\,/g,''), 10 );
 	});
 
-	filas = '<table class="table table-striped table-condensed table-top"><tr><td><b>Estado</b></td><td><b>CO2</b></td><td><b>PIB</b></td></tr>'
+	filas = '<table class="table table-striped table-condensed table-top"><tr><td><b>Estado</b></td><td><b>Valor</b></td><td><b>PIB</b></td></tr>'
 	+ '<tr><td>' + topEs.features[0].properties.name + '</td><td>' + topEs.features[0].properties.cosechada[ind].valor + '</td><td>'+topEs.features[0].properties.valoragregado_2014+'</td></tr>' 
 	+ '<tr><td>' + topEs.features[1].properties.name + '</td><td>' + topEs.features[1].properties.cosechada[ind].valor + '</td><td>'+topEs.features[1].properties.valoragregado_2014+'</td></tr>' 
 	+ '<tr><td>' + topEs.features[2].properties.name + '</td><td>' + topEs.features[2].properties.cosechada[ind].valor + '</td><td>'+topEs.features[2].properties.valoragregado_2014+'</td></tr>' 
@@ -690,7 +689,7 @@ function crearFilasIndicador3() {
 		return b.properties.incendios[ind].valor - a.properties.incendios[ind].valor;
 	});
 
-	filas = '<table class="table table-striped table-condensed table-top"><tr><td><b>Estado</b></td><td><b>CO2</b></td><td><b>PIB</b></td></tr>'
+	filas = '<table class="table table-striped table-condensed table-top"><tr><td><b>Estado</b></td><td><b>Valor</b></td><td><b>PIB</b></td></tr>'
 	+ '<tr><td>' + topEs.features[0].properties.name + '</td><td>' + topEs.features[0].properties.incendios[ind].valor + '</td><td>'+topEs.features[0].properties.valoragregado_2014+'</td></tr>' 
 	+ '<tr><td>' + topEs.features[1].properties.name + '</td><td>' + topEs.features[1].properties.incendios[ind].valor + '</td><td>'+topEs.features[1].properties.valoragregado_2014+'</td></tr>' 
 	+ '<tr><td>' + topEs.features[2].properties.name + '</td><td>' + topEs.features[2].properties.incendios[ind].valor + '</td><td>'+topEs.features[2].properties.valoragregado_2014+'</td></tr>' 
@@ -717,7 +716,7 @@ function crearFilasIndicador4() {
 		return b.properties.estimacionresiduos[ind].valor - a.properties.estimacionresiduos[ind].valor;
 	});
 
-	filas = '<table class="table table-striped table-condensed table-top"><tr><td><b>Estado</b></td><td><b>CO2</b></td><td><b>PIB</b></td></tr>'
+	filas = '<table class="table table-striped table-condensed table-top"><tr><td><b>Estado</b></td><td><b>Valor</b></td><td><b>PIB</b></td></tr>'
 	+ '<tr><td>' + topEs.features[0].properties.name + '</td><td>' + topEs.features[0].properties.estimacionresiduos[ind].valor + '</td><td>'+topEs.features[0].properties.valoragregado_2014+'</td></tr>' 
 	+ '<tr><td>' + topEs.features[1].properties.name + '</td><td>' + topEs.features[1].properties.estimacionresiduos[ind].valor + '</td><td>'+topEs.features[1].properties.valoragregado_2014+'</td></tr>' 
 	+ '<tr><td>' + topEs.features[2].properties.name + '</td><td>' + topEs.features[2].properties.estimacionresiduos[ind].valor + '</td><td>'+topEs.features[2].properties.valoragregado_2014+'</td></tr>' 
@@ -744,7 +743,7 @@ function crearFilasIndicador5() {
 		return b.properties.genelec[ind].valor - a.properties.genelec[ind].valor;
 	});
 
-	filas = '<table class="table table-striped table-condensed table-top"><tr><td><b>Estado</b></td><td><b>CO2</b></td><td><b>PIB</b></td></tr>'
+	filas = '<table class="table table-striped table-condensed table-top"><tr><td><b>Estado</b></td><td><b>Valor</b></td><td><b>PIB</b></td></tr>'
 	+ '<tr><td>' + topEs.features[0].properties.name + '</td><td>' + topEs.features[0].properties.genelec[ind].valor + '</td><td>'+topEs.features[0].properties.valoragregado_2014+'</td></tr>' 
 	+ '<tr><td>' + topEs.features[1].properties.name + '</td><td>' + topEs.features[1].properties.genelec[ind].valor + '</td><td>'+topEs.features[1].properties.valoragregado_2014+'</td></tr>' 
 	+ '<tr><td>' + topEs.features[2].properties.name + '</td><td>' + topEs.features[2].properties.genelec[ind].valor + '</td><td>'+topEs.features[2].properties.valoragregado_2014+'</td></tr>' 
@@ -771,7 +770,7 @@ function crearFilasIndicador6() {
 		return b.properties.vehiregistrados[ind].valor - a.properties.vehiregistrados[ind].valor;
 	});
 
-	filas = '<table class="table table-striped table-condensed table-top"><tr><td><b>Estado</b></td><td><b>CO2</b></td><td><b>PIB</b></td></tr>'
+	filas = '<table class="table table-striped table-condensed table-top"><tr><td><b>Estado</b></td><td><b>Valor</b></td><td><b>PIB</b></td></tr>'
 	+ '<tr><td>' + topEs.features[0].properties.name + '</td><td>' + topEs.features[0].properties.vehiregistrados[ind].valor + '</td><td>'+topEs.features[0].properties.valoragregado_2014+'</td></tr>' 
 	+ '<tr><td>' + topEs.features[1].properties.name + '</td><td>' + topEs.features[1].properties.vehiregistrados[ind].valor + '</td><td>'+topEs.features[1].properties.valoragregado_2014+'</td></tr>' 
 	+ '<tr><td>' + topEs.features[2].properties.name + '</td><td>' + topEs.features[2].properties.vehiregistrados[ind].valor + '</td><td>'+topEs.features[2].properties.valoragregado_2014+'</td></tr>' 
@@ -798,7 +797,7 @@ function crearFilasIndicador7() {
 		return b.properties.plantasresiduales[ind].valor - a.properties.plantasresiduales[ind].valor;
 	});
 
-	filas = '<table class="table table-striped table-condensed table-top"><tr><td><b>Estado</b></td><td><b>CO2</b></td><td><b>PIB</b></td></tr>'
+	filas = '<table class="table table-striped table-condensed table-top"><tr><td><b>Estado</b></td><td><b>Valor</b></td><td><b>PIB</b></td></tr>'
 	+ '<tr><td>' + topEs.features[0].properties.name + '</td><td>' + topEs.features[0].properties.plantasresiduales[ind].valor + '</td><td>'+topEs.features[0].properties.valoragregado_2014+'</td></tr>' 
 	+ '<tr><td>' + topEs.features[1].properties.name + '</td><td>' + topEs.features[1].properties.plantasresiduales[ind].valor + '</td><td>'+topEs.features[1].properties.valoragregado_2014+'</td></tr>' 
 	+ '<tr><td>' + topEs.features[2].properties.name + '</td><td>' + topEs.features[2].properties.plantasresiduales[ind].valor + '</td><td>'+topEs.features[2].properties.valoragregado_2014+'</td></tr>' 
@@ -824,7 +823,7 @@ function crearFilasIndicador8() {
 		return b.properties.buques[ind].valor - a.properties.buques[ind].valor;
 	});
 
-	filas = '<table class="table table-striped table-condensed table-top"><tr><td><b>Estado</b></td><td><b>CO2</b></td><td><b>PIB</b></td></tr>'
+	filas = '<table class="table table-striped table-condensed table-top"><tr><td><b>Estado</b></td><td><b>Valor</b></td><td><b>PIB</b></td></tr>'
 	+ '<tr><td>' + topEs.features[0].properties.name + '</td><td>' + topEs.features[0].properties.buques[ind].valor + '</td><td>'+topEs.features[0].properties.valoragregado_2014+'</td></tr>' 
 	+ '<tr><td>' + topEs.features[1].properties.name + '</td><td>' + topEs.features[1].properties.buques[ind].valor + '</td><td>'+topEs.features[1].properties.valoragregado_2014+'</td></tr>' 
 	+ '<tr><td>' + topEs.features[2].properties.name + '</td><td>' + topEs.features[2].properties.buques[ind].valor + '</td><td>'+topEs.features[2].properties.valoragregado_2014+'</td></tr>' 
@@ -851,7 +850,7 @@ function crearFilasIndicador9() {
 		return b.properties.vuelos[ind].valor - a.properties.vuelos[ind].valor;
 	});
 
-	filas = '<table class="table table-striped table-condensed table-top"><tr><td><b>Estado</b></td><td><b>CO2</b></td><td><b>PIB</b></td></tr>'
+	filas = '<table class="table table-striped table-condensed table-top"><tr><td><b>Estado</b></td><td><b>Valor</b></td><td><b>PIB</b></td></tr>'
 	+ '<tr><td>' + topEs.features[0].properties.name + '</td><td>' + topEs.features[0].properties.vuelos[ind].valor + '</td><td>'+topEs.features[0].properties.valoragregado_2014+'</td></tr>' 
 	+ '<tr><td>' + topEs.features[1].properties.name + '</td><td>' + topEs.features[1].properties.vuelos[ind].valor + '</td><td>'+topEs.features[1].properties.valoragregado_2014+'</td></tr>' 
 	+ '<tr><td>' + topEs.features[2].properties.name + '</td><td>' + topEs.features[2].properties.vuelos[ind].valor + '</td><td>'+topEs.features[2].properties.valoragregado_2014+'</td></tr>' 
@@ -897,11 +896,46 @@ function pintarMapa() {
 
 	info.update = function (props) {
 		this._div.innerHTML = (props ? '<h4>' + props.name + '</h4> <br>' 
-			+ 'Población: ' + props.pob_2014 + '<br>' 
+			+ '<div style="text-align: left;">Población: ' + props.pob_2014 + '<br>' 
 			+ 'PIB Anual: ' + props.valoragregado_2014 + '<br>'
-			+ 'Territorio: ' + props.superficie_total + '<br><br><br>'
+			+ 'Territorio: ' + props.superficie_total + '</div><br>'
 			+ '<b>Top estados generadores</b><br>'
-			+ filas : '');
+			+ filas
+			+ '<div id="chart2"></div>' : '');
+
+			if (typeof props != "undefined") {
+				var x = ['x'];
+				var lb = ['Valor'];
+
+				props.ganado.forEach(function(el) {
+					x.push(el.tiempo + "-01-01");
+					lb.push(el.valor);
+				});
+			
+			
+				var chart = c3.generate({
+					bindto: '#chart2',
+					size: {
+						width: 210,
+						height: 200
+					},
+					padding: {
+						right: 10
+					},
+				    data: {
+				        x: 'x',
+				        columns: [x, lb]
+				    },
+				    axis: {
+				        x: {
+				            type: 'timeseries',
+				            tick: {
+				                format: '%Y'
+				            }
+				        }
+				    }
+				});
+			}
 	};
 
 	info.addTo(map);
@@ -977,11 +1011,46 @@ function pintarMapa2() {
 
 	info.update = function (props) {
 		this._div.innerHTML = (props ? '<h4>' + props.name + '</h4> <br>' 
-			+ 'Población: ' + props.pob_2014 + '<br>' 
+			+ '<div style="text-align: left;">Población: ' + props.pob_2014 + '<br>' 
 			+ 'PIB Anual: ' + props.valoragregado_2014 + '<br>'
-			+ 'Territorio: ' + props.superficie_total + '<br><br><br>'
-			+ '<b>Top estados generadores</b><br>' 
-			+ filas : '');
+			+ 'Territorio: ' + props.superficie_total + '</div><br>'
+			+ '<b>Top estados generadores</b><br>'
+			+ filas
+			+ '<div id="chart2"></div>' : '');
+
+			if (typeof props != "undefined") {
+				var x = ['x'];
+				var lb = ['Valor'];
+
+				props.cosechada.forEach(function(el) {
+					x.push(el.tiempo + "-01-01");
+					lb.push(el.valor.replace(/\,/g,''));
+				});
+			
+			
+				var chart = c3.generate({
+					bindto: '#chart2',
+					size: {
+						width: 210,
+						height: 200
+					},
+					padding: {
+						right: 10
+					},
+				    data: {
+				        x: 'x',
+				        columns: [x, lb]
+				    },
+				    axis: {
+				        x: {
+				            type: 'timeseries',
+				            tick: {
+				                format: '%Y'
+				            }
+				        }
+				    }
+				});
+			}
 	};
 
 	info.addTo(map);
@@ -1054,11 +1123,46 @@ function pintarMapa3() {
 
 	info.update = function (props) {
 		this._div.innerHTML = (props ? '<h4>' + props.name + '</h4> <br>' 
-			+ 'Población: ' + props.pob_2014 + '<br>' 
+			+ '<div style="text-align: left;">Población: ' + props.pob_2014 + '<br>' 
 			+ 'PIB Anual: ' + props.valoragregado_2014 + '<br>'
-			+ 'Territorio: ' + props.superficie_total + '<br><br><br>'
-			+ '<b>Top estados generadores</b><br>' 
-			+ filas : '');
+			+ 'Territorio: ' + props.superficie_total + '</div><br>'
+			+ '<b>Top estados generadores</b><br>'
+			+ filas
+			+ '<div id="chart2"></div>' : '');
+
+			if (typeof props != "undefined") {
+				var x = ['x'];
+				var lb = ['Valor'];
+
+				props.incendios.forEach(function(el) {
+					x.push(el.tiempo + "-01-01");
+					lb.push(el.valor);
+				});
+			
+			
+				var chart = c3.generate({
+					bindto: '#chart2',
+					size: {
+						width: 210,
+						height: 200
+					},
+					padding: {
+						right: 10
+					},
+				    data: {
+				        x: 'x',
+				        columns: [x, lb]
+				    },
+				    axis: {
+				        x: {
+				            type: 'timeseries',
+				            tick: {
+				                format: '%Y'
+				            }
+				        }
+				    }
+				});
+			}
 	};
 
 	info.addTo(map);
@@ -1131,11 +1235,46 @@ function pintarMapa4() {
 
 	info.update = function (props) {
 		this._div.innerHTML = (props ? '<h4>' + props.name + '</h4> <br>' 
-			+ 'Población: ' + props.pob_2014 + '<br>' 
+			+ '<div style="text-align: left;">Población: ' + props.pob_2014 + '<br>' 
 			+ 'PIB Anual: ' + props.valoragregado_2014 + '<br>'
-			+ 'Territorio: ' + props.superficie_total + '<br><br><br>'
-			+ '<b>Top estados generadores</b><br>' 
-			+ filas : '');
+			+ 'Territorio: ' + props.superficie_total + '</div><br>'
+			+ '<b>Top estados generadores</b><br>'
+			+ filas
+			+ '<div id="chart2"></div>' : '');
+
+			if (typeof props != "undefined") {
+				var x = ['x'];
+				var lb = ['Valor'];
+
+				props.estimacionresiduos.forEach(function(el) {
+					x.push(el.tiempo + "-01-01");
+					lb.push(el.valor);
+				});
+			
+			
+				var chart = c3.generate({
+					bindto: '#chart2',
+					size: {
+						width: 210,
+						height: 200
+					},
+					padding: {
+						right: 10
+					},
+				    data: {
+				        x: 'x',
+				        columns: [x, lb]
+				    },
+				    axis: {
+				        x: {
+				            type: 'timeseries',
+				            tick: {
+				                format: '%Y'
+				            }
+				        }
+				    }
+				});
+			}
 	};
 
 	info.addTo(map);
@@ -1207,11 +1346,46 @@ function pintarMapa5() {
 
 	info.update = function (props) {
 		this._div.innerHTML = (props ? '<h4>' + props.name + '</h4> <br>' 
-			+ 'Población: ' + props.pob_2014 + '<br>' 
+			+ '<div style="text-align: left;">Población: ' + props.pob_2014 + '<br>' 
 			+ 'PIB Anual: ' + props.valoragregado_2014 + '<br>'
-			+ 'Territorio: ' + props.superficie_total + '<br><br><br>'
-			+ '<b>Top estados generadores</b><br>' 
-			+ filas : '');
+			+ 'Territorio: ' + props.superficie_total + '</div><br>'
+			+ '<b>Top estados generadores</b><br>'
+			+ filas
+			+ '<div id="chart2"></div>' : '');
+
+			if (typeof props != "undefined") {
+				var x = ['x'];
+				var lb = ['Valor'];
+
+				props.genelec.forEach(function(el) {
+					x.push(el.tiempo + "-01-01");
+					lb.push(el.valor);
+				});
+			
+			
+				var chart = c3.generate({
+					bindto: '#chart2',
+					size: {
+						width: 210,
+						height: 200
+					},
+					padding: {
+						right: 10
+					},
+				    data: {
+				        x: 'x',
+				        columns: [x, lb]
+				    },
+				    axis: {
+				        x: {
+				            type: 'timeseries',
+				            tick: {
+				                format: '%Y'
+				            }
+				        }
+				    }
+				});
+			}
 	};
 
 	info.addTo(map);
@@ -1283,11 +1457,46 @@ function pintarMapa6() {
 
 	info.update = function (props) {
 		this._div.innerHTML = (props ? '<h4>' + props.name + '</h4> <br>' 
-			+ 'Población: ' + props.pob_2014 + '<br>' 
+			+ '<div style="text-align: left;">Población: ' + props.pob_2014 + '<br>' 
 			+ 'PIB Anual: ' + props.valoragregado_2014 + '<br>'
-			+ 'Territorio: ' + props.superficie_total + '<br><br><br>'
-			+ '<b>Top estados generadores</b><br>' 
-			+ filas : '');
+			+ 'Territorio: ' + props.superficie_total + '</div><br>'
+			+ '<b>Top estados generadores</b><br>'
+			+ filas
+			+ '<div id="chart2"></div>' : '');
+
+			if (typeof props != "undefined") {
+				var x = ['x'];
+				var lb = ['Valor'];
+
+				props.vehiregistrados.forEach(function(el) {
+					x.push(el.tiempo + "-01-01");
+					lb.push(el.valor);
+				});
+			
+			
+				var chart = c3.generate({
+					bindto: '#chart2',
+					size: {
+						width: 210,
+						height: 200
+					},
+					padding: {
+						right: 10
+					},
+				    data: {
+				        x: 'x',
+				        columns: [x, lb]
+				    },
+				    axis: {
+				        x: {
+				            type: 'timeseries',
+				            tick: {
+				                format: '%Y'
+				            }
+				        }
+				    }
+				});
+			}
 	};
 
 	info.addTo(map);
@@ -1359,11 +1568,46 @@ function pintarMapa7() {
 
 	info.update = function (props) {
 		this._div.innerHTML = (props ? '<h4>' + props.name + '</h4> <br>' 
-			+ 'Población: ' + props.pob_2014 + '<br>' 
+			+ '<div style="text-align: left;">Población: ' + props.pob_2014 + '<br>' 
 			+ 'PIB Anual: ' + props.valoragregado_2014 + '<br>'
-			+ 'Territorio: ' + props.superficie_total + '<br><br><br>'
-			+ '<b>Top estados generadores</b><br>' 
-			+ filas : '');
+			+ 'Territorio: ' + props.superficie_total + '</div><br>'
+			+ '<b>Top estados generadores</b><br>'
+			+ filas
+			+ '<div id="chart2"></div>' : '');
+
+			if (typeof props != "undefined") {
+				var x = ['x'];
+				var lb = ['Valor'];
+
+				props.plantasresiduales.forEach(function(el) {
+					x.push(el.tiempo + "-01-01");
+					lb.push(el.valor);
+				});
+			
+			
+				var chart = c3.generate({
+					bindto: '#chart2',
+					size: {
+						width: 210,
+						height: 200
+					},
+					padding: {
+						right: 10
+					},
+				    data: {
+				        x: 'x',
+				        columns: [x, lb]
+				    },
+				    axis: {
+				        x: {
+				            type: 'timeseries',
+				            tick: {
+				                format: '%Y'
+				            }
+				        }
+				    }
+				});
+			}
 	};
 
 	info.addTo(map);
@@ -1435,11 +1679,46 @@ function pintarMapa8() {
 
 	info.update = function (props) {
 		this._div.innerHTML = (props ? '<h4>' + props.name + '</h4> <br>' 
-			+ 'Población: ' + props.pob_2014 + '<br>' 
+			+ '<div style="text-align: left;">Población: ' + props.pob_2014 + '<br>' 
 			+ 'PIB Anual: ' + props.valoragregado_2014 + '<br>'
-			+ 'Territorio: ' + props.superficie_total + '<br><br><br>'
-			+ '<b>Top estados generadores</b><br>' 
-			+ filas : '');
+			+ 'Territorio: ' + props.superficie_total + '</div><br>'
+			+ '<b>Top estados generadores</b><br>'
+			+ filas
+			+ '<div id="chart2"></div>' : '');
+
+			if (typeof props != "undefined") {
+				var x = ['x'];
+				var lb = ['Valor'];
+
+				props.buques.forEach(function(el) {
+					x.push(el.tiempo + "-01-01");
+					lb.push(el.valor);
+				});
+			
+			
+				var chart = c3.generate({
+					bindto: '#chart2',
+					size: {
+						width: 210,
+						height: 200
+					},
+					padding: {
+						right: 10
+					},
+				    data: {
+				        x: 'x',
+				        columns: [x, lb]
+				    },
+				    axis: {
+				        x: {
+				            type: 'timeseries',
+				            tick: {
+				                format: '%Y'
+				            }
+				        }
+				    }
+				});
+			}
 	};
 
 	info.addTo(map);
@@ -1511,11 +1790,46 @@ function pintarMapa9() {
 
 	info.update = function (props) {
 		this._div.innerHTML = (props ? '<h4>' + props.name + '</h4> <br>' 
-			+ 'Población: ' + props.pob_2014 + '<br>' 
+			+ '<div style="text-align: left;">Población: ' + props.pob_2014 + '<br>' 
 			+ 'PIB Anual: ' + props.valoragregado_2014 + '<br>'
-			+ 'Territorio: ' + props.superficie_total + '<br><br><br>'
-			+ '<b>Top estados generadores</b><br>' 
-			+ filas : '');
+			+ 'Territorio: ' + props.superficie_total + '</div><br>'
+			+ '<b>Top estados generadores</b><br>'
+			+ filas
+			+ '<div id="chart2"></div>' : '');
+
+			if (typeof props != "undefined") {
+				var x = ['x'];
+				var lb = ['Valor'];
+
+				props.vuelos.forEach(function(el) {
+					x.push(el.tiempo + "-01-01");
+					lb.push(el.valor);
+				});
+			
+			
+				var chart = c3.generate({
+					bindto: '#chart2',
+					size: {
+						width: 210,
+						height: 200
+					},
+					padding: {
+						right: 10
+					},
+				    data: {
+				        x: 'x',
+				        columns: [x, lb]
+				    },
+				    axis: {
+				        x: {
+				            type: 'timeseries',
+				            tick: {
+				                format: '%Y'
+				            }
+				        }
+				    }
+				});
+			}
 	};
 
 	info.addTo(map);
@@ -1555,11 +1869,7 @@ function pintarMapa9() {
 
 
 $.ajax({
-	// url: "data/states_temp.json",
-	// url: "data/states_temp_2by2.json",
-	// url: "data/states_temp2byall.json",
-	// url: "data/screen2all_states.json",
-	url: "data/states_all.json",
+	url: "data/screen2.json",
 	async: false,
 	success: function(data){
 		console.log(data);
@@ -1619,11 +1929,46 @@ var map = L.map('map', {zoomControl: true}).setView([25.511791, -101.080072], 5)
 		info.update = function (props) {
 			crearFilasIndicador1();
 			this._div.innerHTML = (props ? '<h4>' + props.name + '</h4> <br>' 
-				+ 'Población: ' + props.pob_2014 + '<br>' 
+				+ '<div style="text-align: left;">Población: ' + props.pob_2014 + '<br>' 
 				+ 'PIB Anual: ' + props.valoragregado_2014 + '<br>'
-				+ 'Territorio: ' + props.superficie_total + '<br><br><br>'
-				+ '<b>Top estados generadores</b><br>' 
-				+ filas : '');
+				+ 'Territorio: ' + props.superficie_total + '</div><br>'
+				+ '<b>Top estados generadores</b><br>'
+				+ filas
+				+ '<div id="chart2"></div>' : '');
+
+			if (typeof props != "undefined") {
+				var x = ['x'];
+				var lb = ['Valor'];
+
+				props.ganado.forEach(function(el) {
+					x.push(el.tiempo + "-01-01");
+					lb.push(el.valor);
+				});
+			
+			
+				var chart = c3.generate({
+					bindto: '#chart2',
+					size: {
+						width: 210,
+						height: 200
+					},
+					padding: {
+						right: 10
+					},
+				    data: {
+				        x: 'x',
+				        columns: [x, lb]
+				    },
+				    axis: {
+				        x: {
+				            type: 'timeseries',
+				            tick: {
+				                format: '%Y'
+				            }
+				        }
+				    }
+				});
+			}
 		};
 
 		info.addTo(map);
@@ -1715,6 +2060,10 @@ var map = L.map('map', {zoomControl: true}).setView([25.511791, -101.080072], 5)
 		};
 
 		legend.addTo(map);
+
+
+
+
 
 	</script>  
 </body>	

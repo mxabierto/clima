@@ -6,8 +6,6 @@
 	src: url(OpenSans-Regular.ttf);
 }
 
-
-
 body {
   background-color: #F6F6F6;
   color: #555;
@@ -19,17 +17,6 @@ body {
 	padding: 30px;
 }
 
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6, 
-.span, .p{
-  margin-top: 0;
-  font-weight: normal;
-  font-family: OpenSans;
-}
 
 /*
  * Masthead for nav
@@ -391,6 +378,39 @@ a:visited{
 	font-size: 16px;
     font-weight: bold;
     color: #4A4A4A;
+}
+
+.indicators-table{
+	width: 100%;
+}
+.indicator-box{
+	width: 100%;
+	color:white;
+	font-size: 15px;
+	padding: 5px;
+	height: 80px;
+} 
+.indicators-row{
+	width: 16.66%;	
+	padding: 3px;						    
+}
+#indicator1{
+	background-color: #853B00;
+}
+#indicator2{
+	background-color: #C75900;
+}							
+#indicator3{
+	background-color: #F4B07F;
+}
+#indicator4{
+	background-color: #F8CAAA;
+}
+#indicator5{
+	background-color: #FCE4D4;
+}
+#indicator6{
+	background-color: black;
 }
 
 .titles-databar{

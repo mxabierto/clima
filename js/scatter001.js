@@ -7,24 +7,23 @@ for (var i = 0; i < 100; i++){
 }
 
 
-//var catalogo = JSON.parse('{{"id": "MICROSOFT","acts":{"indicador":1,nombre:"Games","indicador":2,nombre:"Joysticks"}}, {"id": "IBM","acts":{"indicador":1,nombre:"Computers","indicador":2,nombre:"Laptops"}}}')
 
-// getact = function (d) {     var sector = d.id;
-//                             var ind = d.index;
-//                             var sectores = [{"idsec": "Microsoft","acts":[{"indicador":1,"nombre":"Games"},{"indicador":2,"nombre":"Joysticks"}]},
-//                                             {"idsec": "IBM","acts":[{"indicador":1,"nombre":"Computers"},{"indicador":2,"nombre":"Laptops"}]}
-//                                             ];
-//                             if ( d.value ) {
-//                                 for(var k = 0; k < sectores.length; i++){
-//                                     if(sectores[k].idsec == sector){
-//                                         //if(!sectores[k].acts[ind]){var activity ="None";continue;}
-//                                         var activity = sectores[k].acts[ind].nombre;
-//                                         d.activity = activity;pa
-//                                     }
-//                                 }
-//                             }
-//                             return activity;
-//                         } 
+getact = function (d) {     
+	var sector = d.id;
+	var ind = d.index;
+	var sectores = [{"idsec":"Agropecuario","acts":[{"ind":1,"act":"Fermentación entérica"},{"ind":2,"act":"Manejo del estiercol"}]} , {"idsec":"Generación Eléctrica","acts":[{"ind":1,"act":"Generación Eléctrica"}]},{"idsec":"Industria Petróleo y Gas","acts":[{"ind":1,"act":"Petróleo & Gas"},{"ind":2,"act":"Cemento (combustion y proceso)"},{"ind":3,"act":"Cal (combustion y proceso)"},{"ind":4,"act":"Siderurgica (combustion y proceso)"},{"ind":5,"act":"Química (combustion y proceso)"},{"ind":6,"act":"Consumo de otros carbonatos (Vidrio Metalúrgica)"}]}, {"idsec":"Minería","acts":[{"ind":1,"act":"Minería"}]},{"idsec":"Residencial y Comercial","acts":[{"ind":1,"act":"Gas L.P. residencial"},{"ind":2,"act":"Gas Natural residencial y residencial"}]}];
+
+    if( d.value ) {
+        for(var k = 0; k < sectores.length; i++){
+            if(sectores[k].idsec == sector){
+                //if(!sectores[k].acts[ind]){var activity ="None";continue;}
+                var activity = sectores[k].acts[ind].nombre;
+                d.activity = activity;pa
+            }
+        }
+    }
+    return activity;
+} 
 
 //console.log(datajson)
 //function(d) {
