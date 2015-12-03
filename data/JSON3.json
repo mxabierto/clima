@@ -19,7 +19,7 @@
             ],
             "carbono_emissions":"29.4% (195 millones de toneladas CO2 eq.)"
          },
-        "Fuentes":{  
+        "fuentes":{  
             "title":"Fuentes móviles",
             "sector_values":[  
                {  
@@ -151,7 +151,7 @@
             ],
             "carbono_emissions":"29.4% (195 millones de toneladas CO2 eq.)"
          },
-        "Fuentes":{  
+        "fuentes":{  
             "title":"Fuentes móviles",
             "sector_values":[  
                {  
@@ -279,7 +279,7 @@
             ],
             "carbono_emissions":""
          },
-        "Fuentes":{  
+        "fuentes":{  
             "title":"Agropecuario, Uso de Suelo y Silvicultura",
             "sector_values":[  
                {  
@@ -353,7 +353,7 @@
             ],
             "carbono_emissions":"34 municipios"
          },
-        "Fuentes":{  
+        "fuentes":{  
             "title":"Municipios más vulnerables del Norte",
             "sector_values":[  
                {  
