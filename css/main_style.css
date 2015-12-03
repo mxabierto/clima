@@ -395,23 +395,42 @@ a:visited{
 	padding: 3px;						    
 }
 #indicator1{
-	background-color: #853B00;
+	background-color: #0B0B0B;
 }
 #indicator2{
-	background-color: #C75900;
+	background-color: #4A4A4A;
 }							
 #indicator3{
-	background-color: #F4B07F;
+	background-color: #6F6F6F;
 }
 #indicator4{
-	background-color: #F8CAAA;
+	background-color: #AEAEAE;
 }
 #indicator5{
-	background-color: #FCE4D4;
+	background-color: #D4D4D4;
 }
 #indicator6{
 	background-color: black;
 }
+#indicator1:hover{
+	background-color: #0B0B0B;
+}
+#indicator2:hover{
+	background-color: #4A4A4A;
+}							
+#indicator3:hover{
+	background-color: #6F6F6F;
+}
+#indicator4:hover{
+	background-color: #AEAEAE;
+}
+#indicator5:hover{
+	background-color: #D4D4D4;
+}
+#indicator6:hover{
+	background-color: black;
+}
+
 
 .titles-databar{
 	width: 100%;
