@@ -1,52 +1,45 @@
 //DEFAULT
-var datajson = []
-for (var i = 0; i < 100; i++){
-    datajson.push({
-        total: Math.ceil(Math.random() * 10)
-    });
-}
 
-//CATALOGO
-//var catalogo = JSON.parse('{{"idsec":"Agropecuario","acts":"[{"ind":1,"act":"Fermentación entérica"},{"ind":2,"act":"Manejo del estiercol"},{"ind":3,"act":"Suelos agricolas, quemas agricolas y cultivos de arroz"}]"} ],[ {"idsec":"Generación Eléctrica","acts":"[{"ind":1,"act":"Generación Eléctrica"}]"} ],[ {"idsec":"Industria Petróleo y Gas","acts":"[{"ind":1,"act":"Petróleo & Gas"},{"ind":2,"act":"Cemento (combustion y proceso)"},{"ind":3,"act":"Cal (combustion y proceso)"},{"ind":4,"act":"Siderurgica (combustion y proceso)"},{"ind":5,"act":"Química (combustion y proceso)"},{"ind":6,"act":"Consumo de otros carbonatos (Vidrio Metalúrgica)"}]"} ],[ {"idsec":"Minería","acts":"[{"ind":1,"act":"Minería"}]"} ],[ {"idsec":"Residencial y Comercial","acts":"[{"ind":1,"act":"Gas L.P. residencial"},{"ind":2,"act":"Gas Natural residencial y residencial"}]"}}')
+//CATALOGOS
 
-// getact = function (d) {     var sector = d.id;
-//                             var ind = d.index;
-//                             var sectores = [ {"idsec":"Agropecuario","acts":"[{"ind":1,"act":"Fermentación entérica"},{"ind":2,"act":"Manejo del estiercol"},{"ind":3,"act":"Suelos agricolas, quemas agricolas y cultivos de arroz"}]"} ],[ {"idsec":"Generación Eléctrica","acts":"[{"ind":1,"act":"Generación Eléctrica"}]"} ],[ {"idsec":"Industria Petróleo y Gas","acts":"[{"ind":1,"act":"Petróleo & Gas"},{"ind":2,"act":"Cemento (combustion y proceso)"},{"ind":3,"act":"Cal (combustion y proceso)"},{"ind":4,"act":"Siderurgica (combustion y proceso)"},{"ind":5,"act":"Química (combustion y proceso)"},{"ind":6,"act":"Consumo de otros carbonatos (Vidrio Metalúrgica)"}]"} ],[ {"idsec":"Minería","acts":"[{"ind":1,"act":"Minería"}]"} ],[ {"idsec":"Residencial y Comercial","acts":"[{"ind":1,"act":"Gas L.P. residencial"},{"ind":2,"act":"Gas Natural residencial y residencial"}]"} ];
-//                             if ( d.value ) {
-//                                 for(var k = 0; k < sectores.length; i++){
-//                                     if(sectores[k].idsec == sector){
-//                                         //if(!sectores[k].acts[ind]){var activity ="None";continue;}
-//                                         var activity = sectores[k].acts[ind].nombre;
-//                                         d.activity = activity;pa
-//                                     }
-//                                 }
-//                             }
-//                             return activity;
-//                         } 
+var sectores_ratio = {"idsec":["Agropecuario","Generación Eléctrica","Industria Petróleo y Gas","Minería"],
+                   "vals":[
+                        [192.79,17.583],[114.351],[25.276,159.258,287.008,32.19,8.564,4.055],[17.916]
+                          ]
+                }
 
-//console.log(datajson)
-//function(d) {
-//       return Math.random() * 3;
-
+var sectores_acts = {"idsec":["Agropecuario","Generación Eléctrica","Industria Petróleo y Gas","Minería"],
+                   "acts":[
+                         ["Fermentación entérica y Manejo del estiercol","Suelos agricolas, quemas agricolas y cultivos de arroz"],
+                          ["Generación Eléctrica"],
+                          ["Petróleo & Gas","Cemento (combustión y fabricación)","Cal (combustión y fabricación)","Siderúrgica (combustion y proceso)","Química (combustion y proceso)","Consumo de otros carbonatos (Vidrio Metalúrgica)"],
+                          ["Minería"]
+                          ]
+                }
+                
 var chart = c3.generate({
     bindto: '#chart',
     point: {
         r: function (d) {
-            var k = d.index
             if ( d.value ) {
-                var size = datajson[k]["total"];
+                var sector = d.id
+                var k = d.index
+                var j = sectores_ratio.idsec.indexOf(sector);
+                var size = sectores_ratio.vals[j][k]
                 d.size = size;
-                return size;
+                //console.log(size)
+                //return gol;
+                return size/10;
             }
         }
     },
     data: {
         xs: {
-            'Agropecuario': 'x1', 'Generación Eléctrica': 'x2', 'Industria Petróleo y Gas': 'x3', 'Minería': 'x4', 'Residencial y Comercial': 'x5'
-        },
+            'Agropecuario': 'x1', 'Generación Eléctrica': 'x2', 'Industria Petróleo y Gas': 'x3', 'Minería': 'x4'
+          },
         columns: [
-            ['Agropecuario',51208129,13735518,14845796],['x1',1591596,65478,417346594],['Generación Eléctrica',126607656],['x2',204585913],['Industria Petróleo y Gas',80455256,30224652,4213282,8783472,8220642,1833695],['x3',895936597,14216838,1305421,60991145,230284086,46354299],['Minería',9578774],['x4',104079321],['Residencial y Comercial',2503920,628478],['x5',53115667,101486124]
-            ],
+            ['Agropecuario',93821211,19271651],['x1',486651,1096020],['Generación Eléctrica',126607656],['x2',1107180],['Industria Petróleo y Gas',80455256,30224652,4213282,8783472,8849120,1833695],['x3',3183091,189784,14680,272864,1033237,452170],['Minería',9578774],['x4',534644]
+           ],
         type: 'scatter'
     },
     axis: {
@@ -54,19 +47,23 @@ var chart = c3.generate({
          min: 10,
          tick: {
          fit: false, // adjusts the chart not fit x ticks
-         culling: {
-                    max: 8 // the number of tick texts will be adjusted to less than this value
-                }
+         // culling: {
+         //            max: 8 // the number of tick texts will be adjusted to less than this value
+         //        }
+         format: d3.format('.2s'),
             },
         label: { // ADD
-          text: 'Valor Agregado Censal Bruto (miles de pesos)',
+          text: 'Valor Agregado Censal Bruto (millones de pesos a precios del 2008)',
           position: 'outer-middle'
         }
       },
       y: {
+        tick: {
+                format: d3.format('2s')
+              },
        // padding: {top: 0, bottom: 0},
         label: { // ADD
-          text: 'Emisiones totales de CO2 (gigatoneladas)',
+          text: 'Emisiones Totales de CO2 (gigatoneladas)',
           position: 'outer-middle'
         }
       }
@@ -88,32 +85,18 @@ var chart = c3.generate({
                   title = titleFormat ? titleFormat(data[i].x) : data[i].x;
                   text = "<div id='tooltip' class='d3-tip'>";
                   size = data[i].size;
-                  sector = data[i].id;
-                  ind = data[i].index;
-                  //activity= getact(data[i]);
-                  //console.log(sector);
-                  //console.log(ind);
-                    // var sectores = [{"idsec": "Microsoft","acts":[{"indicador":1,"nombre":"Games"},{"indicador":2,"nombre":"Joysticks"}]},
-                    //                 {"idsec": "IBM","acts":[{"indicador":1,"nombre":"Computers"},{"indicador":2,"nombre":"Laptops"}]}
-                    //                 ];
-
-                    // for(var k = 0; k < sectores.length; i++)
-                    // {
-                    //   if(sectores[k].idsec == sector)
-                    //   {
-                    //     activity = sectores[k].acts[ind].nombre ;
-                    //     console.log(activity);
-                    //   }
-                    // }  
-
-                       
+                  var sector = data[i].id;
+                  var k = data[i].index;
+                  var j = sectores_ratio.idsec.indexOf(sector);
+                  var act = sectores_acts.acts[j][k];
+    
                 }
 
                 value = valueFormat(data[i].value, data[i].ratio, data[i].id, data[i].index);
-                text += "<span class='info'> Actividad economica " + sector +" " + ind + "</span><br>";
-                text += "<span class='info'>"+ title + " pesos</span><br>";
-                text += "<span class='info'>"+ size + " empleados </span><br>";
-                text += "<span class='value'>" + value + " co2/kg </span>";
+                text += "<span class='info'> Actividad económica: " + act + "</span><br>";
+                text += "<span class='info'> Valor Agregado: "+ title + " millones  de pesos</span><br>";
+                text += "<span class='info'> Emisiones: " + value + " CO2/Kg </span><br>";
+                text += "<span class='info'> Razón de Eficiencia: "+ size + " GTon CO2 / Millones Pesos </span>";
                 text += "</div>";
             }
         return text;
