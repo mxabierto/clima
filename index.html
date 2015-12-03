@@ -16,7 +16,7 @@
 	<!--Tabs Style -->
 	<link type="text/css" rel="stylesheet" href="css/tabs_style.css" />
 
-	<link href="css/c3.css" rel="stylesheet" type="text/css">    
+	<link href="css/c3-master/c3.css" rel="stylesheet" type="text/css">    
 	<link href="css/scatterbar.css" rel="stylesheet" type="text/css">
 
 	<!-- Custom styles for this template -->
@@ -840,16 +840,16 @@
 		            ['Generación Energía Eléctrica', 126607.656,0,0],
 		            ['Fuentes Móviles', 174156.531,0,0],
 		            ['Agropecuario y Uso de Suelos', 112593.95,0,0], 
-		            ['Permanencias USCUSS', 0,-172997.611,0],
+		            ['Permanencias y Cambio de Uso de Suelos', 0,-172997.611,0],
 		            ['Emisiones Netas', 0,0,492307.308],
 		        ],
 		        type: 'bar',
 		        groups: [
-		            ['Industria, Petróleo y Gas', 'Residuos, Residencial y Comercial', 'Generación Energía Eléctrica', 'Fuentes Móviles', 'Agropecuario y Uso de Suelos', 'Permanencias USCUSS','Emisiones Netas'], ['Permanencias USCUSS'],['Emisiones Netas']
+		            ['Industria, Petróleo y Gas', 'Residuos, Residencial y Comercial', 'Generación Energía Eléctrica', 'Fuentes Móviles', 'Agropecuario y Uso de Suelos', 'Permanencias y Cambio de Uso de Suelos','Emisiones Netas'], ['Permanencias y Cambio de Uso de Suelos'],['Emisiones Netas']
 		        ]
 		    },
 		    color: {
-		            pattern: ['#cc0000','#b20000','#990000','#7f0000','#660000','#0fc94b','#330000']
+		            pattern: ['#cc0000','#660000','#990000','#b20000','#7f0000','#0fc94b','#330000']
 		    },
 		    axis: {
 		        x: {
@@ -858,7 +858,10 @@
 		            categories: ['Emisiones Brutas', 'Absorciones', 'Emisione Netas']
 		        },
 		        y: {
-		            //label: 'Gigagramos de CO2eq'
+		           label: 'Gigatoneladas de CO2 eq.',
+		           tick: {
+                   format: d3.format(',')
+              		}	
 		        }
 		    },
 		    grid: {
