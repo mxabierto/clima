@@ -419,6 +419,9 @@
 		  }
 		
 		  root.children.forEach(collapse);
+		  //para mostrar los primeros nodos abiertos
+		  click(root.children[0])
+		  click(root.children[0].children[0])
 		  update(root);
 		});
 		
