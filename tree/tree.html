@@ -4,10 +4,6 @@
 <title>Treemap Presupuesto</title>
 <style>
 
-@font-face{
-	font-family: OpenSans;
-	src: url(OpenSans-Regular.ttf);
-}
 
 #chart {
   width: 750px;
@@ -20,7 +16,7 @@ text {
 }
 
 .grandparent text {
-  font-weight: normal;
+  font-weight: bold;
 }
 
 rect {
@@ -31,15 +27,14 @@ rect {
 rect.parent,
 .grandparent rect {
   stroke-width: 2px;
-  height: 10px
 }
 
 .grandparent rect {
-  fill: #00C292;
+  fill: #00CC99;
 }
 
 .grandparent:hover rect {
-  fill: #03B388;
+  fill: #bbb;
 }
 
 .children rect.parent,
