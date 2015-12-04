@@ -53,6 +53,12 @@ body {
     margin-left: auto;
 }
 
+.container-clima-landing{
+	min-width: 750px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .blog-nav .active {
   color: #fff;
 }
